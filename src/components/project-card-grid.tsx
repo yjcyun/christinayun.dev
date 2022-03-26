@@ -1,12 +1,17 @@
 import React from "react";
 import styled from "styled-components";
+import { device } from "../constants/device";
 import ProjectCard from "./project-card";
 
 const StyledProjectCardGrid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 1rem;
   margin-top: 2rem;
+
+  @media ${device.tabletS} {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const ProjectCardGrid = () => {
