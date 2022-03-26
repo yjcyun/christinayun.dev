@@ -5,14 +5,16 @@ import Layout from "../components/layout";
 import List from "../components/posts/list";
 
 import { PostListQuery } from "../../graphql-types";
+import PageTitle from "../components/page-title";
 
 const Posts = ({ data }: PageProps<PostListQuery>) => {
   return (
     <Layout>
-      <p>
-        These are components I've created and some snippets I want to keep
-        around for future reference.
-      </p>
+      <PageTitle
+        title="Posts"
+        description="These are components I've created and some snippets I want to keep
+        around for future reference."
+      />
       <List {...data} />
     </Layout>
   );

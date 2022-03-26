@@ -17,6 +17,10 @@ const StyledHeader = styled.header`
   }
 `;
 
+const StyledHome = styled.div`
+  font-size: 1.35rem;
+`;
+
 const StyledNavList = styled.ul`
   ${navList};
 `;
@@ -30,7 +34,7 @@ const Navbar = () => {
   return (
     <StyledHeader>
       <Link to="/">
-        <h1>Christina Yun</h1>
+        <StyledHome>Christina Yun</StyledHome>
       </Link>
       <nav>
         <StyledNavList>
