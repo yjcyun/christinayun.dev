@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 import { device } from "../constants/device";
+import { navList } from "./shared-style";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -10,40 +11,38 @@ const StyledHeader = styled.header`
   align-items: center;
   flex-direction: column;
   gap: 1rem;
-  margin-bottom: 2rem;
 
   @media ${device.tablet} {
     flex-direction: row;
   }
 `;
 
-const StyledNav = styled.nav`
-  display: flex;
-  gap: 2rem;
-
-  a {
-    text-decoration: none;
-    font-size: 18px;
-  }
-  a.active {
-    text-decoration: underline;
-  }
+const StyledNavList = styled.ul`
+  ${navList};
 `;
 
 const Navbar = () => {
+  const headerNav = [
+    { label: "projects", link: "/" },
+    { label: "posts", link: "/posts" },
+  ];
+
   return (
     <StyledHeader>
       <Link to="/">
         <h1>Christina Yun</h1>
       </Link>
-      <StyledNav>
-        <Link to="/" activeClassName="active">
-          projects
-        </Link>
-        <Link to="/posts" activeClassName="active">
-          posts
-        </Link>
-      </StyledNav>
+      <nav>
+        <StyledNavList>
+          {headerNav.map((item) => (
+            <li>
+              <Link to={item.link} activeClassName="active">
+                {item.label}
+              </Link>
+            </li>
+          ))}
+        </StyledNavList>
+      </nav>
     </StyledHeader>
   );
 };

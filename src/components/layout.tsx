@@ -1,5 +1,6 @@
 import React from "react";
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import Footer from "./footer";
 import Navbar from "./navbar";
 
 const GlobalStyle = createGlobalStyle`
@@ -34,6 +35,10 @@ const GlobalStyle = createGlobalStyle`
     letter-spacing: 0.05rem;
   }
 
+  ul {
+    list-style: none;
+  }
+
   p {
     line-height: 1.5;
     color: #666;
@@ -42,6 +47,10 @@ const GlobalStyle = createGlobalStyle`
   .accent {
     color: var(--accent);
   }
+`;
+
+const Main = styled.main`
+  padding: 3rem 0;
 `;
 
 interface LayoutProps {
@@ -53,7 +62,8 @@ export default function Layout({ children }: LayoutProps) {
     <React.Fragment>
       <GlobalStyle />
       <Navbar />
-      {children}
+      <Main>{children}</Main>
+      <Footer />
     </React.Fragment>
   );
 }
