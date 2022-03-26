@@ -1,7 +1,7 @@
 import React from "react";
 import { graphql, PageProps } from "gatsby";
 
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import List from "../components/posts/list";
 
 import { PostListQuery } from "../../graphql-types";

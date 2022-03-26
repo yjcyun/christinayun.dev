@@ -1,7 +1,7 @@
 import * as React from "react";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 import PageTitle from "../components/page-title";
-import ProjectCardGrid from "../components/project-card-grid";
+import ProjectCardGrid from "../components/projects/project-card-grid";
 
 // markup
 const IndexPage = () => {

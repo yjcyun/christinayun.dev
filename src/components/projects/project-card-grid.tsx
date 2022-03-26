@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { device } from "../constants/device";
+import { device } from "../../constants/device";
 import ProjectCard from "./project-card";
 
 const StyledProjectCardGrid = styled.div`

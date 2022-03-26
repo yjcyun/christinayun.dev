@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 interface PageTitleProps {
   title: string;
-  description: string | React.ReactNode;
+  description?: string | React.ReactNode;
 }
 
 const StyledPageTitle = styled.div`

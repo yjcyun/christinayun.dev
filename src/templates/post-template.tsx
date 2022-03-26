@@ -3,7 +3,7 @@ import { graphql, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import { GetSinglePostQuery } from "../../graphql-types";
-import Layout from "../components/layout";
+import Layout from "../components/layout/layout";
 
 const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
   if (!data.mdx || !data.mdx.frontmatter) {
