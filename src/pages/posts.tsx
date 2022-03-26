@@ -2,29 +2,18 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 
 import Layout from "../components/layout";
+import List from "../components/posts/list";
+
 import { PostListQuery } from "../../graphql-types";
 
 const Posts = ({ data }: PageProps<PostListQuery>) => {
-  const {
-    allMdx: { nodes: posts },
-  } = data;
-
   return (
     <Layout>
-      {posts.map((post) => {
-        if (!post.frontmatter) {
-          return <div key={post.id}>Oops! something went wrong</div>;
-        }
-
-        const { date, title } = post.frontmatter;
-
-        return (
-          <article key={post.id}>
-            <div>{title}</div>
-            <div>{date}</div>
-          </article>
-        );
-      })}
+      <p>
+        These are components I've created and some snippets I want to keep
+        around for future reference.
+      </p>
+      <List {...data} />
     </Layout>
   );
 };
