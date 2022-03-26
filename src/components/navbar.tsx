@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 import { device } from "../constants/device";
-import { navList } from "./shared-style";
+import { navList } from "../css/shared-style";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -35,7 +35,7 @@ const Navbar = () => {
       <nav>
         <StyledNavList>
           {headerNav.map((item) => (
-            <li>
+            <li key={item.label}>
               <Link to={item.link} activeClassName="active">
                 {item.label}
               </Link>

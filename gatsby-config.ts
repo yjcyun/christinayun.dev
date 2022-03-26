@@ -36,14 +36,14 @@ const config: GatsbyConfig = {
       __key: "pages",
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: "gatsby-source-filesystem",
       options: {
-        fonts: [
-          `Inconsolata\:300,400`, // you can also specify font weights and styles
-        ],
-        display: "swap",
+        name: "posts",
+        path: "./src/posts",
       },
+      __key: "posts",
     },
+    "gatsby-plugin-mdx",
   ],
 };
 

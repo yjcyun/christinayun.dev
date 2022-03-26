@@ -1,8 +1,7 @@
-import { link } from "fs";
 import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import { navList } from "./shared-style";
+import { navList } from "../css/shared-style";
 
 const StyledFooterUl = styled.ul`
   ${navList};
@@ -22,8 +21,10 @@ const Footer = () => {
       <nav>
         <StyledFooterUl>
           {footerNav.map((item) => (
-            <li>
-              <Link to={item.link}>{item.label}</Link>
+            <li key={item.label}>
+              <Link to={item.link} activeClassName="active">
+                {item.label}
+              </Link>
             </li>
           ))}
         </StyledFooterUl>
