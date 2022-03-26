@@ -13,8 +13,12 @@ const StyledListItem = styled.article`
   font-size: 1rem;
   display: flex;
   justify-content: space-between;
-  flex-direction: column-reverse;
-  margin-bottom: 0.75rem;
+  flex-direction: column;
+  padding: 1.25rem 0;
+
+  &:not(:last-child) {
+    border-bottom: var(--border);
+  }
 
   a:hover {
     color: var(--accent);

@@ -3,6 +3,8 @@ import { createGlobalStyle } from "styled-components";
 const GlobalStyle = createGlobalStyle`
   :root {
     --accent: rgb(37 99 235);
+    --faint-accent: rgb(147 197 253);
+    --border: 1px solid var(--faint-accent);
   }
 
   * {

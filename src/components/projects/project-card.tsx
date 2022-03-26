@@ -10,7 +10,7 @@ interface ProjectCardProps {
 }
 
 const StyledProjectCard = styled.div`
-  border: 1px solid rgb(147 197 253);
+  border: var(--border);
   padding: 1.25rem;
   border-radius: 3px;
 
