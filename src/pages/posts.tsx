@@ -1,8 +1,10 @@
-import { graphql } from "gatsby";
 import React from "react";
-import Layout from "../components/layout";
+import { graphql, PageProps } from "gatsby";
 
-const Posts = ({ data }) => {
+import Layout from "../components/layout";
+import { PostListQuery } from "../../graphql-types";
+
+const Posts = ({ data }: PageProps<PostListQuery>) => {
   const {
     allMdx: { nodes: posts },
   } = data;
@@ -10,7 +12,12 @@ const Posts = ({ data }) => {
   return (
     <Layout>
       {posts.map((post) => {
+        if (!post.frontmatter) {
+          return <div key={post.id}>Oops! something went wrong</div>;
+        }
+
         const { date, title } = post.frontmatter;
+
         return (
           <article key={post.id}>
             <div>{title}</div>
@@ -23,11 +30,11 @@ const Posts = ({ data }) => {
 };
 
 export const query = graphql`
-  query MDXQuery {
+  query PostList {
     allMdx {
       nodes {
         frontmatter {
-          date
+          date(formatString: "MMM D, YYYY")
           title
         }
         id

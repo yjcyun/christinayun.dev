@@ -44,6 +44,7 @@ const config: GatsbyConfig = {
       __key: "posts",
     },
     "gatsby-plugin-mdx",
+    "gatsby-plugin-graphql-codegen",
   ],
 };
 
