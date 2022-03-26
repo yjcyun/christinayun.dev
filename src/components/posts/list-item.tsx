@@ -6,6 +6,7 @@ import { device } from "../../constants/device";
 interface ListItemProps {
   title: string;
   date?: any;
+  slug: string;
 }
 
 const StyledListItem = styled.article`
@@ -25,10 +26,10 @@ const StyledListItem = styled.article`
   }
 `;
 
-const ListItem = ({ title, date }: ListItemProps) => {
+const ListItem = ({ title, date, slug }: ListItemProps) => {
   return (
     <StyledListItem>
-      <Link to={"/"}>{title}</Link>
+      <Link to={`/posts/${slug}`}>{title}</Link>
       <div>{date}</div>
     </StyledListItem>
   );

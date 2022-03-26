@@ -357,7 +357,7 @@ export type MdxFrontmatter = {
   slug?: Maybe<Scalars['String']>;
   image?: Maybe<File>;
   date?: Maybe<Scalars['Date']>;
-  category?: Maybe<Scalars['String']>;
+  categories?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 
@@ -1024,7 +1024,7 @@ export type MdxFrontmatterFilterInput = {
   slug?: InputMaybe<StringQueryOperatorInput>;
   image?: InputMaybe<FileFilterInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
-  category?: InputMaybe<StringQueryOperatorInput>;
+  categories?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type FileFilterInput = {
@@ -1318,7 +1318,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___image___id'
   | 'childrenMdx___frontmatter___image___children'
   | 'childrenMdx___frontmatter___date'
-  | 'childrenMdx___frontmatter___category'
+  | 'childrenMdx___frontmatter___categories'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
   | 'childrenMdx___excerpt'
@@ -1413,7 +1413,7 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___image___id'
   | 'childMdx___frontmatter___image___children'
   | 'childMdx___frontmatter___date'
-  | 'childMdx___frontmatter___category'
+  | 'childMdx___frontmatter___categories'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -3170,7 +3170,7 @@ export type MdxFieldsEnum =
   | 'frontmatter___image___internal___owner'
   | 'frontmatter___image___internal___type'
   | 'frontmatter___date'
-  | 'frontmatter___category'
+  | 'frontmatter___categories'
   | 'slug'
   | 'body'
   | 'excerpt'
@@ -3531,7 +3531,14 @@ export type ImageSharpSortInput = {
 export type PostListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string } | null }> } };
+export type PostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string, slug?: string | null } | null }> } };
+
+export type GetSinglePostQueryVariables = Exact<{
+  slug?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type GetSinglePostQuery = { mdx?: { body: string, frontmatter?: { categories?: Array<string | null> | null, date?: any | null, slug?: string | null, title: string } | null } | null };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 
