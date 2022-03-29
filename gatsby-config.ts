@@ -16,7 +16,6 @@ const config: GatsbyConfig = {
         icon: "src/images/icon.png",
       },
     },
-    "gatsby-plugin-mdx",
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
@@ -43,8 +42,14 @@ const config: GatsbyConfig = {
       },
       __key: "posts",
     },
-    "gatsby-plugin-mdx",
     "gatsby-plugin-graphql-codegen",
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [`gatsby-remark-autolink-headers`],
+        plugins: [`gatsby-remark-autolink-headers`],
+      },
+    },
   ],
 };
 

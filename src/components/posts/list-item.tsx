@@ -6,7 +6,7 @@ import { device } from "../../constants/device";
 interface ListItemProps {
   title: string;
   date?: any;
-  slug: string;
+  slug?: string | null | undefined;
 }
 
 const StyledListItem = styled.article`
