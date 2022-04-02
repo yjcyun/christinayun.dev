@@ -6,13 +6,11 @@ const About = () => {
   return (
     <Layout>
       <PageTitle title="About" />
-      <p>Hi =) </p>
+      <p>Hi</p>
       <br />
       <p>
-        I do frontend stuff at work but I'm always curious about the backend and
-        other areas of software development. I can be ambitious and bold but
-        often I'm not. I am easy-going with others but hardcore with myself. I
-        enjoy hiking with my dogs in my free time.
+        I have a background in biology but I do frontend stuff now. I enjoy
+        hiking with my dogs in my free time.
       </p>
       <br />
       <p>

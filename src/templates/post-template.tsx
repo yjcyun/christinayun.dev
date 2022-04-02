@@ -7,6 +7,7 @@ import Layout from "../components/layout/layout";
 import { device } from "../constants/device";
 import { GetSinglePostQuery } from "../../graphql-types";
 import TableOfContents from "../components/posts/table-of-contents";
+import PillButton from "../components/pill-buttons";
 
 const StyledPostTemplate = styled.div`
   display: flex;
@@ -21,6 +22,20 @@ const StyledPostTemplate = styled.div`
 const StyledArticle = styled.article`
   max-width: 43rem;
   width: 100%;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
+
+  time {
+    font-size: 1rem;
+  }
+`;
+
+const StyleCategoriesContainer = styled.div`
+  display: flex;
+  gap: 5px;
+  margin: 1rem 0;
 `;
 
 const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
@@ -47,9 +62,11 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
         <StyledArticle>
           <h1>#{title}</h1>
           <time>{date}</time>
-          {categories?.map((category) => (
-            <button key={category}>{category}</button>
-          ))}
+          <StyleCategoriesContainer>
+            {categories?.map((category) => (
+              <PillButton key={category}>{category}</PillButton>
+            ))}
+          </StyleCategoriesContainer>
           <MDXRenderer>{body}</MDXRenderer>
         </StyledArticle>
         {nonNullHeadings && nonNullHeadings.length > 0 && (
