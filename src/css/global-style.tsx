@@ -2,8 +2,8 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --accent: rgb(37 99 235);
-    --faint-accent: rgb(147 197 253);
+    --accent: rgb(37, 99,235);
+    --faint-accent: rgb(147, 197, 253);
     --border: 1px solid var(--faint-accent);
   }
 
@@ -48,15 +48,6 @@ const GlobalStyle = createGlobalStyle`
     color: var(--accent);
   }
 
-  pre {
-    line-height: 1.2rem;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    overflow: auto;
-    padding: 1.25rem;
-    margin: 0;
-    background-color: #fff;
-  }
 `;
 
 export default GlobalStyle;

@@ -32,6 +32,7 @@ const ProjectCardGrid = () => {
       title: "Heather Dick",
       description: "Personal blog built using Gatsby & Strapi",
       liveLink: "https://heatherdick.ca",
+      sourceLink: "https://github.com/yjcyun/heather_dick_portfolio",
     },
     {
       title: "Prince Dog Korea",

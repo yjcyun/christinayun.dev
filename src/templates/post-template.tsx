@@ -23,10 +23,6 @@ const StyledArticle = styled.article`
   max-width: 43rem;
   width: 100%;
 
-  h1 {
-    margin-bottom: 2rem;
-  }
-
   time {
     font-size: 1rem;
   }
@@ -60,7 +56,7 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
     <Layout>
       <StyledPostTemplate>
         <StyledArticle>
-          <h1>#{title}</h1>
+          <h1>{title}</h1>
           <time>{date}</time>
           <StyleCategoriesContainer>
             {categories?.map((category) => (

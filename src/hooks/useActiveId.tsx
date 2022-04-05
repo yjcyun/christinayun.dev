@@ -16,7 +16,9 @@ const useActiveId = (itemIds: string[]) => {
     );
 
     itemIds.forEach((id) => {
-      observer.observe(document.getElementById(id)!);
+      if (document.getElementById(id)) {
+        observer.observe(document.getElementById(id)!);
+      }
     });
 
     return () => {

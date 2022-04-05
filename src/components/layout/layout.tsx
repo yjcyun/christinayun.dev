@@ -1,7 +1,7 @@
 import React from "react";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
+
 import GlobalStyle from "../../css/global-style";
-import Footer from "./footer";
 import Navbar from "./navbar";
 
 const Main = styled.main`
@@ -18,7 +18,7 @@ export default function Layout({ children }: LayoutProps) {
       <GlobalStyle />
       <Navbar />
       <Main>{children}</Main>
-      <Footer />
+      {/* <Footer /> */}
     </React.Fragment>
   );
 }
