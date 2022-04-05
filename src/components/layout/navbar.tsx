@@ -28,7 +28,7 @@ const StyledNavList = styled.ul`
 const Navbar = () => {
   const headerNav = [
     { label: "projects", link: "/" },
-    { label: "posts", link: "/posts" },
+    // { label: "posts", link: "/posts" },
   ];
 
   return (
