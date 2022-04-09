@@ -29,6 +29,10 @@ const GlobalStyle = createGlobalStyle`
   a {
     text-decoration: none;
     color: var(--light-cyan);
+
+    &.active {
+      text-decoration: underline;
+    }
   }
 
   h1 {

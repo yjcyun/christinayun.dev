@@ -2,35 +2,47 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-import { navList } from "@styles/shared-style";
+import { footerNav } from "@constants/footer-nav";
+
+const StyledFooter = styled.footer`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  p,
+  a {
+    font-size: 0.75rem;
+  }
+`;
 
 const StyledFooterUl = styled.ul`
-  ${navList};
-  justify-content: center;
-  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+`;
+
+const StyledFooterLi = styled.li`
+  display: inherit;
 `;
 
 const Footer = () => {
-  const footerNav = [
-    { label: "about", link: "/about" },
-    { label: "resume", link: "/resume" },
-    { label: "log", link: "/log" },
-  ];
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer>
+    <StyledFooter>
+      <p>Copyright ©{currentYear} Christina Yun</p>
       <nav>
         <StyledFooterUl>
           {footerNav.map((item) => (
-            <li key={item.label}>
+            <StyledFooterLi key={item.label}>
               <Link to={item.link} activeClassName="active">
                 {item.label}
               </Link>
-            </li>
+            </StyledFooterLi>
           ))}
         </StyledFooterUl>
       </nav>
-    </footer>
+    </StyledFooter>
   );
 };
 

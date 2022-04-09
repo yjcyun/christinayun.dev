@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 import GlobalStyle from "@styles/global-style";
 import Navbar from "./navbar";
+import Footer from "./footer";
 
 const Main = styled.main`
   padding: 3rem 0;
@@ -18,7 +19,7 @@ export default function Layout({ children }: LayoutProps) {
       <GlobalStyle />
       <Navbar />
       <Main>{children}</Main>
-      {/* <Footer /> */}
+      <Footer />
     </React.Fragment>
   );
 }

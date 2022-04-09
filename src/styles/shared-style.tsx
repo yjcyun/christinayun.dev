@@ -5,7 +5,6 @@ export const navList = css`
   gap: 2rem;
 
   a {
-    text-decoration: none;
     font-size: 1.15rem;
 
     &.active {
@@ -14,6 +13,6 @@ export const navList = css`
   }
 `;
 
-export const Section = styled.section`
-  margin-bottom: 5rem;
+export const Section = styled.section<{ smallMargin?: boolean }>`
+  margin-bottom: ${(props) => (props.smallMargin ? "3rem" : "5rem")};
 `;

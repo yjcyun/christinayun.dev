@@ -5,7 +5,7 @@ import PageTitle from "@components/page-title";
 
 const Contact = () => {
   return (
-    <Section>
+    <Section smallMargin>
       <PageTitle
         title="Contact"
         description={
