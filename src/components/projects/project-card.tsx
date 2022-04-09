@@ -1,29 +1,50 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "../button";
 
 interface ProjectCardProps {
   title: string;
   description: string;
   sourceLink?: string;
   liveLink?: string;
+  thumbnail: string;
 }
 
 const StyledProjectCard = styled.div`
-  border: var(--border);
-  padding: 1.25rem;
-  border-radius: 3px;
+  display: flex;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
 
-  h4 {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--dark-grayish-blue);
   }
+`;
 
+const StyledImageContainer = styled.div`
+  width: 200px;
+  height: 110px;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+`;
+
+const StyledContentContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
+
+const StyledContent = styled.div`
   p {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-    padding: 1.25rem 0;
+    margin-top: 0.5rem;
   }
+`;
+
+const StyledCtaContainer = styled.div`
+  display: flex;
+  gap: 1rem;
 `;
 
 const ProjectCard = ({
@@ -31,21 +52,31 @@ const ProjectCard = ({
   description,
   sourceLink,
   liveLink,
+  thumbnail,
 }: ProjectCardProps) => {
   return (
     <StyledProjectCard>
-      <h4>#### {title}</h4>
-      <p>{description}</p>
-      <Button disabled={!sourceLink}>
-        <a href={sourceLink} target="_blank" rel="noopener noreferrer">
-          source
-        </a>
-      </Button>
-      <Button disabled={!liveLink}>
-        <a href={liveLink} target="_blank" rel="noopener noreferrer">
-          live
-        </a>
-      </Button>
+      <StyledImageContainer>
+        <img src={thumbnail} alt={title} />
+      </StyledImageContainer>
+      <StyledContentContainer>
+        <StyledContent>
+          <h4>#### {title}</h4>
+          <p>{description}</p>
+        </StyledContent>
+
+        <StyledCtaContainer>
+          {sourceLink && (
+            <a href={sourceLink} target="_blank" rel="noopener noreferrer">
+              source
+            </a>
+          )}
+
+          <a href={liveLink} target="_blank" rel="noopener noreferrer">
+            live
+          </a>
+        </StyledCtaContainer>
+      </StyledContentContainer>
     </StyledProjectCard>
   );
 };

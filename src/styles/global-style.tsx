@@ -7,6 +7,8 @@ const GlobalStyle = createGlobalStyle`
     --light-cyan: #CEE3E9;
     --neon-green: #53FFAA;
     --border: 1px solid var(--faint-accent);
+    --bodyFF:  'Spartan', sans-serif;
+    --headingFF: 'Oxygen Mono', monospace;
   }
 
   * {
@@ -16,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   body {
-    font-family: monospace;
+    font-family: var(--bodyFF);
     max-width: 48rem;
     margin: auto;
     padding: 3rem 1rem;
@@ -26,11 +28,12 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: var(--light-cyan);
+    color: var(--neon-green);
   }
 
   h1 {
     letter-spacing: 0.075rem;
+    font-family: vaR(--headingFF)
   }
 
   nav {
@@ -48,7 +51,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .accent {
-    color: var(--accent);
+    color: var(--neon-green);
   }
 `;
 
