@@ -1,7 +1,8 @@
-import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import { device } from "../../constants/device";
+import { Link } from "gatsby";
+
+import { device } from "@constants/device";
 
 interface ListItemProps {
   title: string;

@@ -1,7 +1,8 @@
-import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
-import { navList } from "../../css/shared-style";
+import { Link } from "gatsby";
+
+import { navList } from "@styles/shared-style";
 
 const StyledFooterUl = styled.ul`
   ${navList};

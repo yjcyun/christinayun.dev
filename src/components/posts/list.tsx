@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { PostListQuery } from "../../../graphql-types";
+import { PostListQuery } from "@graphql-types";
 import ListItem from "./list-item";
 
 const StyledList = styled.div`

@@ -2,8 +2,8 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
-import { device } from "../../constants/device";
-import useActiveId from "../../hooks/useActiveId";
+import { device } from "@constants/device";
+import useActiveId from "@hooks/useActiveId";
 
 interface TableOfContentsProps {
   headings: { depth: number; value: string }[];

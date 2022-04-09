@@ -50,6 +50,23 @@ const config: GatsbyConfig = {
         plugins: [`gatsby-remark-autolink-headers`],
       },
     },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@components": "src/components",
+          "@constants": "src/constants",
+          "@graphql-types": "graphql-types",
+          "@hooks": "src/hooks",
+          "@pages": "src/pages",
+          "@posts": "content/posts",
+          "@src": "src",
+          "@styles": "src/styles",
+          "@templates": "src/templates",
+        },
+        extensions: ["tsx", "ts"],
+      },
+    },
   ],
 };
 

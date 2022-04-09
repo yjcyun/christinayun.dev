@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-import { device } from "../../constants/device";
-import { navList } from "../../css/shared-style";
+import { device } from "@constants/device";
+import { navList } from "@styles/shared-style";
 
 const StyledHeader = styled.header`
   display: flex;

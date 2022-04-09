@@ -1,6 +1,6 @@
 import React from "react";
-import Layout from "../components/layout/layout";
-import PageTitle from "../components/page-title";
+import Layout from "@components/layout/layout";
+import PageTitle from "@components/page-title";
 
 const About = () => {
   return (

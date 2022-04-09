@@ -47,7 +47,6 @@ const GlobalStyle = createGlobalStyle`
   .accent {
     color: var(--accent);
   }
-
 `;
 
 export default GlobalStyle;
