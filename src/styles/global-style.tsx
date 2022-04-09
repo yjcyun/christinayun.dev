@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     --dark-grayish-blue: #313A48;
     --light-cyan: #CEE3E9;
     --neon-green: #53FFAA;
-    --border: 1px solid var(--faint-accent);
+    --border: 1px solid var(--dark-grayish-blue);
     --bodyFF:  'Spartan', sans-serif;
     --headingFF: 'Oxygen Mono', monospace;
   }
@@ -28,12 +28,12 @@ const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
-    color: var(--neon-green);
+    color: var(--light-cyan);
   }
 
   h1 {
     letter-spacing: 0.075rem;
-    font-family: vaR(--headingFF)
+    font-family: var(--headingFF)
   }
 
   nav {

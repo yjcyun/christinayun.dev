@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-
 import { device } from "@constants/device";
 
 interface ListItemProps {
@@ -15,7 +14,8 @@ const StyledListItem = styled.article`
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  padding: 1.25rem 0;
+  padding: 0.7rem 0;
+  color: var(--light-cyan);
 
   &:not(:last-child) {
     border-bottom: var(--border);
@@ -23,7 +23,6 @@ const StyledListItem = styled.article`
 
   a:hover {
     color: var(--neon-green);
-    font-weight: bold;
   }
 
   @media ${device.tabletS} {

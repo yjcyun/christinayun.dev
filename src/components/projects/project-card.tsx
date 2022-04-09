@@ -16,7 +16,7 @@ const StyledProjectCard = styled.div`
   margin-bottom: 2rem;
 
   &:not(:last-child) {
-    border-bottom: 1px solid var(--dark-grayish-blue);
+    border-bottom: var(--border);
   }
 `;
 
