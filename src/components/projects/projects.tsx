@@ -1,10 +1,13 @@
 import React from "react";
+
 import PageTitle from "@components/page-title";
+import { Section } from "@styles/shared-style";
+
 import ProjectCardGrid from "./project-card-grid";
 
 const Projects = () => {
   return (
-    <div>
+    <Section>
       <PageTitle
         title="Projects"
         description={
@@ -34,7 +37,7 @@ const Projects = () => {
         }
       />
       <ProjectCardGrid />
-    </div>
+    </Section>
   );
 };
 

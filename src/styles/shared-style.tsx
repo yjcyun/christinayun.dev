@@ -13,3 +13,7 @@ export const navList = css`
     }
   }
 `;
+
+export const Section = styled.section`
+  margin-bottom: 5rem;
+`;

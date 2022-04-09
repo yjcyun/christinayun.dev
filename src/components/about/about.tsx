@@ -1,5 +1,7 @@
-import PageTitle from "@components/page-title";
 import React from "react";
+
+import { Section } from "@styles/shared-style";
+import PageTitle from "@components/page-title";
 
 const About = () => {
   const renderDescription = (
@@ -12,9 +14,9 @@ const About = () => {
   );
 
   return (
-    <div>
+    <Section>
       <PageTitle title="About" description={renderDescription} />
-    </div>
+    </Section>
   );
 };
 
