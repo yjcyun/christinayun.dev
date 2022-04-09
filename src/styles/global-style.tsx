@@ -2,8 +2,10 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --accent: rgb(37, 99,235);
-    --faint-accent: rgb(147, 197, 253);
+    --dark-blue: #202733;
+    --dark-grayish-blue: #313A48;
+    --light-cyan: #CEE3E9;
+    --neon-green: #53FFAA;
     --border: 1px solid var(--faint-accent);
   }
 
@@ -18,12 +20,13 @@ const GlobalStyle = createGlobalStyle`
     max-width: 48rem;
     margin: auto;
     padding: 3rem 1rem;
-    color: #333;
+    color: var(--light-cyan);
+    background: var(--dark-blue);
   }
 
   a {
     text-decoration: none;
-    color: #333;
+    color: var(--light-cyan);
   }
 
   h1 {
@@ -41,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-size: 1rem;
     line-height: 1.5;
-    color: #666;
+    color: var(--light-cyan);
   }
 
   .accent {

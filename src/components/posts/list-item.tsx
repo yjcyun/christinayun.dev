@@ -22,7 +22,7 @@ const StyledListItem = styled.article`
   }
 
   a:hover {
-    color: var(--accent);
+    color: var(--neon-green);
     font-weight: bold;
   }
 

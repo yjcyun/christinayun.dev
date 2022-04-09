@@ -44,7 +44,7 @@ const getHeadingDepth = (depth: number) => {
 };
 
 const StyledLink = styled(Link)<{ $isActive: boolean; $depth: number }>`
-  color: ${(props) => (props.$isActive ? "var(--accent)" : "inherit")};
+  color: ${(props) => (props.$isActive ? "var(--neon-green)" : "inherit")};
   margin-left: ${(props) => getHeadingDepth(props.$depth)};
 `;
 
