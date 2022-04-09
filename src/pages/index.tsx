@@ -1,10 +1,12 @@
-import * as React from "react";
+import React from "react";
+import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
 import About from "@components/about/about";
 import Projects from "@components/projects/projects";
 import Posts from "@components/posts/posts";
-import { graphql, PageProps } from "gatsby";
+import Contact from "@components/contact/contact";
+
 import { PostListQuery } from "@graphql-types";
 
 // markup
@@ -14,6 +16,7 @@ const IndexPage = ({ data }: PageProps<PostListQuery>) => {
       <About />
       <Projects />
       <Posts {...data} />
+      <Contact />
     </Layout>
   );
 };
