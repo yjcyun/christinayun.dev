@@ -12,11 +12,11 @@ interface ProjectCardProps {
 const StyledProjectCard = styled.div`
   display: flex;
   gap: 2rem;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
 
   &:not(:last-child) {
     border-bottom: var(--border);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
   }
 `;
 

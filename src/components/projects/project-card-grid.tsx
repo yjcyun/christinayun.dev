@@ -8,7 +8,7 @@ const StyledProjectCardGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 `;
 
 const ProjectCardGrid = () => {
