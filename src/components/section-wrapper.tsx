@@ -8,7 +8,7 @@ interface SectionProps extends PageTitleProps {
 }
 
 const SectionContainer = styled.section<{ $smallMargin?: boolean }>`
-  margin-bottom: ${(props) => (props.$smallMargin ? "3rem" : "6rem")};
+  margin-bottom: ${(props) => (props.$smallMargin ? "3rem" : "4rem")};
 `;
 
 const Section = ({

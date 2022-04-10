@@ -1,3 +1,4 @@
+import Button from "@components/button";
 import React from "react";
 import styled from "styled-components";
 
@@ -39,7 +40,7 @@ const StyledContent = styled.div`
 
 const StyledCtaContainer = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 0.5rem;
 `;
 
 const ProjectCard = ({
@@ -68,7 +69,7 @@ const ProjectCard = ({
               target="_blank"
               rel="noopener noreferrer"
             >
-              source
+              <Button size="small">source</Button>
             </a>
           )}
 
@@ -78,7 +79,7 @@ const ProjectCard = ({
             target="_blank"
             rel="noopener noreferrer"
           >
-            live
+            <Button size="small">live</Button>
           </a>
         </StyledCtaContainer>
       </StyledContentContainer>

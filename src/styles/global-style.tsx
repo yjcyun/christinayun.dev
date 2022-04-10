@@ -30,12 +30,7 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: var(--light-cyan);
 
-    &.active {
-      text-decoration: underline;
-    }
-
-    &.link {
-      color: var(--neon-green);
+    &.active, &.link {
       text-decoration: underline;
     }
   }
@@ -57,6 +52,11 @@ const GlobalStyle = createGlobalStyle`
     font-size: 1rem;
     line-height: 1.5;
     color: var(--light-cyan);
+  }
+
+  button {
+    font-family: var(--bodyFF);
+    cursor: pointer;
   }
 
   .accent {

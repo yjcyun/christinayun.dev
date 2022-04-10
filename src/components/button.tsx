@@ -1,28 +1,56 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+type ButtonSize = "small" | "default";
 
 interface ButtonProps {
   children: React.ReactNode;
   disabled?: boolean;
+  size?: ButtonSize;
 }
 
-const StyledButton = styled.button`
-  background-color: ${(props) =>
-    props.disabled ? "rgb(229 231 235)" : "white"};
-  border: 1px solid #333;
-  padding: 0.5rem 0.75rem;
-  border-radius: 3px;
-  font-size: 1rem;
-  font-family: monospace;
-  opacity: ${(props) => (props.disabled ? "0.5" : "1")};
+const getButtonSize = (size: ButtonSize) => {
+  switch (size) {
+    case "small":
+      return css`
+        background: var(--dark-grayish-blue);
+        padding: 5px 7px;
+        border: 1px solid var(--neon-green);
+        border-radius: 3px;
+        color: var(--neon-green);
+        font-size: 0.9rem;
 
-  &:first-of-type {
-    margin-right: 0.5rem;
+        &:hover {
+          box-shadow: 0px 0px 10px var(--neon-green);
+        }
+      `;
+    default:
+      return css`
+        background: var(--dark-navy);
+        padding: 1rem;
+        border: 1px solid var(--light-cyan);
+        border-radius: 5px;
+        color: inherit;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+
+        &:hover {
+          background: var(--dark-grayish-blue);
+        }
+      `;
   }
+};
+
+const StyledButton = styled.button<{ size: ButtonSize }>`
+  ${(props) => getButtonSize(props.size)}
 `;
 
-const Button = ({ children, disabled }: ButtonProps) => {
-  return <StyledButton disabled={disabled}>{children}</StyledButton>;
+const Button = ({ children, disabled, size = "default" }: ButtonProps) => {
+  return (
+    <StyledButton disabled={disabled} size={size}>
+      {children}
+    </StyledButton>
+  );
 };
 
 export default Button;

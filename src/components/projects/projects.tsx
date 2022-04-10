@@ -10,10 +10,23 @@ const Projects = () => {
   return (
     <Section
       title="Projects"
-      description="I do frontend stuff and this where I show my work and some other things."
+      description={
+        <>
+          Here's a glimpse of some projects I worked on. Personal projects can
+          all be found on my{" "}
+          <a
+            className="link"
+            href="https://github.com/yjcyun"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            Github
+          </a>
+          .
+        </>
+      }
     >
       <ProjectCardGrid />
-      <SeeMoreLink to="projects" />
     </Section>
   );
 };

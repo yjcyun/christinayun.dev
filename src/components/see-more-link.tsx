@@ -1,21 +1,24 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
+import Button from "./button";
 
 interface SeeMoreProps {
   to: string;
 }
 
 const StyledSeeMoreLink = styled.div`
-  margin-top: 3rem;
-  font-weight: 800;
-  text-decoration: underline;
+  margin-top: 2rem;
+  display: flex;
+  width: 100%;
 `;
 
 const SeeMoreLink = ({ to }: SeeMoreProps) => {
   return (
     <StyledSeeMoreLink>
-      <Link to={`/${to}`}>See more {to}...</Link>
+      <Link to={`/${to}`}>
+        <Button>See All {to} ⟶</Button>
+      </Link>
     </StyledSeeMoreLink>
   );
 };

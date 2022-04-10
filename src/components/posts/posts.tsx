@@ -15,7 +15,6 @@ const Posts = (props: HomePostListQuery) => {
     around for future reference."
     >
       <List {...props} />
-      <SeeMoreLink to="posts" />
     </Section>
   );
 };
