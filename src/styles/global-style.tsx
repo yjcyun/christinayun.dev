@@ -33,6 +33,11 @@ const GlobalStyle = createGlobalStyle`
     &.active {
       text-decoration: underline;
     }
+
+    &.link {
+      color: var(--neon-green);
+      text-decoration: underline;
+    }
   }
 
   h1 {

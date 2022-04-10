@@ -1,42 +1,24 @@
 import React from "react";
+import { Link } from "gatsby";
 
-import PageTitle from "@components/page-title";
-import { Section } from "@styles/shared-style";
+import Section from "@components/section-wrapper";
 
 import ProjectCardGrid from "./project-card-grid";
+import SeeMoreLink from "@components/see-more-link";
 
 const Projects = () => {
   return (
-    <Section>
-      <PageTitle
-        title="Projects"
-        description={
-          <>
-            I do frontend stuff and this where I show my work and some other
-            things. My life consists of coding and dogs. You can reach out to me
-            on{" "}
-            <a
-              className="accent"
-              href="https://github.com/yjcyun"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              github
-            </a>{" "}
-            and{" "}
-            <a
-              className="accent"
-              href="https://www.linkedin.com/in/yjcyun/"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              linkedin
-            </a>
-            .
-          </>
-        }
-      />
+    <Section
+      title="Projects"
+      description={
+        <>
+          I do frontend stuff and this where I show my work and some other
+          things.
+        </>
+      }
+    >
       <ProjectCardGrid />
+      <SeeMoreLink to="projects" />
     </Section>
   );
 };

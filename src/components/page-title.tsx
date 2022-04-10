@@ -1,21 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 
-interface PageTitleProps {
+export interface PageTitleProps {
   title: string;
   description?: string | React.ReactNode;
+  section?: boolean;
 }
 
 const StyledPageTitle = styled.div`
-  h1 {
+  h1,
+  h2 {
     margin-bottom: 1rem;
+    color: var(--neon-green);
   }
 `;
 
-const PageTitle = ({ title, description }: PageTitleProps) => {
+const PageTitle = ({ title, description, section }: PageTitleProps) => {
   return (
     <StyledPageTitle>
-      <h1># {title}</h1>
+      {section ? <h2>## {title}</h2> : <h1># {title}</h1>}
       <p>{description}</p>
     </StyledPageTitle>
   );

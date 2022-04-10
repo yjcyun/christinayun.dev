@@ -15,19 +15,14 @@ const StyledProjectCard = styled.div`
 
   &:not(:last-child) {
     border-bottom: var(--border);
-    padding-bottom: 2rem;
-    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 `;
 
-const StyledImageContainer = styled.div`
+const StyledImage = styled.img`
   width: 200px;
-  height: 110px;
-
-  img {
-    width: 100%;
-    height: 100%;
-  }
+  height: 120px;
 `;
 
 const StyledContentContainer = styled.div`
@@ -56,23 +51,33 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <StyledProjectCard>
-      <StyledImageContainer>
-        <img src={thumbnail} alt={title} />
-      </StyledImageContainer>
+      <a href={liveLink} target="_blank" rel="noopener noreferrer">
+        <StyledImage src={thumbnail} alt={title} />
+      </a>
       <StyledContentContainer>
         <StyledContent>
-          <h4>#### {title}</h4>
+          <h4>{title}</h4>
           <p>{description}</p>
         </StyledContent>
 
         <StyledCtaContainer>
           {sourceLink && (
-            <a href={sourceLink} target="_blank" rel="noopener noreferrer">
+            <a
+              className="link"
+              href={sourceLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               source
             </a>
           )}
 
-          <a href={liveLink} target="_blank" rel="noopener noreferrer">
+          <a
+            className="link"
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             live
           </a>
         </StyledCtaContainer>

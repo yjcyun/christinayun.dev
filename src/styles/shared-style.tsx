@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import { css } from "styled-components";
 
 export const navList = css`
   display: flex;
@@ -11,8 +11,4 @@ export const navList = css`
       text-decoration: underline;
     }
   }
-`;
-
-export const Section = styled.section<{ smallMargin?: boolean }>`
-  margin-bottom: ${(props) => (props.smallMargin ? "3rem" : "5rem")};
 `;

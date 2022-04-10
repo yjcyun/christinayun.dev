@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Section } from "@styles/shared-style";
-import PageTitle from "@components/page-title";
+import Section from "@components/section-wrapper";
 
 const About = () => {
   const renderDescription = (
@@ -13,11 +12,7 @@ const About = () => {
     </>
   );
 
-  return (
-    <Section>
-      <PageTitle title="About" description={renderDescription} />
-    </Section>
-  );
+  return <Section title="About" description={renderDescription} />;
 };
 
 export default About;
