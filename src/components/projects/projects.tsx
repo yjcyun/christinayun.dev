@@ -10,12 +10,7 @@ const Projects = () => {
   return (
     <Section
       title="Projects"
-      description={
-        <>
-          I do frontend stuff and this where I show my work and some other
-          things.
-        </>
-      }
+      description="I do frontend stuff and this where I show my work and some other things."
     >
       <ProjectCardGrid />
       <SeeMoreLink to="projects" />

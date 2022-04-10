@@ -9,6 +9,7 @@ export const projects = [
       "A Demand Side Platform SaaS project built using Hasura & React",
     liveLink: "https://kismet.ai",
     thumbnail: kismet,
+    featured: true,
   },
   {
     title: "Sports Inference",
@@ -16,6 +17,7 @@ export const projects = [
       "NBA teams analysis and statistics built using Firebase & React",
     liveLink: "https://sportsinference.com",
     thumbnail: sportsInference,
+    featured: true,
   },
   {
     title: "Heather Dick",
@@ -23,5 +25,6 @@ export const projects = [
     liveLink: "https://heatherdick.ca",
     sourceLink: "https://github.com/yjcyun/heather_dick_portfolio",
     thumbnail: heatherDick,
+    featured: true,
   },
 ];

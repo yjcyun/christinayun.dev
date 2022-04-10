@@ -4,6 +4,10 @@ import styled from "styled-components";
 import { projects } from "@constants/projects";
 import ProjectCard from "./project-card";
 
+interface ProjectCardGridProps {
+  all?: boolean;
+}
+
 const StyledProjectCardGrid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -11,12 +15,14 @@ const StyledProjectCardGrid = styled.div`
   margin-top: 3rem;
 `;
 
-const ProjectCardGrid = () => {
+const ProjectCardGrid = ({ all }: ProjectCardGridProps) => {
   return (
     <StyledProjectCardGrid>
-      {projects.map((project) => (
-        <ProjectCard key={project.title} {...project} />
-      ))}
+      {(all ? projects : projects.filter((project) => project.featured)).map(
+        (project) => (
+          <ProjectCard key={project.title} {...project} />
+        )
+      )}
     </StyledProjectCardGrid>
   );
 };
