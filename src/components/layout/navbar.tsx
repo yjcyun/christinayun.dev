@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 
 import { device } from "@constants/device";
-import { navList } from "@styles/shared-style";
+import { headerNav } from "@constants/header-nav";
 
 const StyledHeader = styled.header`
   display: flex;
@@ -22,15 +22,19 @@ const StyledHome = styled.div`
 `;
 
 const StyledNavList = styled.ul`
-  ${navList};
+  display: flex;
+  gap: 1.5rem;
+
+  a {
+    font-size: 1.15rem;
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
 `;
 
 const Navbar = () => {
-  const headerNav = [
-    { label: "projects", link: "/" },
-    // { label: "posts", link: "/posts" },
-  ];
-
   return (
     <StyledHeader>
       <Link to="/">

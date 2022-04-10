@@ -3528,10 +3528,15 @@ export type MdxSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
-export type PostListQueryVariables = Exact<{ [key: string]: never; }>;
+export type HomePostListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type PostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string, slug?: string | null } | null }> } };
+export type HomePostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string, slug?: string | null } | null }> } };
+
+export type PostsPagePostListQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type PostsPagePostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string, slug?: string | null } | null }> } };
 
 export type GetSinglePostQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;

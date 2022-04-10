@@ -5,10 +5,10 @@ import Layout from "@components/layout/layout";
 import List from "@components/posts/list";
 
 import PageTitle from "@components/page-title";
-import { PostListQuery } from "@graphql-types";
+import { HomePostListQuery } from "@graphql-types";
 import { Section } from "@styles/shared-style";
 
-const Posts = (props: PostListQuery) => {
+const Posts = (props: HomePostListQuery) => {
   return (
     <Section>
       <PageTitle

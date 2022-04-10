@@ -7,10 +7,10 @@ import Projects from "@components/projects/projects";
 import Posts from "@components/posts/posts";
 import Contact from "@components/contact/contact";
 
-import { PostListQuery } from "@graphql-types";
+import { HomePostListQuery } from "@graphql-types";
 
 // markup
-const IndexPage = ({ data }: PageProps<PostListQuery>) => {
+const IndexPage = ({ data }: PageProps<HomePostListQuery>) => {
   return (
     <Layout>
       <About />
@@ -24,7 +24,7 @@ const IndexPage = ({ data }: PageProps<PostListQuery>) => {
 export default IndexPage;
 
 export const query = graphql`
-  query PostList {
+  query HomePostList {
     allMdx(limit: 5, sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         frontmatter {

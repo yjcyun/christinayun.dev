@@ -7,6 +7,7 @@ import Footer from "./footer";
 
 const Main = styled.main`
   padding: 3rem 0;
+  min-height: calc(100vh - 9rem);
 `;
 
 interface LayoutProps {

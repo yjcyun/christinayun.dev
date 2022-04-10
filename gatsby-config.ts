@@ -24,7 +24,6 @@ const config: GatsbyConfig = {
         name: "images",
         path: "./src/images/",
       },
-      __key: "images",
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -32,7 +31,6 @@ const config: GatsbyConfig = {
         name: "pages",
         path: "./src/pages/",
       },
-      __key: "pages",
     },
     {
       resolve: "gatsby-source-filesystem",
@@ -40,7 +38,6 @@ const config: GatsbyConfig = {
         name: "posts",
         path: "./src/posts",
       },
-      __key: "posts",
     },
     "gatsby-plugin-graphql-codegen",
     {
