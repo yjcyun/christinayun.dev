@@ -3533,11 +3533,6 @@ export type HomePostListQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type HomePostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string, slug?: string | null } | null }> } };
 
-export type PostsPagePostListQueryVariables = Exact<{ [key: string]: never; }>;
-
-
-export type PostsPagePostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string, slug?: string | null } | null }> } };
-
 export type GetSinglePostQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;
 }>;

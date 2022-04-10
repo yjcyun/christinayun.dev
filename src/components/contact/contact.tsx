@@ -9,7 +9,7 @@ const Contact = () => {
       title="Contact"
       description={
         <>
-          You can reach out to me on{" "}
+          You can find me on{" "}
           <a
             className="link"
             href="https://github.com/yjcyun"
@@ -17,8 +17,8 @@ const Contact = () => {
             target="_blank"
           >
             Github
-          </a>{" "}
-          and{" "}
+          </a>
+          , and message me on{" "}
           <a
             className="link"
             href="https://www.linkedin.com/in/yjcyun/"
@@ -27,8 +27,7 @@ const Contact = () => {
           >
             LinkedIn
           </a>
-          , as well as on my mail address at{" "}
-          <code>contact@christinayun.dev</code>
+          , or email me at contact@christinayun.dev.
         </>
       }
     ></Section>

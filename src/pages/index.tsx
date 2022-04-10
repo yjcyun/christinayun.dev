@@ -4,7 +4,7 @@ import { graphql, PageProps } from "gatsby";
 import Layout from "@components/layout/layout";
 import About from "@components/about/about";
 import Projects from "@components/projects/projects";
-import Posts from "@components/posts/posts";
+// import Posts from "@components/posts/posts";
 import Contact from "@components/contact/contact";
 
 import { HomePostListQuery } from "@graphql-types";
@@ -15,7 +15,7 @@ const IndexPage = ({ data }: PageProps<HomePostListQuery>) => {
     <Layout>
       <About />
       <Projects />
-      <Posts {...data} />
+      {/* <Posts {...data} /> */}
       <Contact />
     </Layout>
   );
