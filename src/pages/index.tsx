@@ -3,20 +3,20 @@ import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
 import About from "@components/about/about";
-import Projects from "@components/projects/projects";
-// import Posts from "@components/posts/posts";
-import Contact from "@components/contact/contact";
 
 import { HomePostListQuery } from "@graphql-types";
+import Hero from "@components/home/hero";
+import PageTitle from "@components/page-title";
+import FeaturedProjectCard from "@components/cards/featured-project-card";
+import Featured from "@components/home/featured";
 
 // markup
 const IndexPage = ({ data }: PageProps<HomePostListQuery>) => {
   return (
     <Layout>
-      <About />
-      <Projects />
-      {/* <Posts {...data} /> */}
-      <Contact />
+      <Hero />
+      <Featured type="projects" title="Featured Projects" />
+      <Featured type="blog" title="Latest Blog Posts" />
     </Layout>
   );
 };

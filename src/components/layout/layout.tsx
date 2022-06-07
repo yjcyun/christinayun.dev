@@ -16,11 +16,11 @@ interface LayoutProps {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <React.Fragment>
+    <>
       <GlobalStyle />
       <Navbar />
       <Main>{children}</Main>
       <Footer />
-    </React.Fragment>
+    </>
   );
 }

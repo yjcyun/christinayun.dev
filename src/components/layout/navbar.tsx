@@ -7,10 +7,11 @@ import { headerNav } from "@constants/header-nav";
 
 const StyledHeader = styled.header`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
   flex-direction: column;
   gap: 1rem;
+  border-bottom: 1px solid #737373;
+  padding-bottom: 1rem;
 
   @media ${device.tablet} {
     flex-direction: row;
@@ -19,6 +20,8 @@ const StyledHeader = styled.header`
 
 const StyledHome = styled.div`
   font-size: 1.35rem;
+  font-family: var(--logoFF);
+  margin-right: 1rem;
 `;
 
 const StyledNavList = styled.ul`
@@ -26,7 +29,8 @@ const StyledNavList = styled.ul`
   gap: 1.5rem;
 
   a {
-    font-size: 1.15rem;
+    font-size: 1rem;
+    text-transform: uppercase;
 
     &.active {
       text-decoration: underline;
@@ -38,7 +42,7 @@ const Navbar = () => {
   return (
     <StyledHeader>
       <Link to="/">
-        <StyledHome>Christina Yun</StyledHome>
+        <StyledHome>CYY</StyledHome>
       </Link>
       <nav>
         <StyledNavList>

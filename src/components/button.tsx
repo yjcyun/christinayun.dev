@@ -7,6 +7,7 @@ interface ButtonProps {
   children: React.ReactNode;
   disabled?: boolean;
   size?: ButtonSize;
+  style?: React.CSSProperties;
 }
 
 const getButtonSize = (size: ButtonSize) => {
@@ -45,9 +46,14 @@ const StyledButton = styled.button<{ size: ButtonSize }>`
   ${(props) => getButtonSize(props.size)}
 `;
 
-const Button = ({ children, disabled, size = "default" }: ButtonProps) => {
+const Button = ({
+  children,
+  disabled,
+  size = "default",
+  style,
+}: ButtonProps) => {
   return (
-    <StyledButton disabled={disabled} size={size}>
+    <StyledButton disabled={disabled} size={size} style={style}>
       {children}
     </StyledButton>
   );

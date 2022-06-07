@@ -68,7 +68,12 @@ const config: GatsbyConfig = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`spartan\:400,800`, `oxygen mono`],
+        fonts: [
+          `plaster`,
+          `poppins\:400,600,700`,
+          `spartan\:400,800`,
+          `oxygen mono`,
+        ],
         display: "swap",
       },
     },

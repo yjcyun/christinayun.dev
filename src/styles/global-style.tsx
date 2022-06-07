@@ -6,9 +6,11 @@ const GlobalStyle = createGlobalStyle`
     --dark-grayish-blue: #313A48;
     --light-cyan: #CEE3E9;
     --neon-green: #53FFAA;
+    --white: #fff;
     --border: 1px solid var(--dark-grayish-blue);
-    --bodyFF:  'Spartan', sans-serif;
-    --headingFF: 'Oxygen Mono', monospace;
+    --logoFF: 'Plaster', cursive;
+    --bodyFF:  'Poppins', sans-serif;
+    --headingFF: 'Poppins', sans-serif;
   }
 
   * {
@@ -19,7 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: var(--bodyFF);
-    max-width: 48rem;
+    max-width: 1280px;
     margin: auto;
     padding: 3rem 1rem;
     color: var(--light-cyan);
