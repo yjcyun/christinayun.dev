@@ -29,7 +29,6 @@ const Hero = () => {
         new tools, and drinking tea☕.
       </StyledDesc>
       <Button>About me</Button>
-      <Button size="small">About me</Button>
     </StyledHero>
   );
 };

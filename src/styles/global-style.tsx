@@ -6,6 +6,8 @@ const GlobalStyle = createGlobalStyle`
     --dark-grayish-blue: #313A48;
     --light-cyan: #CEE3E9;
     --neon-green: #53FFAA;
+    --primary: #4F46E5;
+    --accent-1: #8B5CF6;
     --white: #fff;
     --border: 1px solid var(--dark-grayish-blue);
     --logoFF: 'Plaster', cursive;

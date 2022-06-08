@@ -1,59 +1,66 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-type ButtonSize = "small" | "default";
+type ButtonSize = "pill" | "default";
 
-interface ButtonProps {
+type ButtonProps = {
+  bgColor?: string;
   children: React.ReactNode;
+  color?: string;
   disabled?: boolean;
   size?: ButtonSize;
   style?: React.CSSProperties;
-}
+};
 
-const getButtonSize = (size: ButtonSize) => {
+const stylePillSizeButton = (size: ButtonSize) => {
   switch (size) {
-    case "small":
+    case "pill":
       return css`
-        background: var(--dark-grayish-blue);
-        padding: 5px 7px;
-        border: 1px solid var(--neon-green);
-        border-radius: 3px;
-        color: var(--neon-green);
-        font-size: 0.9rem;
-
-        &:hover {
-          box-shadow: 0px 0px 10px var(--neon-green);
-        }
+        padding: 3px 10px;
+        font-size: 0.8rem;
       `;
-    default:
-      return css`
-        background: var(--dark-navy);
-        padding: 1rem;
-        border: 1px solid var(--light-cyan);
-        border-radius: 5px;
-        color: inherit;
-        letter-spacing: 1px;
-        text-transform: uppercase;
 
-        &:hover {
-          background: var(--dark-grayish-blue);
-        }
+    case "default":
+      return css`
+        padding: 0.5rem 1.5rem;
+        font-size: 1.2rem;
       `;
   }
 };
 
-const StyledButton = styled.button<{ size: ButtonSize }>`
-  ${(props) => getButtonSize(props.size)}
+const StyledButton = styled.button<{
+  $size: ButtonSize;
+  $color: string;
+  $bgColor: string;
+}>`
+  ${(props) => stylePillSizeButton(props.$size)}
+  color: ${(props) => props.$color};
+  background: ${(props) => props.$bgColor};
+  border: none;
+  border-radius: 5rem;
+  letter-spacing: 0.5px;
+
+  &:hover {
+    opacity: 0.8;
+  }
 `;
 
 const Button = ({
   children,
+  bgColor = "var(--primary)",
+  color = "var(--white)",
   disabled,
   size = "default",
   style,
 }: ButtonProps) => {
   return (
-    <StyledButton disabled={disabled} size={size} style={style}>
+    <StyledButton
+      disabled={disabled}
+      $color={color}
+      $bgColor={bgColor}
+      $size={size}
+      style={style}
+    >
       {children}
     </StyledButton>
   );

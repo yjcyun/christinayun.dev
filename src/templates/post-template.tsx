@@ -7,7 +7,7 @@ import Layout from "../components/layout/layout";
 import { device } from "../constants/device";
 import { GetSinglePostQuery } from "../../graphql-types";
 import TableOfContents from "../components/posts/table-of-contents";
-import PillButton from "../components/pill-buttons";
+import Button from "@components/button";
 
 const StyledPostTemplate = styled.div`
   display: flex;
@@ -60,7 +60,9 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
           <time>{date}</time>
           <StyleCategoriesContainer>
             {categories?.map((category) => (
-              <PillButton key={category}>{category}</PillButton>
+              <Button size="pill" key={category}>
+                {category}
+              </Button>
             ))}
           </StyleCategoriesContainer>
           <MDXRenderer>{body}</MDXRenderer>

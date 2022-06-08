@@ -3,8 +3,8 @@ import styled from "styled-components";
 import { Link } from "gatsby";
 import { MdEast } from "react-icons/md";
 
-import PillButton from "@components/pill-buttons";
 import { device } from "@constants/device";
+import Button from "@components/button";
 
 const StyledCard = styled.div`
   padding: 1.5rem;
@@ -69,7 +69,7 @@ const FeaturedBlogCard = ({
     <Link to={to}>
       <StyledCard>
         <StyledMeta>
-          <PillButton>{tag}</PillButton>
+          <Button size="pill">{tag}</Button>
           <p>{date}</p>
         </StyledMeta>
         <StyledTitles>
