@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
-import FeaturedProjectCard from "@components/cards/featured-project-card";
-import PageTitle from "@components/page-title";
+import FeaturedProjectCard from "@components/ui/cards/featured-project-card";
+import PageTitle from "@components/ui/page-title";
 
 import heatherDick from "@images/projects/heather-dick.png";
-import FeaturedBlogCard from "@components/cards/featured-blog-card";
-import Button from "@components/button";
+import FeaturedBlogCard from "@components/ui/cards/featured-blog-card";
+import Button from "@components/ui/button";
 import { device } from "@constants/device";
 
 const StyledFeatured = styled.section`

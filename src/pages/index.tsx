@@ -2,13 +2,13 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
-import About from "@components/about/about";
+import About from "@components/page/about/about";
 
 import { HomePostListQuery } from "@graphql-types";
-import Hero from "@components/home/hero";
-import PageTitle from "@components/page-title";
-import FeaturedProjectCard from "@components/cards/featured-project-card";
-import Featured from "@components/home/featured";
+import Hero from "@components/page/home/hero";
+import PageTitle from "@components/ui/page-title";
+import FeaturedProjectCard from "@components/ui/cards/featured-project-card";
+import Featured from "@components/page/home/featured";
 
 // markup
 const IndexPage = ({ data }: PageProps<HomePostListQuery>) => {

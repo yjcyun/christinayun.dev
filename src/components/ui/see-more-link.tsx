@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import Button from "./button";
+import Button from "./ui/button";
 
 interface SeeMoreProps {
   to: string;

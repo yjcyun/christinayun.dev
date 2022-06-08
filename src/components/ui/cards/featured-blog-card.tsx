@@ -4,7 +4,7 @@ import { Link } from "gatsby";
 import { MdEast } from "react-icons/md";
 
 import { device } from "@constants/device";
-import Button from "@components/button";
+import Button from "@components/ui/button";
 
 const StyledCard = styled.div`
   padding: 1.5rem;
