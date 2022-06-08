@@ -60,7 +60,7 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
           <time>{date}</time>
           <StyleCategoriesContainer>
             {categories?.map((category) => (
-              <Button size="pill" key={category}>
+              <Button type="pill" key={category}>
                 {category}
               </Button>
             ))}

@@ -5,10 +5,16 @@ const GlobalStyle = createGlobalStyle`
     --dark-blue: #202733;
     --dark-grayish-blue: #313A48;
     --light-cyan: #CEE3E9;
-    --neon-green: #53FFAA;
-    --primary: #4F46E5;
-    --accent-1: #8B5CF6;
-    --white: #fff;
+    --neon-green: #2cb67d;
+    --primary: #7f5af0;
+    --secondary: #2cb67d;
+    --accent-1: #322460;
+    --accent-2: #d8cdfa;
+    --background: #16161a;
+    --white-1: #ffffff;
+    --white-2: #fffffe;
+    --black-1: #000000;
+    --black-2: #242629;
     --border: 1px solid var(--dark-grayish-blue);
     --logoFF: 'Plaster', cursive;
     --bodyFF:  'Poppins', sans-serif;
@@ -26,8 +32,8 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1280px;
     margin: auto;
     padding: 3rem 1rem;
-    color: var(--light-cyan);
-    background: var(--dark-blue);
+    color: var(--white-2);
+    background: var(--background);
   }
 
   a {
@@ -55,7 +61,6 @@ const GlobalStyle = createGlobalStyle`
   p {
     font-size: 1rem;
     line-height: 1.5;
-    color: var(--light-cyan);
   }
 
   button {

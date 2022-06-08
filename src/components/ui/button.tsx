@@ -2,7 +2,7 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 type ButtonSize = "pill" | "default";
-
+type ButtonType = "primary" | "secondary" | "tertiary" | "pill";
 type ButtonProps = {
   bgColor?: string;
   children: React.ReactNode;
@@ -10,35 +10,60 @@ type ButtonProps = {
   disabled?: boolean;
   size?: ButtonSize;
   style?: React.CSSProperties;
+  type?: ButtonType;
 };
 
-const stylePillSizeButton = (size: ButtonSize) => {
-  switch (size) {
+const getButtonTypeStyle = (
+  type: ButtonType,
+  color: string,
+  bgColor: string
+) => {
+  switch (type) {
     case "pill":
       return css`
         padding: 3px 10px;
         font-size: 0.8rem;
+        border-radius: 5rem;
+        background-color: var(--primary);
       `;
 
-    case "default":
+    case "primary":
       return css`
         padding: 0.5rem 1.5rem;
         font-size: 1.2rem;
+        border-radius: 5rem;
+      `;
+
+    case "secondary":
+      return css`
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        border: 2px solid ${bgColor};
+        background-color: ${bgColor};
+      `;
+
+    case "tertiary":
+      return css`
+        padding: 0.5rem 1rem;
+        font-size: 1.2rem;
+        border-radius: 5px;
+        border: 2px solid var(--white-2);
+        background-color: transparent;
       `;
   }
 };
 
 const StyledButton = styled.button<{
-  $size: ButtonSize;
   $color: string;
   $bgColor: string;
+  $type: ButtonType;
 }>`
-  ${(props) => stylePillSizeButton(props.$size)}
   color: ${(props) => props.$color};
-  background: ${(props) => props.$bgColor};
+  background-color: ${(props) => props.$bgColor};
   border: none;
-  border-radius: 5rem;
   letter-spacing: 0.5px;
+  ${(props) => getButtonTypeStyle(props.$type, props.$color, props.$bgColor)}
 
   &:hover {
     opacity: 0.8;
@@ -47,19 +72,19 @@ const StyledButton = styled.button<{
 
 const Button = ({
   children,
-  bgColor = "var(--primary)",
+  bgColor = "inherit",
   color = "var(--white)",
   disabled,
-  size = "default",
   style,
+  type = "primary",
 }: ButtonProps) => {
   return (
     <StyledButton
       disabled={disabled}
       $color={color}
       $bgColor={bgColor}
-      $size={size}
       style={style}
+      $type={type}
     >
       {children}
     </StyledButton>

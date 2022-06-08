@@ -3,7 +3,7 @@ import styled from "styled-components";
 import Button from "@components/ui/button";
 
 const StyledHero = styled.div`
-  background-color: #8572fb;
+  background-color: var(--primary);
   padding: 40px;
   border-radius: 10px;
 `;

@@ -1,6 +1,7 @@
 import kismet from "@images/projects/kismet.png";
 import sportsInference from "@images/projects/sports-inference.png";
 import heatherDick from "@images/projects/heather-dick.png";
+import React from "react";
 
 export const projects = [
   {
@@ -10,6 +11,7 @@ export const projects = [
     liveLink: "https://kismet.ai",
     thumbnail: kismet,
     featured: true,
+    tags: ["React", "Hasura", "GraphQL"],
   },
   {
     title: "Sports Inference",
@@ -18,6 +20,7 @@ export const projects = [
     liveLink: "https://sportsinference.com",
     thumbnail: sportsInference,
     featured: true,
+    tags: ["React", "Firebase"],
   },
   {
     title: "Heather Dick",
@@ -26,5 +29,6 @@ export const projects = [
     sourceLink: "https://github.com/yjcyun/heather_dick_portfolio",
     thumbnail: heatherDick,
     featured: true,
+    tags: ["Gatsby", "Stripe"],
   },
 ];

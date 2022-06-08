@@ -17,7 +17,7 @@ const StyledCardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
 
   @media ${device.tabletL} {
     grid-template-columns: repeat(3, 1fr);
@@ -25,15 +25,6 @@ const StyledCardContainer = styled.div`
 `;
 
 const StyledFeaturedSection = styled.section``;
-const StyledButtonContainer = styled.div`
-  display: flex;
-  margin-top: 2rem;
-  justify-content: center;
-
-  @media ${device.tabletL} {
-    justify-content: flex-end;
-  }
-`;
 
 interface FeaturedProps {
   title: string;
@@ -51,9 +42,6 @@ const Featured = ({ title, type }: FeaturedProps) => {
             <FeaturedProjectCard alt="Heather Dick" src={heatherDick} to="/" />
             <FeaturedProjectCard alt="Heather Dick" src={heatherDick} to="/" />
           </StyledCardContainer>
-          <StyledButtonContainer>
-            <Button>View all projects</Button>
-          </StyledButtonContainer>
         </StyledFeaturedSection>
       ) : (
         <StyledFeaturedSection>
@@ -80,9 +68,6 @@ const Featured = ({ title, type }: FeaturedProps) => {
               to="/"
             />
           </StyledCardContainer>
-          <StyledButtonContainer>
-            <Button>View all blog posts</Button>
-          </StyledButtonContainer>
         </StyledFeaturedSection>
       )}
     </StyledFeatured>

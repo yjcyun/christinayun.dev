@@ -8,7 +8,7 @@ import Button from "@components/ui/button";
 
 const StyledCard = styled.div`
   padding: 1.5rem;
-  background: var(--dark-grayish-blue);
+  background: var(--black-2);
   border-radius: 10px;
   position: relative;
 
@@ -69,7 +69,7 @@ const FeaturedBlogCard = ({
     <Link to={to}>
       <StyledCard>
         <StyledMeta>
-          <Button size="pill">{tag}</Button>
+          <Button type="pill">{tag}</Button>
           <p>{date}</p>
         </StyledMeta>
         <StyledTitles>
