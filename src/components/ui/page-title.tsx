@@ -17,7 +17,8 @@ const StyledH1 = styled.h1`
 `;
 
 const StyledH2 = styled.h2`
-  font-size: 2rem;
+  font-size: 1.7rem;
+  color: var(--accent);
 `;
 
 const StyledP = styled.p`

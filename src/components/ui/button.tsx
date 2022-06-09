@@ -23,23 +23,23 @@ const getButtonTypeStyle = (
       return css`
         padding: 3px 10px;
         font-size: 0.8rem;
-        border-radius: 5rem;
-        background-color: var(--primary);
+        border-radius: 3px;
+        background-color: var(--slate-000);
+        color: var(--slate-400);
       `;
 
     case "primary":
       return css`
         padding: 0.5rem 1.5rem;
         font-size: 1.2rem;
-        border-radius: 5rem;
+        background-color: var(--slate-700);
       `;
 
     case "secondary":
       return css`
         padding: 0.5rem 1rem;
         font-size: 1.2rem;
-        border-radius: 5px;
-        border: 2px solid ${bgColor};
+        border: 1px solid ${bgColor};
         background-color: ${bgColor};
       `;
 
@@ -47,8 +47,7 @@ const getButtonTypeStyle = (
       return css`
         padding: 0.5rem 1rem;
         font-size: 1.2rem;
-        border-radius: 5px;
-        border: 2px solid var(--white-2);
+        border: 1px solid var(--slate-600);
         background-color: transparent;
       `;
   }

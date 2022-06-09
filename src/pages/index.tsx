@@ -2,7 +2,6 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
-import About from "@components/page/about/about";
 
 import { HomePostListQuery } from "@graphql-types";
 import Hero from "@components/page/home/hero";

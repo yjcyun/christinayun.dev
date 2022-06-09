@@ -2,10 +2,7 @@ import { Link } from "gatsby";
 import React from "react";
 import styled from "styled-components";
 
-const StyledCard = styled.div``;
-
 const StyledCardImg = styled.img`
-  border-radius: 10px;
   width: 100%;
 `;
 

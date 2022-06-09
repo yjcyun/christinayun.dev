@@ -3,23 +3,28 @@ import styled from "styled-components";
 import Button from "../button";
 
 const StyledProjectCard = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 `;
 
 const StyledThumbnail = styled.img`
-  border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 100%;
 `;
 
 const StyledContentContainer = styled.div`
-  padding: 3rem;
-  background-color: var(--black-2);
-  border-radius: 0 0 10px 10px;
+  padding: 2rem;
+  background-color: var(--slate-800);
 `;
 
 const StyledH3 = styled.h3`
   font-size: 1.4rem;
   margin-bottom: 1rem;
+  color: var(--slate-300);
+`;
+
+const StyledP = styled.p`
+  color: var(--slate-400);
 `;
 
 const StyledTagsContainer = styled.div`
@@ -53,7 +58,6 @@ const ProjectCard = ({
 }: ProjectCardProps) => {
   return (
     <StyledProjectCard>
-      <StyledThumbnail src={thumbnail} alt={title} />
       <StyledContentContainer>
         <StyledTagsContainer>
           {tags.map((tag) => (
@@ -63,18 +67,21 @@ const ProjectCard = ({
           ))}
         </StyledTagsContainer>
         <StyledH3>{title}</StyledH3>
-        <p>{description}</p>
+        <StyledP>{description}</StyledP>
         <StyledCtaContainer>
           <a href={liveLink}>
-            <Button type="secondary" bgColor="var(--primary)">
+            <Button type="secondary" bgColor="var(--slate-600)">
               Live Site
             </Button>
           </a>
-          <a href={sourceLink}>
-            <Button type="tertiary">Github</Button>
-          </a>
+          {sourceLink && (
+            <a href={sourceLink}>
+              <Button type="tertiary">Github</Button>
+            </a>
+          )}
         </StyledCtaContainer>
       </StyledContentContainer>
+      <StyledThumbnail src={thumbnail} alt={title} />
     </StyledProjectCard>
   );
 };

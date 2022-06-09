@@ -2,19 +2,17 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
   :root {
-    --dark-blue: #202733;
-    --dark-grayish-blue: #313A48;
-    --light-cyan: #CEE3E9;
-    --neon-green: #2cb67d;
-    --primary: #7f5af0;
-    --secondary: #2cb67d;
-    --accent-1: #322460;
-    --accent-2: #d8cdfa;
-    --background: #16161a;
-    --white-1: #ffffff;
-    --white-2: #fffffe;
-    --black-1: #000000;
-    --black-2: #242629;
+    --slate-000: #080b13;
+    --slate-900: #0C111C;
+    --slate-800:#111827;
+    --slate-700: #334155;
+    --slate-600: #475569;
+    --slate-500: #64748b;
+    --slate-400: #94a3b8;
+    --slate-300: #cbd5e1;
+    --slate-200: #e2e8f0;
+    --slate-100: #f1f5f9;
+    --accent: #78D5CA;
     --border: 1px solid var(--dark-grayish-blue);
     --logoFF: 'Plaster', cursive;
     --bodyFF:  'Poppins', sans-serif;
@@ -32,8 +30,8 @@ const GlobalStyle = createGlobalStyle`
     max-width: 1280px;
     margin: auto;
     padding: 3rem 1rem;
-    color: var(--white-2);
-    background: var(--background);
+    color: var(--slate-100);
+    background: var(--slate-900);
   }
 
   a {

@@ -1,53 +1,36 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
-import { MdEast } from "react-icons/md";
 
 import { device } from "@constants/device";
 import Button from "@components/ui/button";
 
 const StyledCard = styled.div`
   padding: 1.5rem;
-  background: var(--black-2);
-  border-radius: 10px;
-  position: relative;
+  background: var(--slate-800);
 
   @media ${device.tabletS} {
-    padding: 2.5rem 2rem;
+    padding: 2rem;
   }
-`;
-
-const StyledMeta = styled.div`
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 1.3rem;
 `;
 
 const StyledTitles = styled.div`
   margin-bottom: 2.5rem;
-
+  margin-top: 1.3rem;
   h3 {
     margin-bottom: 1.3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 `;
 
-const StyledArrow = styled.div`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 2rem;
-  height: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #8572fb;
-  border-radius: 10px 0 10px 0;
+const StyledDate = styled.p`
+  color: var(--slate-400);
 `;
 
-const StyledMdEast = styled(MdEast)`
-  color: var(--white);
-  width: 1.5rem;
-  height: 1.5rem;
+const StyledPills = styled.div`
+  display: flex;
+  gap: 5px;
 `;
 
 type FeaturedBlogCardProps = {
@@ -68,17 +51,14 @@ const FeaturedBlogCard = ({
   return (
     <Link to={to}>
       <StyledCard>
-        <StyledMeta>
-          <Button type="pill">{tag}</Button>
-          <p>{date}</p>
-        </StyledMeta>
+        <StyledDate>{date}</StyledDate>
         <StyledTitles>
           <h3>{title}</h3>
-          <h5>{description}</h5>
+          <p>{description}</p>
         </StyledTitles>
-        <StyledArrow>
-          <StyledMdEast />
-        </StyledArrow>
+        <StyledPills>
+          <Button type="pill">{tag}</Button>
+        </StyledPills>
       </StyledCard>
     </Link>
   );

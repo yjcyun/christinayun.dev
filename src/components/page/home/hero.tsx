@@ -3,12 +3,12 @@ import styled from "styled-components";
 import Button from "@components/ui/button";
 
 const StyledHero = styled.div`
-  background-color: var(--primary);
+  background-color: var(--slate-800);
   padding: 40px;
-  border-radius: 10px;
 `;
 
 const StyledH1 = styled.h1`
+  color: var(--accent);
   font-size: 4rem;
 `;
 
@@ -16,6 +16,7 @@ const StyledDesc = styled.p`
   margin-top: 1.5rem;
   margin-bottom: 2rem;
   max-width: 600px;
+  color: var(--slate-400);
 `;
 
 const Hero = () => {
