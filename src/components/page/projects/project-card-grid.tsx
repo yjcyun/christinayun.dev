@@ -4,16 +4,17 @@ import styled from "styled-components";
 import ProjectCard from "@components/ui/cards/project-card";
 
 import { projects } from "@constants/projects";
-
-interface ProjectCardGridProps {
-  all?: boolean;
-}
+import { device } from "@constants/device";
 
 const StyledProjectCardGrid = styled.div`
   margin-top: 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
   grid-gap: 2rem;
+  grid-template-columns: 1fr;
+
+  @media ${device.laptop} {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const ProjectCardGrid = () => {

@@ -1,3 +1,4 @@
+import { device } from "@constants/device";
 import React from "react";
 import styled from "styled-components";
 import Button from "../button";
@@ -13,9 +14,11 @@ const StyledProjectCard = styled.a<{
   $displayAll: boolean;
 }>`
   display: grid;
-  grid-template-columns: ${(props) =>
-    props.$featured && !props.$displayAll ? "1fr 2fr" : "1fr 1fr"};
+  grid-template-columns: 1fr;
   transition: 0.2s;
+
+  background-color: var(--slate-800);
+  grid-gap: 1rem;
 
   &:hover {
     transform: translateY(-0.3rem);
@@ -24,18 +27,34 @@ const StyledProjectCard = styled.a<{
       color: var(--accent);
     }
   }
+
+  @media ${device.tablet} {
+    grid-template-columns: ${(props) =>
+      props.$featured && !props.$displayAll ? "1fr 2fr" : "1fr 1fr"};
+  }
+`;
+
+const StyledThumbnailContainer = styled.div`
+  display: none;
+  padding: 2rem;
+
+  @media ${device.tablet} {
+    display: block;
+  }
+
+  @media ${device.laptop} {
+    padding: 0;
+  }
 `;
 
 const StyledThumbnail = styled.img`
   width: 100%;
   height: 100%;
   object-fit: contain;
-  background-color: var(--slate-800);
 `;
 
 const StyledContentContainer = styled.div`
   padding: 2rem;
-  background-color: var(--slate-800);
 `;
 
 const StyledP = styled.p`
@@ -57,6 +76,7 @@ const StyledCtaContainer = styled.div`
 type ProjectCardProps = {
   displayAll?: boolean;
   featured?: boolean;
+  featuredImg?: string;
   thumbnail: string;
   title: string;
   description: string;
@@ -68,6 +88,7 @@ type ProjectCardProps = {
 const ProjectCard = ({
   displayAll = false,
   description,
+  featuredImg,
   featured = false,
   liveLink,
   sourceLink,
@@ -75,6 +96,7 @@ const ProjectCard = ({
   title,
   thumbnail,
 }: ProjectCardProps) => {
+  console.log(displayAll, featuredImg);
   return (
     <StyledProjectCard
       $displayAll={displayAll}
@@ -108,7 +130,12 @@ const ProjectCard = ({
           )}
         </StyledCtaContainer>
       </StyledContentContainer>
-      <StyledThumbnail src={thumbnail} alt={title} />
+      <StyledThumbnailContainer>
+        <StyledThumbnail
+          src={!displayAll && featuredImg ? featuredImg : thumbnail}
+          alt={title}
+        />
+      </StyledThumbnailContainer>
     </StyledProjectCard>
   );
 };

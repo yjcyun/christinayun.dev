@@ -1,5 +1,7 @@
 import kismet from "@images/projects/kismet-ai-mockup.png";
+import kismetFeatured from "@images/projects/kismet-featured.png";
 import sportsInference from "@images/projects/sports-inference-mockup.png";
+import sportsInferenceFeatured from "@images/projects/sports-inference-featured.png";
 import heatherDick from "@images/projects/heather-dick-mockup.png";
 import reactfitCo from "@images/projects/reactfit-co-mockup.png";
 import threadNeedle from "@images/projects/thread-needle-mockup.png";
@@ -14,6 +16,7 @@ export const projects = [
       "A Demand Side Platform SaaS project built using Hasura & React",
     liveLink: "https://kismet.ai",
     thumbnail: kismet,
+    featuredImg: kismetFeatured,
     featured: true,
     tags: ["React", "Hasura", "GraphQL"],
   },
@@ -23,8 +26,9 @@ export const projects = [
       "NBA teams analysis and statistics built using Firebase & React",
     liveLink: "https://sportsinference.com",
     thumbnail: sportsInference,
+    featuredImg: sportsInferenceFeatured,
     featured: true,
-    tags: ["React", "Firebase"],
+    tags: ["React", "Firebase", "ReactChartJS"],
   },
   {
     title: "Heather Dick",
