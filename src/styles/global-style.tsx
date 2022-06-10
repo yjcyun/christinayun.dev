@@ -13,6 +13,8 @@ const GlobalStyle = createGlobalStyle`
     --slate-200: #e2e8f0;
     --slate-100: #f1f5f9;
     --accent: #78D5CA;
+    --lg-width:1280px;
+    --md-width: 860px;
     --border: 1px solid var(--dark-grayish-blue);
     --logoFF: 'Plaster', cursive;
     --bodyFF:  'Poppins', sans-serif;
@@ -27,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: var(--bodyFF);
-    max-width: 1280px;
+    max-width: var(--lg-width);
     margin: auto;
     padding: 3rem 1rem;
     color: var(--slate-100);

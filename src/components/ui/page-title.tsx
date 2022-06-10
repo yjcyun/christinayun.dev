@@ -14,17 +14,18 @@ const StyledH1 = styled.h1`
   border-bottom: 5px solid var(--secondary);
   padding-bottom: 5px;
   display: inline-block;
+  color: var(--accent);
 `;
 
 const StyledH2 = styled.h2`
-  font-size: 1.7rem;
+  font-size: 2rem;
   color: var(--accent);
 `;
 
 const StyledP = styled.p`
   margin-top: 3rem;
   font-size: 1.2rem;
-  max-width: 700px;
+  max-width: var(--md-width);
 `;
 
 const PageTitle = ({ title, description, section }: PageTitleProps) => {

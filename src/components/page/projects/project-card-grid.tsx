@@ -16,14 +16,12 @@ const StyledProjectCardGrid = styled.div`
   grid-gap: 2rem;
 `;
 
-const ProjectCardGrid = ({ all }: ProjectCardGridProps) => {
+const ProjectCardGrid = () => {
   return (
     <StyledProjectCardGrid>
-      {(all ? projects : projects.filter((project) => project.featured)).map(
-        (project) => (
-          <ProjectCard key={project.title} {...project} />
-        )
-      )}
+      {projects.map((project) => (
+        <ProjectCard key={project.title} displayAll {...project} />
+      ))}
     </StyledProjectCardGrid>
   );
 };

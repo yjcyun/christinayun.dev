@@ -3,12 +3,13 @@ import styled from "styled-components";
 
 const StyledAboutBanner = styled.div`
   background-color: var(--slate-000);
-  width: 860px;
+  width: var(--md-width);
   margin: auto;
   border-radius: 10px;
   display: flex;
   position: relative;
 `;
+
 const StyledText = styled.div`
   padding: 4rem;
 `;

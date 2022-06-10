@@ -5,7 +5,7 @@ import styled from "styled-components";
 import Section from "@components/page/about/section";
 
 const StyledAbout = styled.section`
-  max-width: 860px;
+  max-width: var(--md-width);
   margin: 5rem auto;
 `;
 

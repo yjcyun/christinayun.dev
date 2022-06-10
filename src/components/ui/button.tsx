@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { css } from "styled-components";
 
-type ButtonSize = "pill" | "default";
+type ButtonSize = "small" | "default";
 type ButtonType = "primary" | "secondary" | "tertiary" | "pill";
 type ButtonProps = {
   bgColor?: string;
@@ -15,8 +15,8 @@ type ButtonProps = {
 
 const getButtonTypeStyle = (
   type: ButtonType,
-  color: string,
-  bgColor: string
+  bgColor: string,
+  size: string
 ) => {
   switch (type) {
     case "pill":
@@ -38,7 +38,7 @@ const getButtonTypeStyle = (
     case "secondary":
       return css`
         padding: 0.5rem 1rem;
-        font-size: 1.2rem;
+        font-size: ${size === "default" ? "1.2rem" : "1rem"};
         border: 1px solid ${bgColor};
         background-color: ${bgColor};
       `;
@@ -46,7 +46,7 @@ const getButtonTypeStyle = (
     case "tertiary":
       return css`
         padding: 0.5rem 1rem;
-        font-size: 1.2rem;
+        font-size: ${size === "default" ? "1.2rem" : "1rem"};
         border: 1px solid var(--slate-600);
         background-color: transparent;
       `;
@@ -56,13 +56,14 @@ const getButtonTypeStyle = (
 const StyledButton = styled.button<{
   $color: string;
   $bgColor: string;
+  $size: ButtonSize;
   $type: ButtonType;
 }>`
   color: ${(props) => props.$color};
   background-color: ${(props) => props.$bgColor};
   border: none;
   letter-spacing: 0.5px;
-  ${(props) => getButtonTypeStyle(props.$type, props.$color, props.$bgColor)}
+  ${(props) => getButtonTypeStyle(props.$type, props.$bgColor, props.$size)}
 
   &:hover {
     opacity: 0.8;
@@ -74,6 +75,7 @@ const Button = ({
   bgColor = "inherit",
   color = "var(--white)",
   disabled,
+  size = "default",
   style,
   type = "primary",
 }: ButtonProps) => {
@@ -82,6 +84,7 @@ const Button = ({
       disabled={disabled}
       $color={color}
       $bgColor={bgColor}
+      $size={size}
       style={style}
       $type={type}
     >

@@ -2,25 +2,40 @@ import React from "react";
 import styled from "styled-components";
 import Button from "../button";
 
-const StyledProjectCard = styled.div`
+const StyledH3 = styled.h3`
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+  color: var(--slate-300);
+`;
+
+const StyledProjectCard = styled.a<{
+  $featured: boolean;
+  $displayAll: boolean;
+}>`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: ${(props) =>
+    props.$featured && !props.$displayAll ? "1fr 2fr" : "1fr 1fr"};
+  transition: 0.2s;
+
+  &:hover {
+    transform: translateY(-0.3rem);
+
+    ${StyledH3} {
+      color: var(--accent);
+    }
+  }
 `;
 
 const StyledThumbnail = styled.img`
   width: 100%;
   height: 100%;
+  object-fit: contain;
+  background-color: var(--slate-800);
 `;
 
 const StyledContentContainer = styled.div`
   padding: 2rem;
   background-color: var(--slate-800);
-`;
-
-const StyledH3 = styled.h3`
-  font-size: 1.4rem;
-  margin-bottom: 1rem;
-  color: var(--slate-300);
 `;
 
 const StyledP = styled.p`
@@ -36,10 +51,12 @@ const StyledTagsContainer = styled.div`
 const StyledCtaContainer = styled.div`
   display: flex;
   gap: 0.5rem;
-  margin-top: 1rem;
+  margin-top: 2rem;
 `;
 
 type ProjectCardProps = {
+  displayAll?: boolean;
+  featured?: boolean;
   thumbnail: string;
   title: string;
   description: string;
@@ -49,7 +66,9 @@ type ProjectCardProps = {
 };
 
 const ProjectCard = ({
+  displayAll = false,
   description,
+  featured = false,
   liveLink,
   sourceLink,
   tags,
@@ -57,7 +76,13 @@ const ProjectCard = ({
   thumbnail,
 }: ProjectCardProps) => {
   return (
-    <StyledProjectCard>
+    <StyledProjectCard
+      $displayAll={displayAll}
+      $featured={featured}
+      href={liveLink}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
       <StyledContentContainer>
         <StyledTagsContainer>
           {tags.map((tag) => (
@@ -69,14 +94,16 @@ const ProjectCard = ({
         <StyledH3>{title}</StyledH3>
         <StyledP>{description}</StyledP>
         <StyledCtaContainer>
-          <a href={liveLink}>
-            <Button type="secondary" bgColor="var(--slate-600)">
+          <a href={liveLink} target="_blank" rel="noopener noreferrer">
+            <Button type="secondary" bgColor="var(--slate-600)" size="small">
               Live Site
             </Button>
           </a>
           {sourceLink && (
-            <a href={sourceLink}>
-              <Button type="tertiary">Github</Button>
+            <a href={sourceLink} target="_blank" rel="noopener noreferrer">
+              <Button type="tertiary" size="small">
+                Github
+              </Button>
             </a>
           )}
         </StyledCtaContainer>
