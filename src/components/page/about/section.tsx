@@ -45,7 +45,7 @@ const Section = ({ title, paragraphs, list }: SectionProps) => {
       {list && (
         <StyledUl>
           {list?.map((li) => (
-            <StyledLi>{li}</StyledLi>
+            <StyledLi key={li}>{li}</StyledLi>
           ))}
         </StyledUl>
       )}

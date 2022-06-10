@@ -1,9 +1,10 @@
+import { device } from "@constants/device";
 import React from "react";
 import styled from "styled-components";
 
 const StyledAboutBanner = styled.div`
   background-color: var(--slate-000);
-  width: var(--md-width);
+  max-width: var(--md-width);
   margin: auto;
   border-radius: 10px;
   display: flex;
@@ -22,6 +23,7 @@ const StyledH1 = styled.h1`
     color: var(--accent);
   }
 `;
+
 const StyledImageContainer = styled.div`
   width: 350px;
   height: 350px;

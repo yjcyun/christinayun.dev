@@ -63,6 +63,7 @@ const StyledButton = styled.button<{
   background-color: ${(props) => props.$bgColor};
   border: none;
   letter-spacing: 0.5px;
+  white-space: nowrap;
   ${(props) => getButtonTypeStyle(props.$type, props.$bgColor, props.$size)}
 
   &:hover {

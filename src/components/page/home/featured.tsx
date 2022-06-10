@@ -38,7 +38,7 @@ const Featured = ({ title, type }: FeaturedProps) => {
       <PageTitle title={title} section />
       {type === "projects" ? (
         <StyledFeaturedSection>
-          <StyledCardContainer $grid={1}>
+          <StyledCardContainer $grid={2}>
             {projects
               .filter((project) => project.featured)
               .map((project) => (

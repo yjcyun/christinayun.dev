@@ -33,7 +33,7 @@ const StyledNavList = styled.ul`
     text-transform: uppercase;
 
     &.active {
-      text-decoration: underline;
+      color: var(--accent);
     }
   }
 `;

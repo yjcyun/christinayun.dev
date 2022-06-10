@@ -1,3 +1,4 @@
+import { device } from "@constants/device";
 import React from "react";
 import styled from "styled-components";
 
@@ -18,8 +19,12 @@ const StyledH1 = styled.h1`
 `;
 
 const StyledH2 = styled.h2`
-  font-size: 2rem;
   color: var(--accent);
+  font-size: 1.7rem;
+
+  @media ${device.tabletS} {
+    font-size: 2rem;
+  }
 `;
 
 const StyledP = styled.p`

@@ -4,9 +4,13 @@ import styled from "styled-components";
 import Button from "../button";
 
 const StyledH3 = styled.h3`
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   margin-bottom: 1rem;
   color: var(--slate-300);
+
+  @media ${device.tabletS} {
+    font-size: 1.7rem;
+  }
 `;
 
 const StyledProjectCard = styled.a<{
@@ -16,7 +20,7 @@ const StyledProjectCard = styled.a<{
   display: grid;
   grid-template-columns: 1fr;
   transition: 0.2s;
-
+  box-shadow: var(--box-shadow);
   background-color: var(--slate-800);
   grid-gap: 1rem;
 
@@ -29,8 +33,7 @@ const StyledProjectCard = styled.a<{
   }
 
   @media ${device.tablet} {
-    grid-template-columns: ${(props) =>
-      props.$featured && !props.$displayAll ? "1fr 2fr" : "1fr 1fr"};
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -54,7 +57,11 @@ const StyledThumbnail = styled.img`
 `;
 
 const StyledContentContainer = styled.div`
-  padding: 2rem;
+  padding: 1rem;
+
+  @media ${device.tabletS} {
+    padding: 2rem;
+  }
 `;
 
 const StyledP = styled.p`
@@ -76,7 +83,6 @@ const StyledCtaContainer = styled.div`
 type ProjectCardProps = {
   displayAll?: boolean;
   featured?: boolean;
-  featuredImg?: string;
   thumbnail: string;
   title: string;
   description: string;
@@ -88,7 +94,6 @@ type ProjectCardProps = {
 const ProjectCard = ({
   displayAll = false,
   description,
-  featuredImg,
   featured = false,
   liveLink,
   sourceLink,
@@ -96,7 +101,6 @@ const ProjectCard = ({
   title,
   thumbnail,
 }: ProjectCardProps) => {
-  console.log(displayAll, featuredImg);
   return (
     <StyledProjectCard
       $displayAll={displayAll}
@@ -131,10 +135,7 @@ const ProjectCard = ({
         </StyledCtaContainer>
       </StyledContentContainer>
       <StyledThumbnailContainer>
-        <StyledThumbnail
-          src={!displayAll && featuredImg ? featuredImg : thumbnail}
-          alt={title}
-        />
+        <StyledThumbnail src={thumbnail} alt={title} />
       </StyledThumbnailContainer>
     </StyledProjectCard>
   );
