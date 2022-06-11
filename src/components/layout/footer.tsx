@@ -2,16 +2,31 @@ import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
 
-import { footerNav } from "@constants/footer-nav";
+import { footerNav, socialLinks } from "@constants/footer-nav";
+import { device } from "@constants/device";
 
 const StyledFooter = styled.footer`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: 0 1.25rem;
+  padding: 1rem 0 3rem;
+  border-top: 1px solid var(--slate-500);
+  text-align: center;
+  flex-direction: column-reverse;
 
-  p,
-  a {
-    font-size: 0.75rem;
+  @media ${device.tabletS} {
+    text-align: left;
+    flex-direction: row;
+  }
+`;
+
+const StyledCopyright = styled.p`
+  font-size: 0.8rem;
+  margin-top: 1rem;
+
+  @media ${device.tabletS} {
+    margin-top: 0;
   }
 `;
 
@@ -22,7 +37,7 @@ const StyledFooterUl = styled.ul`
 `;
 
 const StyledFooterLi = styled.li`
-  display: inherit;
+  font-size: 1.5rem;
 `;
 
 const Footer = () => {
@@ -30,14 +45,16 @@ const Footer = () => {
 
   return (
     <StyledFooter>
-      <p>Copyright ©{currentYear} Christina Yun</p>
+      <StyledCopyright>
+        Copyright ©{currentYear} Christina Yun. All rights reserved.
+      </StyledCopyright>
       <nav>
         <StyledFooterUl>
-          {footerNav.map((item) => (
-            <StyledFooterLi key={item.label}>
-              <Link to={item.link} activeClassName="active">
+          {socialLinks.map((item, index) => (
+            <StyledFooterLi key={index}>
+              <a href={item.link} target="_blank">
                 {item.label}
-              </Link>
+              </a>
             </StyledFooterLi>
           ))}
         </StyledFooterUl>
