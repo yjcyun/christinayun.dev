@@ -27,6 +27,7 @@ const StyledLi = styled.li`
   margin: 5px 0;
   color: var(--slate-400);
   list-style: disc;
+  word-break: break-word;
 `;
 
 type SectionProps = {

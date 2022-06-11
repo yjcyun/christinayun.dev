@@ -71,6 +71,7 @@ const StyledP = styled.p`
 const StyledTagsContainer = styled.div`
   margin-bottom: 1rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.3rem;
 `;
 
@@ -120,17 +121,22 @@ const ProjectCard = ({
         <StyledH3>{title}</StyledH3>
         <StyledP>{description}</StyledP>
         <StyledCtaContainer>
-          <a href={liveLink} target="_blank" rel="noopener noreferrer">
-            <Button type="secondary" bgColor="var(--slate-600)" size="small">
-              Live Site
-            </Button>
-          </a>
+          <Button
+            type="secondary"
+            bgColor="var(--slate-600)"
+            size="small"
+            onClick={() => window.open(liveLink, "_blank")}
+          >
+            Live Site
+          </Button>
           {sourceLink && (
-            <a href={sourceLink} target="_blank" rel="noopener noreferrer">
-              <Button type="tertiary" size="small">
-                Github
-              </Button>
-            </a>
+            <Button
+              type="tertiary"
+              size="small"
+              onClick={() => window.open(sourceLink, "_blank")}
+            >
+              Github
+            </Button>
           )}
         </StyledCtaContainer>
       </StyledContentContainer>

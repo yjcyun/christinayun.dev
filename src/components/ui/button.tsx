@@ -11,6 +11,7 @@ type ButtonProps = {
   size?: ButtonSize;
   style?: React.CSSProperties;
   type?: ButtonType;
+  onClick?: () => void;
 };
 
 const getButtonTypeStyle = (
@@ -79,6 +80,7 @@ const Button = ({
   size = "default",
   style,
   type = "primary",
+  onClick,
 }: ButtonProps) => {
   return (
     <StyledButton
@@ -88,6 +90,7 @@ const Button = ({
       $size={size}
       style={style}
       $type={type}
+      onClick={onClick}
     >
       {children}
     </StyledButton>

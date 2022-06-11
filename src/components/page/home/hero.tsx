@@ -9,6 +9,10 @@ const StyledHero = styled.div`
   padding: 1rem;
 
   @media ${device.tablet} {
+    padding: 2rem;
+  }
+
+  @media ${device.tabletL} {
     padding: 4rem;
   } ;
 `;
@@ -27,6 +31,11 @@ const StyledDesc = styled.p`
   margin-bottom: 2rem;
   max-width: 600px;
   color: var(--slate-400);
+  font-size: 1.1rem;
+
+  @media ${device.tablet} {
+    font-size: 1.3rem;
+  }
 `;
 
 const Hero = () => {
@@ -34,10 +43,10 @@ const Hero = () => {
     <StyledHero>
       <StyledH1>Christina Yujeong Yun</StyledH1>
       <StyledDesc>
-        My name is Christina Yun, and I am a frontend developer based in
-        Toronto. In my free time, I continue my studies in JavaScript, learn
-        backend and AWS. My goal is to write useful apps and continue making
-        beautiful websites while expanding my knowledge in software engineering.
+        I am a frontend developer based in Toronto. In my free time, I continue
+        my studies in JavaScript, learn backend and AWS. My goal is to write
+        useful apps and continue making beautiful websites while expanding my
+        knowledge in software engineering.
       </StyledDesc>
       <Link to="/about">
         <Button>About me</Button>

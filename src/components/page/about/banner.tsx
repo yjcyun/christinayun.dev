@@ -8,31 +8,47 @@ const StyledAboutBanner = styled.div`
   margin: auto;
   border-radius: 10px;
   display: flex;
-  position: relative;
+  justify-content: space-between;
+  align-items: center;
   z-index: -1;
+  padding: 2rem;
+  flex-direction: column-reverse;
+
+  @media ${device.tabletS} {
+    flex-direction: row;
+  }
 `;
 
-const StyledText = styled.div`
-  padding: 4rem;
-`;
+const StyledText = styled.div``;
 
 const StyledH1 = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
+  margin-top: 2rem;
 
   span {
     font-family: var(--logoFF);
     color: var(--accent);
   }
+
+  @media ${device.mobileS} {
+    font-size: 2.5rem;
+  }
+
+  @media ${device.tabletS} {
+    margin-top: 0;
+  }
+
+  @media ${device.tablet} {
+    font-size: 3rem;
+  }
 `;
 
 const StyledImageContainer = styled.div`
-  width: 350px;
-  height: 350px;
   background-color: var(--accent);
   border-radius: 5px;
-  position: absolute;
-  right: 2rem;
-  top: 2rem;
+  max-width: 200px;
+  width: 100%;
+  height: 200px;
 `;
 const AboutBanner = () => {
   return (
