@@ -36,14 +36,14 @@ const config: GatsbyConfig = {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "posts",
-        path: "./src/posts",
+        path: "./src/contents/dev-blog",
       },
     },
     {
       resolve: "gatsby-source-filesystem",
       options: {
         name: "projects",
-        path: "./src/projects",
+        path: "./src/contents/projects",
       },
     },
     "gatsby-plugin-graphql-codegen",

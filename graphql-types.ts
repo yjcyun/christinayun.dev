@@ -605,14 +605,14 @@ export type MdxFrontmatter = {
   title: Scalars['String'];
   description?: Maybe<Scalars['String']>;
   liveLink?: Maybe<Scalars['String']>;
+  sourceLink?: Maybe<Scalars['String']>;
   thumbnail?: Maybe<File>;
   featured?: Maybe<Scalars['Boolean']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
-  image?: Maybe<File>;
   date?: Maybe<Scalars['Date']>;
   categories?: Maybe<Array<Maybe<Scalars['String']>>>;
-  sourceLink?: Maybe<Scalars['String']>;
+  image?: Maybe<File>;
 };
 
 
@@ -1126,14 +1126,14 @@ export type MdxFrontmatterFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
   description?: InputMaybe<StringQueryOperatorInput>;
   liveLink?: InputMaybe<StringQueryOperatorInput>;
+  sourceLink?: InputMaybe<StringQueryOperatorInput>;
   thumbnail?: InputMaybe<FileFilterInput>;
   featured?: InputMaybe<BooleanQueryOperatorInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
-  image?: InputMaybe<FileFilterInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
   categories?: InputMaybe<StringQueryOperatorInput>;
-  sourceLink?: InputMaybe<StringQueryOperatorInput>;
+  image?: InputMaybe<FileFilterInput>;
 };
 
 export type FileFilterInput = {
@@ -1433,6 +1433,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___title'
   | 'childrenMdx___frontmatter___description'
   | 'childrenMdx___frontmatter___liveLink'
+  | 'childrenMdx___frontmatter___sourceLink'
   | 'childrenMdx___frontmatter___thumbnail___sourceInstanceName'
   | 'childrenMdx___frontmatter___thumbnail___absolutePath'
   | 'childrenMdx___frontmatter___thumbnail___relativePath'
@@ -1474,6 +1475,8 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___featured'
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___slug'
+  | 'childrenMdx___frontmatter___date'
+  | 'childrenMdx___frontmatter___categories'
   | 'childrenMdx___frontmatter___image___sourceInstanceName'
   | 'childrenMdx___frontmatter___image___absolutePath'
   | 'childrenMdx___frontmatter___image___relativePath'
@@ -1512,9 +1515,6 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___image___childrenMdx'
   | 'childrenMdx___frontmatter___image___id'
   | 'childrenMdx___frontmatter___image___children'
-  | 'childrenMdx___frontmatter___date'
-  | 'childrenMdx___frontmatter___categories'
-  | 'childrenMdx___frontmatter___sourceLink'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
   | 'childrenMdx___excerpt'
@@ -1571,6 +1571,7 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___title'
   | 'childMdx___frontmatter___description'
   | 'childMdx___frontmatter___liveLink'
+  | 'childMdx___frontmatter___sourceLink'
   | 'childMdx___frontmatter___thumbnail___sourceInstanceName'
   | 'childMdx___frontmatter___thumbnail___absolutePath'
   | 'childMdx___frontmatter___thumbnail___relativePath'
@@ -1612,6 +1613,8 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___featured'
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___slug'
+  | 'childMdx___frontmatter___date'
+  | 'childMdx___frontmatter___categories'
   | 'childMdx___frontmatter___image___sourceInstanceName'
   | 'childMdx___frontmatter___image___absolutePath'
   | 'childMdx___frontmatter___image___relativePath'
@@ -1650,9 +1653,6 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___image___childrenMdx'
   | 'childMdx___frontmatter___image___id'
   | 'childMdx___frontmatter___image___children'
-  | 'childMdx___frontmatter___date'
-  | 'childMdx___frontmatter___categories'
-  | 'childMdx___frontmatter___sourceLink'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -3399,6 +3399,7 @@ export type MdxFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___description'
   | 'frontmatter___liveLink'
+  | 'frontmatter___sourceLink'
   | 'frontmatter___thumbnail___sourceInstanceName'
   | 'frontmatter___thumbnail___absolutePath'
   | 'frontmatter___thumbnail___relativePath'
@@ -3482,6 +3483,8 @@ export type MdxFieldsEnum =
   | 'frontmatter___featured'
   | 'frontmatter___tags'
   | 'frontmatter___slug'
+  | 'frontmatter___date'
+  | 'frontmatter___categories'
   | 'frontmatter___image___sourceInstanceName'
   | 'frontmatter___image___absolutePath'
   | 'frontmatter___image___relativePath'
@@ -3562,9 +3565,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___image___internal___mediaType'
   | 'frontmatter___image___internal___owner'
   | 'frontmatter___image___internal___type'
-  | 'frontmatter___date'
-  | 'frontmatter___categories'
-  | 'frontmatter___sourceLink'
   | 'slug'
   | 'body'
   | 'excerpt'

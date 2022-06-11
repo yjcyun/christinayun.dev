@@ -2,9 +2,7 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
-
 import Hero from "@components/page/home/hero";
-
 import Featured from "@components/page/home/featured";
 import { GetAllProjectMdxQuery } from "./projects";
 
