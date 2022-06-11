@@ -603,10 +603,16 @@ export type ImageSharpResize = {
 
 export type MdxFrontmatter = {
   title: Scalars['String'];
+  description?: Maybe<Scalars['String']>;
+  liveLink?: Maybe<Scalars['String']>;
+  thumbnail?: Maybe<File>;
+  featured?: Maybe<Scalars['Boolean']>;
+  tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
   image?: Maybe<File>;
   date?: Maybe<Scalars['Date']>;
   categories?: Maybe<Array<Maybe<Scalars['String']>>>;
+  sourceLink?: Maybe<Scalars['String']>;
 };
 
 
@@ -1118,10 +1124,16 @@ export type MdxFilterInput = {
 
 export type MdxFrontmatterFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  liveLink?: InputMaybe<StringQueryOperatorInput>;
+  thumbnail?: InputMaybe<FileFilterInput>;
+  featured?: InputMaybe<BooleanQueryOperatorInput>;
+  tags?: InputMaybe<StringQueryOperatorInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
   image?: InputMaybe<FileFilterInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
   categories?: InputMaybe<StringQueryOperatorInput>;
+  sourceLink?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type FileFilterInput = {
@@ -1419,6 +1431,48 @@ export type FileFieldsEnum =
   | 'childrenMdx___rawBody'
   | 'childrenMdx___fileAbsolutePath'
   | 'childrenMdx___frontmatter___title'
+  | 'childrenMdx___frontmatter___description'
+  | 'childrenMdx___frontmatter___liveLink'
+  | 'childrenMdx___frontmatter___thumbnail___sourceInstanceName'
+  | 'childrenMdx___frontmatter___thumbnail___absolutePath'
+  | 'childrenMdx___frontmatter___thumbnail___relativePath'
+  | 'childrenMdx___frontmatter___thumbnail___extension'
+  | 'childrenMdx___frontmatter___thumbnail___size'
+  | 'childrenMdx___frontmatter___thumbnail___prettySize'
+  | 'childrenMdx___frontmatter___thumbnail___modifiedTime'
+  | 'childrenMdx___frontmatter___thumbnail___accessTime'
+  | 'childrenMdx___frontmatter___thumbnail___changeTime'
+  | 'childrenMdx___frontmatter___thumbnail___birthTime'
+  | 'childrenMdx___frontmatter___thumbnail___root'
+  | 'childrenMdx___frontmatter___thumbnail___dir'
+  | 'childrenMdx___frontmatter___thumbnail___base'
+  | 'childrenMdx___frontmatter___thumbnail___ext'
+  | 'childrenMdx___frontmatter___thumbnail___name'
+  | 'childrenMdx___frontmatter___thumbnail___relativeDirectory'
+  | 'childrenMdx___frontmatter___thumbnail___dev'
+  | 'childrenMdx___frontmatter___thumbnail___mode'
+  | 'childrenMdx___frontmatter___thumbnail___nlink'
+  | 'childrenMdx___frontmatter___thumbnail___uid'
+  | 'childrenMdx___frontmatter___thumbnail___gid'
+  | 'childrenMdx___frontmatter___thumbnail___rdev'
+  | 'childrenMdx___frontmatter___thumbnail___ino'
+  | 'childrenMdx___frontmatter___thumbnail___atimeMs'
+  | 'childrenMdx___frontmatter___thumbnail___mtimeMs'
+  | 'childrenMdx___frontmatter___thumbnail___ctimeMs'
+  | 'childrenMdx___frontmatter___thumbnail___atime'
+  | 'childrenMdx___frontmatter___thumbnail___mtime'
+  | 'childrenMdx___frontmatter___thumbnail___ctime'
+  | 'childrenMdx___frontmatter___thumbnail___birthtime'
+  | 'childrenMdx___frontmatter___thumbnail___birthtimeMs'
+  | 'childrenMdx___frontmatter___thumbnail___blksize'
+  | 'childrenMdx___frontmatter___thumbnail___blocks'
+  | 'childrenMdx___frontmatter___thumbnail___publicURL'
+  | 'childrenMdx___frontmatter___thumbnail___childrenImageSharp'
+  | 'childrenMdx___frontmatter___thumbnail___childrenMdx'
+  | 'childrenMdx___frontmatter___thumbnail___id'
+  | 'childrenMdx___frontmatter___thumbnail___children'
+  | 'childrenMdx___frontmatter___featured'
+  | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___slug'
   | 'childrenMdx___frontmatter___image___sourceInstanceName'
   | 'childrenMdx___frontmatter___image___absolutePath'
@@ -1460,6 +1514,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___image___children'
   | 'childrenMdx___frontmatter___date'
   | 'childrenMdx___frontmatter___categories'
+  | 'childrenMdx___frontmatter___sourceLink'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
   | 'childrenMdx___excerpt'
@@ -1514,6 +1569,48 @@ export type FileFieldsEnum =
   | 'childMdx___rawBody'
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
+  | 'childMdx___frontmatter___description'
+  | 'childMdx___frontmatter___liveLink'
+  | 'childMdx___frontmatter___thumbnail___sourceInstanceName'
+  | 'childMdx___frontmatter___thumbnail___absolutePath'
+  | 'childMdx___frontmatter___thumbnail___relativePath'
+  | 'childMdx___frontmatter___thumbnail___extension'
+  | 'childMdx___frontmatter___thumbnail___size'
+  | 'childMdx___frontmatter___thumbnail___prettySize'
+  | 'childMdx___frontmatter___thumbnail___modifiedTime'
+  | 'childMdx___frontmatter___thumbnail___accessTime'
+  | 'childMdx___frontmatter___thumbnail___changeTime'
+  | 'childMdx___frontmatter___thumbnail___birthTime'
+  | 'childMdx___frontmatter___thumbnail___root'
+  | 'childMdx___frontmatter___thumbnail___dir'
+  | 'childMdx___frontmatter___thumbnail___base'
+  | 'childMdx___frontmatter___thumbnail___ext'
+  | 'childMdx___frontmatter___thumbnail___name'
+  | 'childMdx___frontmatter___thumbnail___relativeDirectory'
+  | 'childMdx___frontmatter___thumbnail___dev'
+  | 'childMdx___frontmatter___thumbnail___mode'
+  | 'childMdx___frontmatter___thumbnail___nlink'
+  | 'childMdx___frontmatter___thumbnail___uid'
+  | 'childMdx___frontmatter___thumbnail___gid'
+  | 'childMdx___frontmatter___thumbnail___rdev'
+  | 'childMdx___frontmatter___thumbnail___ino'
+  | 'childMdx___frontmatter___thumbnail___atimeMs'
+  | 'childMdx___frontmatter___thumbnail___mtimeMs'
+  | 'childMdx___frontmatter___thumbnail___ctimeMs'
+  | 'childMdx___frontmatter___thumbnail___atime'
+  | 'childMdx___frontmatter___thumbnail___mtime'
+  | 'childMdx___frontmatter___thumbnail___ctime'
+  | 'childMdx___frontmatter___thumbnail___birthtime'
+  | 'childMdx___frontmatter___thumbnail___birthtimeMs'
+  | 'childMdx___frontmatter___thumbnail___blksize'
+  | 'childMdx___frontmatter___thumbnail___blocks'
+  | 'childMdx___frontmatter___thumbnail___publicURL'
+  | 'childMdx___frontmatter___thumbnail___childrenImageSharp'
+  | 'childMdx___frontmatter___thumbnail___childrenMdx'
+  | 'childMdx___frontmatter___thumbnail___id'
+  | 'childMdx___frontmatter___thumbnail___children'
+  | 'childMdx___frontmatter___featured'
+  | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___slug'
   | 'childMdx___frontmatter___image___sourceInstanceName'
   | 'childMdx___frontmatter___image___absolutePath'
@@ -1555,6 +1652,7 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___image___children'
   | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___categories'
+  | 'childMdx___frontmatter___sourceLink'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -3299,6 +3397,90 @@ export type MdxFieldsEnum =
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter___title'
+  | 'frontmatter___description'
+  | 'frontmatter___liveLink'
+  | 'frontmatter___thumbnail___sourceInstanceName'
+  | 'frontmatter___thumbnail___absolutePath'
+  | 'frontmatter___thumbnail___relativePath'
+  | 'frontmatter___thumbnail___extension'
+  | 'frontmatter___thumbnail___size'
+  | 'frontmatter___thumbnail___prettySize'
+  | 'frontmatter___thumbnail___modifiedTime'
+  | 'frontmatter___thumbnail___accessTime'
+  | 'frontmatter___thumbnail___changeTime'
+  | 'frontmatter___thumbnail___birthTime'
+  | 'frontmatter___thumbnail___root'
+  | 'frontmatter___thumbnail___dir'
+  | 'frontmatter___thumbnail___base'
+  | 'frontmatter___thumbnail___ext'
+  | 'frontmatter___thumbnail___name'
+  | 'frontmatter___thumbnail___relativeDirectory'
+  | 'frontmatter___thumbnail___dev'
+  | 'frontmatter___thumbnail___mode'
+  | 'frontmatter___thumbnail___nlink'
+  | 'frontmatter___thumbnail___uid'
+  | 'frontmatter___thumbnail___gid'
+  | 'frontmatter___thumbnail___rdev'
+  | 'frontmatter___thumbnail___ino'
+  | 'frontmatter___thumbnail___atimeMs'
+  | 'frontmatter___thumbnail___mtimeMs'
+  | 'frontmatter___thumbnail___ctimeMs'
+  | 'frontmatter___thumbnail___atime'
+  | 'frontmatter___thumbnail___mtime'
+  | 'frontmatter___thumbnail___ctime'
+  | 'frontmatter___thumbnail___birthtime'
+  | 'frontmatter___thumbnail___birthtimeMs'
+  | 'frontmatter___thumbnail___blksize'
+  | 'frontmatter___thumbnail___blocks'
+  | 'frontmatter___thumbnail___publicURL'
+  | 'frontmatter___thumbnail___childrenImageSharp'
+  | 'frontmatter___thumbnail___childrenImageSharp___gatsbyImageData'
+  | 'frontmatter___thumbnail___childrenImageSharp___id'
+  | 'frontmatter___thumbnail___childrenImageSharp___children'
+  | 'frontmatter___thumbnail___childImageSharp___gatsbyImageData'
+  | 'frontmatter___thumbnail___childImageSharp___id'
+  | 'frontmatter___thumbnail___childImageSharp___children'
+  | 'frontmatter___thumbnail___childrenMdx'
+  | 'frontmatter___thumbnail___childrenMdx___rawBody'
+  | 'frontmatter___thumbnail___childrenMdx___fileAbsolutePath'
+  | 'frontmatter___thumbnail___childrenMdx___slug'
+  | 'frontmatter___thumbnail___childrenMdx___body'
+  | 'frontmatter___thumbnail___childrenMdx___excerpt'
+  | 'frontmatter___thumbnail___childrenMdx___headings'
+  | 'frontmatter___thumbnail___childrenMdx___html'
+  | 'frontmatter___thumbnail___childrenMdx___mdxAST'
+  | 'frontmatter___thumbnail___childrenMdx___tableOfContents'
+  | 'frontmatter___thumbnail___childrenMdx___timeToRead'
+  | 'frontmatter___thumbnail___childrenMdx___id'
+  | 'frontmatter___thumbnail___childrenMdx___children'
+  | 'frontmatter___thumbnail___childMdx___rawBody'
+  | 'frontmatter___thumbnail___childMdx___fileAbsolutePath'
+  | 'frontmatter___thumbnail___childMdx___slug'
+  | 'frontmatter___thumbnail___childMdx___body'
+  | 'frontmatter___thumbnail___childMdx___excerpt'
+  | 'frontmatter___thumbnail___childMdx___headings'
+  | 'frontmatter___thumbnail___childMdx___html'
+  | 'frontmatter___thumbnail___childMdx___mdxAST'
+  | 'frontmatter___thumbnail___childMdx___tableOfContents'
+  | 'frontmatter___thumbnail___childMdx___timeToRead'
+  | 'frontmatter___thumbnail___childMdx___id'
+  | 'frontmatter___thumbnail___childMdx___children'
+  | 'frontmatter___thumbnail___id'
+  | 'frontmatter___thumbnail___parent___id'
+  | 'frontmatter___thumbnail___parent___children'
+  | 'frontmatter___thumbnail___children'
+  | 'frontmatter___thumbnail___children___id'
+  | 'frontmatter___thumbnail___children___children'
+  | 'frontmatter___thumbnail___internal___content'
+  | 'frontmatter___thumbnail___internal___contentDigest'
+  | 'frontmatter___thumbnail___internal___description'
+  | 'frontmatter___thumbnail___internal___fieldOwners'
+  | 'frontmatter___thumbnail___internal___ignoreType'
+  | 'frontmatter___thumbnail___internal___mediaType'
+  | 'frontmatter___thumbnail___internal___owner'
+  | 'frontmatter___thumbnail___internal___type'
+  | 'frontmatter___featured'
+  | 'frontmatter___tags'
   | 'frontmatter___slug'
   | 'frontmatter___image___sourceInstanceName'
   | 'frontmatter___image___absolutePath'
@@ -3382,6 +3564,7 @@ export type MdxFieldsEnum =
   | 'frontmatter___image___internal___type'
   | 'frontmatter___date'
   | 'frontmatter___categories'
+  | 'frontmatter___sourceLink'
   | 'slug'
   | 'body'
   | 'excerpt'
@@ -3532,6 +3715,11 @@ export type HomePostListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type HomePostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string, slug?: string | null } | null }> } };
+
+export type GetAllProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllProjectMdxQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type GetSinglePostQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;

@@ -39,6 +39,13 @@ const config: GatsbyConfig = {
         path: "./src/posts",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "projects",
+        path: "./src/projects",
+      },
+    },
     "gatsby-plugin-graphql-codegen",
     {
       resolve: `gatsby-plugin-mdx`,

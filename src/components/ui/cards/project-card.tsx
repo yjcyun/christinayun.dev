@@ -1,7 +1,10 @@
-import { device } from "@constants/device";
 import React from "react";
 import styled from "styled-components";
-import Button from "../button";
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
+
+import { GetAllProjectMdxQuery } from "@pages/projects";
+import Button from "@components/ui/button";
+import { device } from "@constants/device";
 
 const StyledH3 = styled.h3`
   font-size: 1.5rem;
@@ -42,18 +45,14 @@ const StyledThumbnailContainer = styled.div`
   padding: 2rem;
 
   @media ${device.tablet} {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   @media ${device.laptop} {
     padding: 0;
   }
-`;
-
-const StyledThumbnail = styled.img`
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 `;
 
 const StyledContentContainer = styled.div`
@@ -81,15 +80,11 @@ const StyledCtaContainer = styled.div`
   margin-top: 2rem;
 `;
 
-type ProjectCardProps = {
+type ProjectCardFrontmatter =
+  GetAllProjectMdxQuery["allMdx"]["nodes"][number]["frontmatter"];
+
+type ProjectCardProps = ProjectCardFrontmatter & {
   displayAll?: boolean;
-  featured?: boolean;
-  thumbnail: string;
-  title: string;
-  description: string;
-  tags: string[];
-  liveLink: string;
-  sourceLink?: string;
 };
 
 const ProjectCard = ({
@@ -112,7 +107,7 @@ const ProjectCard = ({
     >
       <StyledContentContainer>
         <StyledTagsContainer>
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <Button key={tag} type="pill">
               {tag}
             </Button>
@@ -141,7 +136,10 @@ const ProjectCard = ({
         </StyledCtaContainer>
       </StyledContentContainer>
       <StyledThumbnailContainer>
-        <StyledThumbnail src={thumbnail} alt={title} />
+        <GatsbyImage
+          image={getImage(thumbnail as ImageDataLike)!}
+          alt={title}
+        />
       </StyledThumbnailContainer>
     </StyledProjectCard>
   );

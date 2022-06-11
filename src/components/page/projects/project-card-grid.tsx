@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 import ProjectCard from "@components/ui/cards/project-card";
-
-import { projects } from "@constants/projects";
 import { device } from "@constants/device";
+import { GetAllProjectMdxQuery } from "@pages/projects";
 
 const StyledProjectCardGrid = styled.div`
   margin-top: 3rem;
@@ -17,11 +16,15 @@ const StyledProjectCardGrid = styled.div`
   }
 `;
 
-const ProjectCardGrid = () => {
+type ProjectCardGrid = {
+  projects: GetAllProjectMdxQuery["allMdx"]["nodes"];
+};
+
+const ProjectCardGrid = ({ projects }: ProjectCardGrid) => {
   return (
     <StyledProjectCardGrid>
-      {projects.map((project) => (
-        <ProjectCard key={project.title} displayAll {...project} />
+      {projects.map(({ frontmatter, id }) => (
+        <ProjectCard key={id} displayAll {...frontmatter} />
       ))}
     </StyledProjectCardGrid>
   );
