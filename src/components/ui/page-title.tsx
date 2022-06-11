@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 export interface PageTitleProps {
-  title: string;
+  title: string | React.ReactNode;
   description?: string | React.ReactNode;
   section?: boolean;
 }

@@ -3728,6 +3728,13 @@ export type GetSinglePostQueryVariables = Exact<{
 
 export type GetSinglePostQuery = { mdx?: { body: string, frontmatter?: { categories?: Array<string | null> | null, date?: any | null, slug?: string | null, title: string } | null, headings?: Array<{ depth?: number | null, value?: string | null } | null> | null } | null };
 
+export type GetTaggedProjectMdxQueryVariables = Exact<{
+  tag?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type GetTaggedProjectMdxQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 
 export type GatsbyImageSharpFixed_TracedSvgFragment = { tracedSVG?: string | null, width: number, height: number, src: string, srcSet: string };
