@@ -3711,10 +3711,10 @@ export type MdxSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
-export type HomePostListQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetFeaturedProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type HomePostListQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { date?: any | null, title: string, slug?: string | null } | null }> } };
+export type GetFeaturedProjectMdxQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type GetAllProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 

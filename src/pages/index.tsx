@@ -3,18 +3,21 @@ import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
 
-import { HomePostListQuery } from "@graphql-types";
 import Hero from "@components/page/home/hero";
-import PageTitle from "@components/ui/page-title";
-import FeaturedProjectCard from "@components/ui/cards/featured-project-card";
+
 import Featured from "@components/page/home/featured";
+import { GetAllProjectMdxQuery } from "./projects";
 
 // markup
-const IndexPage = ({ data }: PageProps<HomePostListQuery>) => {
+const IndexPage = ({ data }: PageProps<GetAllProjectMdxQuery>) => {
+  const {
+    allMdx: { nodes: projects },
+  } = data;
+
   return (
     <Layout>
       <Hero />
-      <Featured type="projects" title="Featured Projects" />
+      <Featured type="projects" title="Featured Projects" data={projects} />
       <Featured type="blog" title="Latest Blog Posts" />
     </Layout>
   );
@@ -23,13 +26,26 @@ const IndexPage = ({ data }: PageProps<HomePostListQuery>) => {
 export default IndexPage;
 
 export const query = graphql`
-  query HomePostList {
-    allMdx(limit: 5, sort: { fields: frontmatter___date, order: DESC }) {
+  query GetFeaturedProjectMdx {
+    allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: { featured: { eq: true } }
+      }
+    ) {
       nodes {
         frontmatter {
-          date(formatString: "MMM D, YYYY")
+          description
+          featured
+          liveLink
+          sourceLink
+          tags
           title
-          slug
+          thumbnail {
+            childImageSharp {
+              gatsbyImageData
+            }
+          }
         }
         id
       }

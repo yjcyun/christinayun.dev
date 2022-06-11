@@ -1,14 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-import FeaturedProjectCard from "@components/ui/cards/featured-project-card";
 import PageTitle from "@components/ui/page-title";
-
 import FeaturedBlogCard from "@components/ui/cards/featured-blog-card";
-import Button from "@components/ui/button";
-import { device } from "@constants/device";
-import { projects } from "@constants/projects";
 import ProjectCard from "@components/ui/cards/project-card";
+import { device } from "@constants/device";
+import { GetAllProjectMdxQuery } from "@pages/projects";
 
 const StyledFeatured = styled.section`
   margin-top: 3rem;
@@ -30,20 +27,19 @@ const StyledFeaturedSection = styled.section``;
 interface FeaturedProps {
   title: string;
   type: "blog" | "projects";
+  data: GetAllProjectMdxQuery["allMdx"]["nodes"];
 }
 
-const Featured = ({ title, type }: FeaturedProps) => {
+const Featured = ({ title, type, data }: FeaturedProps) => {
   return (
     <StyledFeatured>
       <PageTitle title={title} section />
       {type === "projects" ? (
         <StyledFeaturedSection>
           <StyledCardContainer $grid={2}>
-            {projects
-              .filter((project) => project.featured)
-              .map((project) => (
-                <ProjectCard {...project} key={project.title} />
-              ))}
+            {data.map(({ frontmatter, id }) => (
+              <ProjectCard {...frontmatter} key={id} />
+            ))}
           </StyledCardContainer>
         </StyledFeaturedSection>
       ) : (

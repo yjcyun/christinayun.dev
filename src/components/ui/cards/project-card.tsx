@@ -5,6 +5,7 @@ import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import { GetAllProjectMdxQuery } from "@pages/projects";
 import Button from "@components/ui/button";
 import { device } from "@constants/device";
+import { Link } from "gatsby";
 
 const StyledH3 = styled.h3`
   font-size: 1.5rem;
@@ -16,7 +17,7 @@ const StyledH3 = styled.h3`
   }
 `;
 
-const StyledProjectCard = styled.a<{
+const StyledProjectCard = styled.div<{
   $featured: boolean;
   $displayAll: boolean;
 }>`
@@ -98,40 +99,31 @@ const ProjectCard = ({
   thumbnail,
 }: ProjectCardProps) => {
   return (
-    <StyledProjectCard
-      $displayAll={displayAll}
-      $featured={featured}
-      href={liveLink}
-      target="_blank"
-      rel="noopener noreferrer"
-    >
+    <StyledProjectCard $displayAll={displayAll} $featured={featured}>
       <StyledContentContainer>
         <StyledTagsContainer>
           {tags?.map((tag) => (
-            <Button key={tag} type="pill">
-              {tag}
-            </Button>
+            <Link to={`/projects/tags/${tag.toLocaleLowerCase()}`} key={tag}>
+              <Button key={tag} type="pill">
+                {tag}
+              </Button>
+            </Link>
           ))}
         </StyledTagsContainer>
         <StyledH3>{title}</StyledH3>
         <StyledP>{description}</StyledP>
         <StyledCtaContainer>
-          <Button
-            type="secondary"
-            bgColor="var(--slate-600)"
-            size="small"
-            onClick={() => window.open(liveLink, "_blank")}
-          >
-            Live Site
-          </Button>
-          {sourceLink && (
-            <Button
-              type="tertiary"
-              size="small"
-              onClick={() => window.open(sourceLink, "_blank")}
-            >
-              Github
+          <a href={liveLink} target="_blank" rel="noopener noreferrer">
+            <Button type="secondary" bgColor="var(--slate-600)" size="small">
+              Live Site
             </Button>
+          </a>
+          {sourceLink && (
+            <a href={sourceLink} target="_blank" rel="noopener noreferrer">
+              <Button type="tertiary" size="small">
+                Github
+              </Button>
+            </a>
           )}
         </StyledCtaContainer>
       </StyledContentContainer>

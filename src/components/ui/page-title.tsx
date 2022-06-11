@@ -14,7 +14,8 @@ const StyledH1 = styled.h1`
   font-size: 2.5rem;
   border-bottom: 5px solid var(--secondary);
   padding-bottom: 5px;
-  display: inline-block;
+  display: flex;
+  align-items: center;
   color: var(--accent);
 `;
 
