@@ -1,3 +1,4 @@
+import { device } from "@constants/device";
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
@@ -32,7 +33,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: var(--bodyFF);
     max-width: var(--lg-width);
     margin: auto;
-    padding: 3rem 1rem;
     color: var(--slate-100);
     background: var(--slate-900);
   }

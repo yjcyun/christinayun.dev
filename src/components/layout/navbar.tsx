@@ -1,20 +1,24 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useEffect, useState } from "react";
+import styled, { css } from "styled-components";
 import { Link } from "gatsby";
+import { FiMenu, FiX } from "react-icons/fi";
 
 import { device } from "@constants/device";
 import { headerNav } from "@constants/header-nav";
+import Sidebar from "./sidebar";
 
 const StyledHeader = styled.header`
   display: flex;
-  align-items: flex-end;
-  flex-direction: column;
   gap: 1rem;
-  border-bottom: 1px solid #737373;
-  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--slate-500);
+  padding: 2rem 0 1rem;
+  margin: 0 1.25rem;
+  align-items: center;
+  justify-content: space-between;
 
   @media ${device.tablet} {
-    flex-direction: row;
+    padding: 3rem 0 1rem;
+    justify-content: flex-start;
   }
 `;
 
@@ -22,6 +26,34 @@ const StyledHome = styled.div`
   font-size: 1.35rem;
   font-family: var(--logoFF);
   margin-right: 1rem;
+`;
+
+const StyledIcons = css`
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 1;
+
+  @media ${device.tablet} {
+    display: none;
+  }
+`;
+
+const StyledFiMenu = styled(FiMenu)<{ $show: boolean }>`
+  ${StyledIcons}
+  display: ${(props) => (props.$show ? "none" : "flex")};
+`;
+
+const StyledFiX = styled(FiX)<{ $show: boolean }>`
+  ${StyledIcons}
+  display: ${(props) => (props.$show ? "flex" : "none")};
+`;
+
+const StyledNav = styled.nav`
+  display: none;
+
+  @media ${device.tablet} {
+    display: block;
+  }
 `;
 
 const StyledNavList = styled.ul`
@@ -39,12 +71,31 @@ const StyledNavList = styled.ul`
 `;
 
 const Navbar = () => {
+  const [showSidebar, setShowSidebar] = useState(false);
+
+  const onShowSidebar = () => {
+    setShowSidebar(!showSidebar);
+  };
+
+  useEffect(() => {
+    if (showSidebar) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [showSidebar]);
+
   return (
     <StyledHeader>
       <Link to="/">
         <StyledHome>CYY</StyledHome>
       </Link>
-      <nav>
+
+      <StyledFiMenu role="button" onClick={onShowSidebar} $show={showSidebar} />
+      <StyledFiX role="button" onClick={onShowSidebar} $show={showSidebar} />
+      <Sidebar show={showSidebar} />
+
+      <StyledNav>
         <StyledNavList>
           {headerNav.map((item) => (
             <li key={item.label}>
@@ -54,7 +105,7 @@ const Navbar = () => {
             </li>
           ))}
         </StyledNavList>
-      </nav>
+      </StyledNav>
     </StyledHeader>
   );
 };

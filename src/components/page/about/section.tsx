@@ -39,13 +39,13 @@ const Section = ({ title, paragraphs, list }: SectionProps) => {
   return (
     <StyledSection>
       <StyledH2>{title}</StyledH2>
-      {paragraphs?.map((para) => (
-        <StyledP>{para}</StyledP>
+      {paragraphs?.map((para, index) => (
+        <StyledP key={index}>{para}</StyledP>
       ))}
       {list && (
         <StyledUl>
-          {list?.map((li) => (
-            <StyledLi key={li}>{li}</StyledLi>
+          {list?.map((li, index) => (
+            <StyledLi key={index}>{li}</StyledLi>
           ))}
         </StyledUl>
       )}

@@ -9,6 +9,7 @@ const StyledAboutBanner = styled.div`
   border-radius: 10px;
   display: flex;
   position: relative;
+  z-index: -1;
 `;
 
 const StyledText = styled.div`
