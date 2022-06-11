@@ -1,40 +1,55 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+
 import { device } from "@constants/device";
+import { GetDevBlogMdxQuery } from "@pages/blog";
 
-interface ListItemProps {
-  title: string;
-  date?: any;
-  slug?: string | null | undefined;
-}
+const StyledTitle = styled.h3`
+  font-weight: 600;
+  font-size: 1.5rem;
+`;
 
-const StyledListItem = styled.article`
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+const StyledListItem = styled.li`
   padding: 0.7rem 0;
-  color: var(--light-cyan);
 
   &:not(:last-child) {
-    border-bottom: var(--border);
+    border-bottom: 1px solid var(--slate-700);
   }
 
-  a:hover {
-    color: var(--neon-green);
+  &:hover ${StyledTitle} {
+    color: var(--accent);
   }
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
 
   @media ${device.tabletS} {
     flex-direction: row;
   }
 `;
 
-const ListItem = ({ title, date, slug }: ListItemProps) => {
+const StyledDate = styled.div`
+  color: var(--slate-500);
+`;
+
+type ListItemProps =
+  GetDevBlogMdxQuery["blogMdx"]["nodes"][number]["frontmatter"];
+
+const ListItem = ({ title, description, date, slug }: ListItemProps) => {
   return (
     <StyledListItem>
-      <Link to={`/posts/${slug}`}>{title}</Link>
-      <div>{date}</div>
+      <StyledLink to={`/posts/${slug}`}>
+        <div>
+          <StyledTitle>{title}</StyledTitle>
+          <p>{description}</p>
+        </div>
+        <StyledDate>{date}</StyledDate>
+      </StyledLink>
     </StyledListItem>
   );
 };

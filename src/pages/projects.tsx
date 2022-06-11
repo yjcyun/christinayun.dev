@@ -7,7 +7,7 @@ import PageTitle from "@components/ui/page-title";
 import ProjectCardGrid from "@components/page/projects/project-card-grid";
 
 export type GetAllProjectMdxQuery = {
-  allMdx: {
+  projectsMdx: {
     nodes: Array<{
       id: string;
       frontmatter: {
@@ -29,7 +29,7 @@ export type GetAllProjectMdxQuery = {
 
 const PostsPage = ({ data }: PageProps<GetAllProjectMdxQuery>) => {
   const {
-    allMdx: { nodes: projects },
+    projectsMdx: { nodes: projects },
   } = data;
   return (
     <Layout>
@@ -44,7 +44,7 @@ const PostsPage = ({ data }: PageProps<GetAllProjectMdxQuery>) => {
 
 export const query = graphql`
   query GetAllProjectMdx {
-    allMdx(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+    projectsMdx: allMdx(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
       nodes {
         frontmatter {
           description

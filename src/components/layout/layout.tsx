@@ -8,7 +8,7 @@ import { device } from "@constants/device";
 
 const Main = styled.main`
   padding: 2rem 1.25rem;
-  min-height: calc(100vh - 9rem);
+  min-height: calc(100vh - 12.2rem);
 
   @media ${device.tablet} {
     padding: 3rem 1.25rem;

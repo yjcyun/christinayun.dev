@@ -28,15 +28,9 @@ const StyledDate = styled.p`
   color: var(--slate-400);
 `;
 
-const StyledPills = styled.div`
-  display: flex;
-  gap: 5px;
-`;
-
 type FeaturedBlogCardProps = {
   date: string;
   description: string;
-  tag: string;
   title: string;
   to: string;
 };
@@ -44,7 +38,6 @@ type FeaturedBlogCardProps = {
 const FeaturedBlogCard = ({
   date,
   description,
-  tag,
   title,
   to,
 }: FeaturedBlogCardProps) => {
@@ -56,9 +49,6 @@ const FeaturedBlogCard = ({
           <h3>{title}</h3>
           <p>{description}</p>
         </StyledTitles>
-        <StyledPills>
-          <Button type="pill">{tag}</Button>
-        </StyledPills>
       </StyledCard>
     </Link>
   );

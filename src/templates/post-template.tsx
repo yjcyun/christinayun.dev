@@ -41,7 +41,7 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
 
   const {
     mdx: {
-      frontmatter: { title, date, categories },
+      frontmatter: { title, date, tags },
       body,
       headings,
     },
@@ -59,9 +59,9 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
           <h1>{title}</h1>
           <time>{date}</time>
           <StyleCategoriesContainer>
-            {categories?.map((category) => (
-              <Button type="pill" key={category}>
-                {category}
+            {tags?.map((tag) => (
+              <Button type="pill" key={tag}>
+                {tag}
               </Button>
             ))}
           </StyleCategoriesContainer>
@@ -80,7 +80,7 @@ export const query = graphql`
     mdx(frontmatter: { slug: { eq: $slug } }) {
       body
       frontmatter {
-        categories
+        tags
         date(formatString: "MMMM D, YYYY")
         slug
         title

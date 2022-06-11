@@ -24,7 +24,6 @@ const StyledProjectCard = styled.div<{
   display: grid;
   grid-template-columns: 1fr;
   transition: 0.2s;
-  box-shadow: var(--box-shadow);
   background-color: var(--slate-800);
   grid-gap: 1rem;
 
@@ -82,7 +81,7 @@ const StyledCtaContainer = styled.div`
 `;
 
 type ProjectCardFrontmatter =
-  GetAllProjectMdxQuery["allMdx"]["nodes"][number]["frontmatter"];
+  GetAllProjectMdxQuery["projectsMdx"]["nodes"][number]["frontmatter"];
 
 type ProjectCardProps = ProjectCardFrontmatter & {
   displayAll?: boolean;

@@ -27,48 +27,18 @@ const StyledFeaturedSection = styled.section``;
 interface FeaturedProps {
   title: string;
   type: "blog" | "projects";
-  data: GetAllProjectMdxQuery["allMdx"]["nodes"];
+  children: React.ReactNode;
 }
 
-const Featured = ({ title, type, data }: FeaturedProps) => {
+const Featured = ({ title, type, children }: FeaturedProps) => {
   return (
     <StyledFeatured>
       <PageTitle title={title} section />
-      {type === "projects" ? (
-        <StyledFeaturedSection>
-          <StyledCardContainer $grid={2}>
-            {data.map(({ frontmatter, id }) => (
-              <ProjectCard {...frontmatter} key={id} />
-            ))}
-          </StyledCardContainer>
-        </StyledFeaturedSection>
-      ) : (
-        <StyledFeaturedSection>
-          <StyledCardContainer $grid={3}>
-            <FeaturedBlogCard
-              date="Feb 15, 2022"
-              description="Blog subtitle goes here"
-              tag="DEV"
-              title="Blog title goes here"
-              to="/"
-            />
-            <FeaturedBlogCard
-              date="Feb 15, 2022"
-              description="Blog subtitle goes here"
-              tag="DEV"
-              title="Blog title goes here"
-              to="/"
-            />
-            <FeaturedBlogCard
-              date="Feb 15, 2022"
-              description="Blog subtitle goes here"
-              tag="DEV"
-              title="Blog title goes here"
-              to="/"
-            />
-          </StyledCardContainer>
-        </StyledFeaturedSection>
-      )}
+      <StyledFeaturedSection>
+        <StyledCardContainer $grid={type === "projects" ? 2 : 3}>
+          {children}
+        </StyledCardContainer>
+      </StyledFeaturedSection>
     </StyledFeatured>
   );
 };

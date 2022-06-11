@@ -1,27 +1,25 @@
 import React from "react";
 import styled from "styled-components";
 
-import { PostListQuery } from "@graphql-types";
+import { GetDevBlogMdxQuery } from "@pages/blog";
 import ListItem from "./list-item";
 
-const StyledList = styled.div`
+const StyledList = styled.ul`
   margin-top: 2rem;
 `;
 
-const List = ({ allMdx }: PostListQuery) => {
-  const { nodes: posts } = allMdx;
+type PostsListProps = {
+  posts: GetDevBlogMdxQuery["blogMdx"]["nodes"];
+};
 
+const PostsList = ({ posts }: PostsListProps) => {
   return (
     <StyledList>
-      {posts.map((post) => {
-        if (!post.frontmatter) {
-          return <div key={post.id}>Oops! something went wrong</div>;
-        }
-
-        return <ListItem key={post.id} {...post.frontmatter} />;
-      })}
+      {posts.map(({ frontmatter, id }) => (
+        <ListItem key={id} {...frontmatter} />
+      ))}
     </StyledList>
   );
 };
 
-export default List;
+export default PostsList;

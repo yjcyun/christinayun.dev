@@ -611,7 +611,6 @@ export type MdxFrontmatter = {
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
-  categories?: Maybe<Array<Maybe<Scalars['String']>>>;
   image?: Maybe<File>;
 };
 
@@ -1132,7 +1131,6 @@ export type MdxFrontmatterFilterInput = {
   tags?: InputMaybe<StringQueryOperatorInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
-  categories?: InputMaybe<StringQueryOperatorInput>;
   image?: InputMaybe<FileFilterInput>;
 };
 
@@ -1476,7 +1474,6 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___slug'
   | 'childrenMdx___frontmatter___date'
-  | 'childrenMdx___frontmatter___categories'
   | 'childrenMdx___frontmatter___image___sourceInstanceName'
   | 'childrenMdx___frontmatter___image___absolutePath'
   | 'childrenMdx___frontmatter___image___relativePath'
@@ -1614,7 +1611,6 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___slug'
   | 'childMdx___frontmatter___date'
-  | 'childMdx___frontmatter___categories'
   | 'childMdx___frontmatter___image___sourceInstanceName'
   | 'childMdx___frontmatter___image___absolutePath'
   | 'childMdx___frontmatter___image___relativePath'
@@ -3484,7 +3480,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___tags'
   | 'frontmatter___slug'
   | 'frontmatter___date'
-  | 'frontmatter___categories'
   | 'frontmatter___image___sourceInstanceName'
   | 'frontmatter___image___absolutePath'
   | 'frontmatter___image___relativePath'
@@ -3711,22 +3706,27 @@ export type MdxSortInput = {
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
 
+export type GetAllDevBlogMdxQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllDevBlogMdxQuery = { blogMdx: { nodes: Array<{ body: string, id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null } | null }> } };
+
 export type GetFeaturedProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedProjectMdxQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type GetFeaturedProjectMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> }, blogMdx: { nodes: Array<{ body: string, id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null } | null }> } };
 
 export type GetAllProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllProjectMdxQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type GetAllProjectMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type GetSinglePostQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type GetSinglePostQuery = { mdx?: { body: string, frontmatter?: { categories?: Array<string | null> | null, date?: any | null, slug?: string | null, title: string } | null, headings?: Array<{ depth?: number | null, value?: string | null } | null> | null } | null };
+export type GetSinglePostQuery = { mdx?: { body: string, frontmatter?: { tags?: Array<string | null> | null, date?: any | null, slug?: string | null, title: string } | null, headings?: Array<{ depth?: number | null, value?: string | null } | null> | null } | null };
 
 export type GetTaggedProjectMdxQueryVariables = Exact<{
   tag?: InputMaybe<Scalars['String']>;
