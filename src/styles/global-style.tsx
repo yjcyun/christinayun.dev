@@ -5,6 +5,7 @@ const GlobalStyle = createGlobalStyle`
   :root {
     --slate-000: #080b13;
     --slate-900: #0C111C;
+    --slate-850: #161f32;
     --slate-800:#111827;
     --slate-700: #334155;
     --slate-600: #475569;

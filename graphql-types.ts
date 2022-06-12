@@ -609,9 +609,9 @@ export type MdxFrontmatter = {
   thumbnail?: Maybe<File>;
   featured?: Maybe<Scalars['Boolean']>;
   archived?: Maybe<Scalars['Boolean']>;
+  date?: Maybe<Scalars['Date']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
-  date?: Maybe<Scalars['Date']>;
   image?: Maybe<File>;
 };
 
@@ -1130,9 +1130,9 @@ export type MdxFrontmatterFilterInput = {
   thumbnail?: InputMaybe<FileFilterInput>;
   featured?: InputMaybe<BooleanQueryOperatorInput>;
   archived?: InputMaybe<BooleanQueryOperatorInput>;
+  date?: InputMaybe<DateQueryOperatorInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
-  date?: InputMaybe<DateQueryOperatorInput>;
   image?: InputMaybe<FileFilterInput>;
 };
 
@@ -1474,9 +1474,9 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___thumbnail___children'
   | 'childrenMdx___frontmatter___featured'
   | 'childrenMdx___frontmatter___archived'
+  | 'childrenMdx___frontmatter___date'
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___slug'
-  | 'childrenMdx___frontmatter___date'
   | 'childrenMdx___frontmatter___image___sourceInstanceName'
   | 'childrenMdx___frontmatter___image___absolutePath'
   | 'childrenMdx___frontmatter___image___relativePath'
@@ -1612,9 +1612,9 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___thumbnail___children'
   | 'childMdx___frontmatter___featured'
   | 'childMdx___frontmatter___archived'
+  | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___slug'
-  | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___image___sourceInstanceName'
   | 'childMdx___frontmatter___image___absolutePath'
   | 'childMdx___frontmatter___image___relativePath'
@@ -3482,9 +3482,9 @@ export type MdxFieldsEnum =
   | 'frontmatter___thumbnail___internal___type'
   | 'frontmatter___featured'
   | 'frontmatter___archived'
+  | 'frontmatter___date'
   | 'frontmatter___tags'
   | 'frontmatter___slug'
-  | 'frontmatter___date'
   | 'frontmatter___image___sourceInstanceName'
   | 'frontmatter___image___absolutePath'
   | 'frontmatter___image___relativePath'
@@ -3710,6 +3710,11 @@ export type MdxSortInput = {
   fields?: InputMaybe<Array<InputMaybe<MdxFieldsEnum>>>;
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
+
+export type GetArchivedProjectsMdxQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetArchivedProjectsMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, date?: any | null } | null }> } };
 
 export type GetAllDevBlogMdxQueryVariables = Exact<{ [key: string]: never; }>;
 

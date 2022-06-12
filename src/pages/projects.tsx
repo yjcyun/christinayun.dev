@@ -5,6 +5,7 @@ import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
 
 import ProjectCardGrid from "@components/page/projects/project-card-grid";
+import HighlightedLink from "@components/ui/highlighted-link";
 
 export type GetAllProjectMdxQuery = {
   projectsMdx: {
@@ -40,10 +41,7 @@ const PostsPage = ({ data }: PageProps<GetAllProjectMdxQuery>) => {
             These are some of the projects that I’ve made. Open source projects
             have Github link so feel free to check out the source code if you
             like the live site. View more in the{" "}
-            <Link to="/projects/archived" style={{ color: "var(--accent)" }}>
-              archived list
-            </Link>
-            .
+            <HighlightedLink to="/archive" label="archived list" />.
           </>
         }
       />
