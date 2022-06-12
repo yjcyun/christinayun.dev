@@ -12,12 +12,11 @@ const StyledTitle = styled.h3`
   font-weight: 600;
 `;
 
-const StyledCard = styled.div`
+const StyledCard = styled(Link)`
   background: var(--slate-800);
   transition: 0.2s;
   padding: 1.5rem;
   display: block;
-  cursor: pointer;
 
   &:hover {
     transform: translateY(-0.3rem);
@@ -26,6 +25,7 @@ const StyledCard = styled.div`
       color: var(--accent);
     }
   }
+
   @media ${device.tabletS} {
     padding: 2rem;
   }
@@ -48,18 +48,23 @@ type BlogCardProps =
 
 const BlogCard = ({ date, title, slug, tags }: BlogCardProps) => {
   return (
-    <StyledCard role="link" onClick={() => navigate(`/blog/${slug}`)}>
+    <StyledCard to={`/blog/${slug}`}>
       <StyledDate>{date}</StyledDate>
       <StyledContent>
         <StyledTitle>{title}</StyledTitle>
       </StyledContent>
       <StyledTagsContainer>
         {tags?.map((tag) => (
-          <Link to={`/blog/tags/${tag.toLocaleLowerCase()}`} key={tag}>
-            <Button key={tag} type="pill">
-              {tag}
-            </Button>
-          </Link>
+          <Button
+            key={tag}
+            type="pill"
+            onClick={(e) => {
+              e.preventDefault();
+              navigate(`/blog/tags/${tag.toLocaleLowerCase()}`);
+            }}
+          >
+            {tag}
+          </Button>
         ))}
       </StyledTagsContainer>
     </StyledCard>

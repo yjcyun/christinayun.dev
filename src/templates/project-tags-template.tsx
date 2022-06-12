@@ -1,23 +1,12 @@
 import React from "react";
-import { graphql, Link, PageProps } from "gatsby";
-import { FiMinus, FiArrowLeft } from "react-icons/fi";
+import { graphql, PageProps } from "gatsby";
+import { FiMinus } from "react-icons/fi";
 
+import BackLink from "@components/ui/back-link";
 import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
 import ProjectCardGrid from "@components/page/projects/project-card-grid";
 import { GetAllProjectMdxQuery } from "@pages/projects";
-import styled from "styled-components";
-
-const StyledBackLink = styled(Link)`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
-
-  &:hover {
-    text-decoration: underline;
-  }
-`;
 
 type GetProjectTagsQuery = {
   tag: string;
@@ -37,10 +26,7 @@ const ProjectTagsTemplate = (
 
   return (
     <Layout>
-      <StyledBackLink to="/projects">
-        <FiArrowLeft />
-        Back to all projects
-      </StyledBackLink>
+      <BackLink to="projects" label="projects" />
       <PageTitle
         title={
           <>

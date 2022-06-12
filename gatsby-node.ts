@@ -17,10 +17,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      blogTags: allMdx(filter: { fileAbsolutePath: { regex: "/dev-blog/" } }) {
+        distinct(field: frontmatter___tags)
+      }
     }
   `);
 
-  result.data.projectTags.distinct.forEach((tag) => {
+  result.data.projectTags.distinct.forEach((tag: string) => {
     createPage({
       path: `/projects/tags/${tag.toLowerCase()}`,
       component: path.resolve(`src/templates/project-tags-template.tsx`),
@@ -29,12 +32,21 @@ exports.createPages = async ({ graphql, actions }) => {
   });
 
   result.data.posts.nodes.forEach(({ frontmatter: { slug } }) => {
+    console.log(slug);
     createPage({
       path: `/blog/${slug}`,
       component: path.resolve(`src/templates/post-template.tsx`),
       context: {
         slug,
       },
+    });
+  });
+
+  result.data.blogTags.distinct.forEach((tag: string) => {
+    createPage({
+      path: `/blog/tags/${tag.toLowerCase()}`,
+      component: path.resolve(`src/templates/blog-tags-template.tsx`),
+      context: { tag },
     });
   });
 };

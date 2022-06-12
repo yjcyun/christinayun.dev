@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, PageProps } from "gatsby";
+import { graphql, navigate, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
 import Layout from "@components/layout/layout";
@@ -52,7 +52,14 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
           <time>{date}</time>
           <StyleCategoriesContainer>
             {tags?.map((tag) => (
-              <Button type="pill" key={tag}>
+              <Button
+                type="pill"
+                key={tag}
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate(`/blog/tags/${tag!.toLocaleLowerCase()}`);
+                }}
+              >
                 {tag}
               </Button>
             ))}

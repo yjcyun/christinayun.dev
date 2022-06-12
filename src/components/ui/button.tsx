@@ -11,7 +11,7 @@ type ButtonProps = {
   size?: ButtonSize;
   style?: React.CSSProperties;
   type?: ButtonType;
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
 const getButtonTypeStyle = (

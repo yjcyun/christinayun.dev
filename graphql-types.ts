@@ -3573,6 +3573,13 @@ export type GetAllProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetAllProjectMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
+export type GetTaggedBlogPostsMdxQueryVariables = Exact<{
+  tag?: InputMaybe<Scalars['String']>;
+}>;
+
+
+export type GetTaggedBlogPostsMdxQuery = { blogMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null, tags?: Array<string | null> | null } | null }> } };
+
 export type GetSinglePostQueryVariables = Exact<{
   slug?: InputMaybe<Scalars['String']>;
 }>;
