@@ -2,8 +2,12 @@ import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: ``,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: `Christina's Digital Space`,
+    description: `Christina Yun is a JavaScript developer who works on creating useful web applications. She's passionate about design, coding, and learning.`,
+    siteUrl: `https://www.christinayun.dev`,
+    titleTemplate: `%s - Christina Yujeong Yun`,
+    twitterUsername: `@xtina_yun`,
+    image: `src/images/main-screenshot.png`,
   },
   plugins: [
     "gatsby-plugin-styled-components",

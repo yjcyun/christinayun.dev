@@ -247,6 +247,8 @@ export type DirectoryCtimeArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   jsxRuntime?: Maybe<Scalars['String']>;
@@ -269,6 +271,9 @@ export type SiteSiteMetadata = {
   title?: Maybe<Scalars['String']>;
   description?: Maybe<Scalars['String']>;
   siteUrl?: Maybe<Scalars['String']>;
+  titleTemplate?: Maybe<Scalars['String']>;
+  twitterUsername?: Maybe<Scalars['String']>;
+  image?: Maybe<Scalars['String']>;
 };
 
 export type SiteFunction = Node & {
@@ -800,6 +805,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -2011,6 +2018,9 @@ export type SiteSiteMetadataFilterInput = {
   title?: InputMaybe<StringQueryOperatorInput>;
   description?: InputMaybe<StringQueryOperatorInput>;
   siteUrl?: InputMaybe<StringQueryOperatorInput>;
+  titleTemplate?: InputMaybe<StringQueryOperatorInput>;
+  twitterUsername?: InputMaybe<StringQueryOperatorInput>;
+  image?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type SiteConnection = {
@@ -2063,6 +2073,11 @@ export type SiteFieldsEnum =
   | 'siteMetadata___title'
   | 'siteMetadata___description'
   | 'siteMetadata___siteUrl'
+  | 'siteMetadata___titleTemplate'
+  | 'siteMetadata___twitterUsername'
+  | 'siteMetadata___image'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'jsxRuntime'
@@ -2198,6 +2213,8 @@ export type SiteGroupConnectionGroupArgs = {
 export type SiteFilterInput = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -3544,6 +3561,11 @@ export type MdxSortInput = {
   fields?: InputMaybe<Array<InputMaybe<MdxFieldsEnum>>>;
   order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
 };
+
+export type GetSeoQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetSeoQuery = { site?: { siteMetadata?: { titleTemplate?: string | null, siteUrl?: string | null, twitterUsername?: string | null, defaultTitle?: string | null, defaultDescription?: string | null, defaultImage?: string | null } | null } | null };
 
 export type GetArchivedProjectsMdxQueryVariables = Exact<{ [key: string]: never; }>;
 

@@ -4,6 +4,7 @@ import { graphql, PageProps } from "gatsby";
 import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
 import PostsGrid from "@components/page/posts/posts-grid";
+import Seo from "@components/ui/seo";
 
 export type GetDevBlogMdxQuery = {
   blogMdx: {
@@ -28,6 +29,10 @@ const Blog = ({ data }: PageProps<GetDevBlogMdxQuery>) => {
 
   return (
     <Layout>
+      <Seo
+        title="Blog about React, JavaScript, and Web Development"
+        description="Christina Yujeong Yun writes about frontend development, React and miscellaneous software topics she has learnt and discovered."
+      />
       <PageTitle
         title="Blog"
         description="This is where I write notes on what I learned and discovered. I thought I would share a piece of my knowledge with the world. Hope you find some of them useful!"

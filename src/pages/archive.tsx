@@ -3,6 +3,7 @@ import Layout from "@components/layout/layout";
 import Table from "@components/page/archive/table";
 import PageTitle from "@components/ui/page-title";
 import { graphql, PageProps } from "gatsby";
+import Seo from "@components/ui/seo";
 
 export type GetArchivedProjectsMdxQuery = {
   projectsMdx: {
@@ -26,6 +27,7 @@ const Archive = ({ data }: PageProps<GetArchivedProjectsMdxQuery>) => {
 
   return (
     <Layout>
+      <Seo title="Archived Projects" />
       <PageTitle title="Archived Projects" />
       <Table data={projects} />
     </Layout>

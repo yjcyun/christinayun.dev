@@ -7,6 +7,7 @@ import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
 import ProjectCardGrid from "@components/page/projects/project-card-grid";
 import { GetAllProjectMdxQuery } from "@pages/projects";
+import Seo from "@components/ui/seo";
 
 type GetProjectTagsQuery = {
   tag: string;
@@ -26,6 +27,7 @@ const ProjectTagsTemplate = (
 
   return (
     <Layout>
+      <Seo title={`${tag} Projects`} />
       <BackLink to="projects" label="projects" />
       <PageTitle
         title={

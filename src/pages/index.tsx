@@ -6,6 +6,7 @@ import Hero from "@components/page/home/hero";
 import Featured from "@components/page/home/featured";
 import ProjectCard from "@components/ui/cards/project-card";
 import BlogCard from "@components/ui/cards/blog-card";
+import Seo from "@components/ui/seo";
 
 import { GetAllProjectMdxQuery } from "./projects";
 import { GetDevBlogMdxQuery } from "./blog";
@@ -13,7 +14,6 @@ import { GetDevBlogMdxQuery } from "./blog";
 type GetIndexDataQuery = GetAllProjectMdxQuery & GetDevBlogMdxQuery;
 
 const IndexPage = ({ data }: PageProps<GetIndexDataQuery>) => {
-  console.log(data);
   const {
     projectsMdx: { nodes: projects },
   } = data;
@@ -23,6 +23,7 @@ const IndexPage = ({ data }: PageProps<GetIndexDataQuery>) => {
 
   return (
     <Layout>
+      <Seo />
       <Hero />
       <Featured type="projects" title="Featured Projects">
         {projects.map(({ frontmatter, id }) => (

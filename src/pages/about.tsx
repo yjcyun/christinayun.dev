@@ -3,6 +3,7 @@ import Layout from "@components/layout/layout";
 import AboutBanner from "@components/page/about/banner";
 import styled from "styled-components";
 import Section from "@components/page/about/section";
+import Seo from "@components/ui/seo";
 
 const StyledAbout = styled.section`
   max-width: var(--md-width);
@@ -12,6 +13,7 @@ const StyledAbout = styled.section`
 const About = () => {
   return (
     <Layout>
+      <Seo title="About" />
       <AboutBanner />
       <StyledAbout>
         <Section

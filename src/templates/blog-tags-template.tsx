@@ -7,6 +7,7 @@ import BackLink from "@components/ui/back-link";
 import PageTitle from "@components/ui/page-title";
 import PostsGrid from "@components/page/posts/posts-grid";
 import { GetDevBlogMdxQuery } from "@pages/blog";
+import Seo from "@components/ui/seo";
 
 type GetBlogTagsQuery = {
   tag: string;
@@ -27,6 +28,7 @@ const BlogTagsTemplate = (
 
   return (
     <Layout>
+      <Seo title={`Blog Posts on ${tag}`} />
       <BackLink to="blog" label="blog posts" />
       <PageTitle
         title={
