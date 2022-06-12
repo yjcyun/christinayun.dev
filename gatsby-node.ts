@@ -10,6 +10,13 @@ exports.createPages = async ({ graphql, actions }) => {
       ) {
         distinct(field: frontmatter___tags)
       }
+      posts: allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
     }
   `);
 
@@ -20,39 +27,14 @@ exports.createPages = async ({ graphql, actions }) => {
       context: { tag },
     });
   });
+
+  result.data.posts.nodes.forEach(({ frontmatter: { slug } }) => {
+    createPage({
+      path: `/blog/${slug}`,
+      component: path.resolve(`src/templates/post-template.tsx`),
+      context: {
+        slug,
+      },
+    });
+  });
 };
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions;
-
-//   const result = await graphql(`
-//     {
-//       allMdx {
-//         nodes {
-//           frontmatter {
-//             slug
-//           }
-//         }
-//       }
-//     }
-//   `);
-
-//   result.data.allMdx.nodes.forEach(({ frontmatter: { slug } }) => {
-//     createPage({
-//       path: `/posts/${slug}`,
-//       component: path.resolve(`src/templates/post-template.tsx`),
-//       context: {
-//         slug,
-//       },
-//     });
-//   });
-// };
-
-// result.data.allMdx.nodes.forEach(({ frontmatter: { slug } }) => {
-//   createPage({
-//     path: `/posts/${slug}`,
-//     component: path.resolve(`src/templates/post-template.tsx`),
-//     context: {
-//       slug,
-//     },
-//   });
-// });

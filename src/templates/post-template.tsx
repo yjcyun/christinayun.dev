@@ -13,19 +13,19 @@ const StyledPostTemplate = styled.div`
   display: flex;
   position: relative;
   justify-content: space-between;
-
-  @media ${device.laptopM} {
-    margin-right: -17rem;
-  }
 `;
 
 const StyledArticle = styled.article`
-  max-width: 43rem;
+  max-width: var(--md-width);
   width: 100%;
 
   time {
     font-size: 1rem;
   }
+`;
+
+const StyledH1 = styled.h1`
+  font-size: 2.5rem;
 `;
 
 const StyleCategoriesContainer = styled.div`
@@ -56,7 +56,7 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
     <Layout>
       <StyledPostTemplate>
         <StyledArticle>
-          <h1>{title}</h1>
+          <StyledH1>{title}</StyledH1>
           <time>{date}</time>
           <StyleCategoriesContainer>
             {tags?.map((tag) => (

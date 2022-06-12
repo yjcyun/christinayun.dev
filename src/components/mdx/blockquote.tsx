@@ -6,9 +6,9 @@ interface BlockquoteProps {
 }
 
 const StyledBlockquote = styled.blockquote`
-  border-left: 2px solid var(--faint-accent);
+  border-left: 4px solid var(--accent);
   padding: 1.25rem;
-  background: rgb(241, 245, 249);
+  background: var(--slate-000);
   margin: 1.5rem 0;
 `;
 
