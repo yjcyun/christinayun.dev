@@ -5,8 +5,8 @@ import { device } from "@constants/device";
 import { Link } from "gatsby";
 
 const StyledHero = styled.div`
-  background-color: var(--slate-800);
-  padding: 1rem;
+  /* background-color: var(--slate-800); */
+  /* padding: 1rem;
 
   @media ${device.tablet} {
     padding: 2rem;
@@ -14,7 +14,7 @@ const StyledHero = styled.div`
 
   @media ${device.tabletL} {
     padding: 4rem;
-  } ;
+  } ; */
 `;
 
 const StyledH1 = styled.h1`
@@ -22,7 +22,7 @@ const StyledH1 = styled.h1`
   font-size: 2.5rem;
 
   @media ${device.tablet} {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 `;
 
@@ -48,9 +48,9 @@ const Hero = () => {
         useful apps and continue making beautiful websites while expanding my
         knowledge in software engineering.
       </StyledDesc>
-      <Link to="/about">
+      {/* <Link to="/about">
         <Button>About me</Button>
-      </Link>
+      </Link> */}
     </StyledHero>
   );
 };

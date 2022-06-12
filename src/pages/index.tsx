@@ -47,6 +47,7 @@ export const query = graphql`
         fileAbsolutePath: { regex: "/projects/" }
         frontmatter: { featured: { eq: true } }
       }
+      limit: 2
     ) {
       nodes {
         frontmatter {
@@ -68,9 +69,9 @@ export const query = graphql`
     blogMdx: allMdx(
       filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: frontmatter___date, order: DESC }
+      limit: 2
     ) {
       nodes {
-        body
         frontmatter {
           description
           date(formatString: "MMMM YYYY")

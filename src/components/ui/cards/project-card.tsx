@@ -43,6 +43,7 @@ const StyledProjectCard = styled.div<{
 const StyledThumbnailContainer = styled.div`
   display: none;
   padding: 2rem;
+  background-color: var(--slate-100);
 
   @media ${device.tablet} {
     display: flex;
@@ -51,7 +52,7 @@ const StyledThumbnailContainer = styled.div`
   }
 
   @media ${device.laptop} {
-    padding: 0;
+    padding: 1.5rem;
   }
 `;
 

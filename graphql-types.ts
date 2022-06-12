@@ -608,6 +608,7 @@ export type MdxFrontmatter = {
   sourceLink?: Maybe<Scalars['String']>;
   thumbnail?: Maybe<File>;
   featured?: Maybe<Scalars['Boolean']>;
+  archived?: Maybe<Scalars['Boolean']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
   date?: Maybe<Scalars['Date']>;
@@ -1128,6 +1129,7 @@ export type MdxFrontmatterFilterInput = {
   sourceLink?: InputMaybe<StringQueryOperatorInput>;
   thumbnail?: InputMaybe<FileFilterInput>;
   featured?: InputMaybe<BooleanQueryOperatorInput>;
+  archived?: InputMaybe<BooleanQueryOperatorInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
@@ -1471,6 +1473,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___thumbnail___id'
   | 'childrenMdx___frontmatter___thumbnail___children'
   | 'childrenMdx___frontmatter___featured'
+  | 'childrenMdx___frontmatter___archived'
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___slug'
   | 'childrenMdx___frontmatter___date'
@@ -1608,6 +1611,7 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___thumbnail___id'
   | 'childMdx___frontmatter___thumbnail___children'
   | 'childMdx___frontmatter___featured'
+  | 'childMdx___frontmatter___archived'
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___slug'
   | 'childMdx___frontmatter___date'
@@ -3477,6 +3481,7 @@ export type MdxFieldsEnum =
   | 'frontmatter___thumbnail___internal___owner'
   | 'frontmatter___thumbnail___internal___type'
   | 'frontmatter___featured'
+  | 'frontmatter___archived'
   | 'frontmatter___tags'
   | 'frontmatter___slug'
   | 'frontmatter___date'
@@ -3714,7 +3719,7 @@ export type GetAllDevBlogMdxQuery = { blogMdx: { nodes: Array<{ body: string, id
 export type GetFeaturedProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedProjectMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> }, blogMdx: { nodes: Array<{ body: string, id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null } | null }> } };
+export type GetFeaturedProjectMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> }, blogMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null } | null }> } };
 
 export type GetAllProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 

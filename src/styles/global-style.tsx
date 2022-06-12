@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: var(--bodyFF);
-    max-width: var(--lg-width);
+    max-width: var(--md-width);
     margin: auto;
     color: var(--slate-100);
     background: var(--slate-900);

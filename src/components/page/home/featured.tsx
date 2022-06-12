@@ -2,10 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import PageTitle from "@components/ui/page-title";
-import FeaturedBlogCard from "@components/ui/cards/featured-blog-card";
-import ProjectCard from "@components/ui/cards/project-card";
 import { device } from "@constants/device";
-import { GetAllProjectMdxQuery } from "@pages/projects";
 
 const StyledFeatured = styled.section`
   margin-top: 3rem;
@@ -22,23 +19,20 @@ const StyledCardContainer = styled.div<{ $grid: number }>`
   }
 `;
 
-const StyledFeaturedSection = styled.section``;
-
-interface FeaturedProps {
+type FeaturedProps = {
   title: string;
   type: "blog" | "projects";
   children: React.ReactNode;
-}
+};
 
 const Featured = ({ title, type, children }: FeaturedProps) => {
   return (
     <StyledFeatured>
       <PageTitle title={title} section />
-      <StyledFeaturedSection>
-        <StyledCardContainer $grid={type === "projects" ? 2 : 3}>
-          {children}
-        </StyledCardContainer>
-      </StyledFeaturedSection>
+
+      <StyledCardContainer $grid={type === "projects" ? 1 : 2}>
+        {children}
+      </StyledCardContainer>
     </StyledFeatured>
   );
 };

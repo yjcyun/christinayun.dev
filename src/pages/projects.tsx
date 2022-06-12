@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, PageProps } from "gatsby";
+import { graphql, Link, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
@@ -35,7 +35,17 @@ const PostsPage = ({ data }: PageProps<GetAllProjectMdxQuery>) => {
     <Layout>
       <PageTitle
         title="Projects"
-        description="These are some of the projects that I’ve made. Open source projects have Github link so feel free to check out the source code if you like the live site."
+        description={
+          <>
+            These are some of the projects that I’ve made. Open source projects
+            have Github link so feel free to check out the source code if you
+            like the live site. View more in the{" "}
+            <Link to="/projects/archived" style={{ color: "var(--accent)" }}>
+              archived list
+            </Link>
+            .
+          </>
+        }
       />
       <ProjectCardGrid projects={projects} />
     </Layout>
@@ -44,7 +54,12 @@ const PostsPage = ({ data }: PageProps<GetAllProjectMdxQuery>) => {
 
 export const query = graphql`
   query GetAllProjectMdx {
-    projectsMdx: allMdx(filter: { fileAbsolutePath: { regex: "/projects/" } }) {
+    projectsMdx: allMdx(
+      filter: {
+        fileAbsolutePath: { regex: "/projects/" }
+        frontmatter: { archived: { eq: false } }
+      }
+    ) {
       nodes {
         frontmatter {
           description

@@ -10,21 +10,17 @@ const StyledProjectCardGrid = styled.div`
   display: grid;
   grid-gap: 2rem;
   grid-template-columns: 1fr;
-
-  @media ${device.laptop} {
-    grid-template-columns: 1fr 1fr;
-  }
 `;
 
 type ProjectCardGrid = {
-  projects: GetAllProjectMdxQuery["allMdx"]["nodes"];
+  projects: GetAllProjectMdxQuery["projectsMdx"]["nodes"];
 };
 
 const ProjectCardGrid = ({ projects }: ProjectCardGrid) => {
   return (
     <StyledProjectCardGrid>
       {projects.map(({ frontmatter, id }) => (
-        <ProjectCard key={id} displayAll {...frontmatter} />
+        <ProjectCard key={id} {...frontmatter} />
       ))}
     </StyledProjectCardGrid>
   );
