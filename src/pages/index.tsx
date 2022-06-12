@@ -77,6 +77,7 @@ export const query = graphql`
           date(formatString: "MMMM YYYY")
           title
           slug
+          tags
         }
         id
       }

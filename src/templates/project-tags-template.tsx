@@ -28,7 +28,7 @@ const ProjectTagsTemplate = (
 ) => {
   const {
     data: {
-      allMdx: { nodes: projects },
+      projectsMdx: { nodes: projects },
     },
   } = props;
   const {
@@ -55,7 +55,7 @@ const ProjectTagsTemplate = (
 
 export const query = graphql`
   query GetTaggedProjectMdx($tag: String) {
-    allMdx(
+    projectsMdx: allMdx(
       filter: {
         fileAbsolutePath: { regex: "/projects/" }
         frontmatter: { tags: { eq: $tag } }

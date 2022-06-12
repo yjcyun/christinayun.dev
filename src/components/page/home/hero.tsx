@@ -5,16 +5,7 @@ import { device } from "@constants/device";
 import { Link } from "gatsby";
 
 const StyledHero = styled.div`
-  /* background-color: var(--slate-800); */
-  /* padding: 1rem;
-
-  @media ${device.tablet} {
-    padding: 2rem;
-  }
-
-  @media ${device.tabletL} {
-    padding: 4rem;
-  } ; */
+  margin-bottom: 5rem;
 `;
 
 const StyledH1 = styled.h1`
@@ -29,7 +20,6 @@ const StyledH1 = styled.h1`
 const StyledDesc = styled.p`
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  max-width: 600px;
   color: var(--slate-400);
   font-size: 1.1rem;
 

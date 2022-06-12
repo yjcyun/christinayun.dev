@@ -10,7 +10,7 @@ import styled from "styled-components";
 
 const StyledLatest = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1.5rem;
   margin-top: 3rem;
 `;
@@ -25,6 +25,7 @@ export type GetDevBlogMdxQuery = {
         date: string;
         title: string;
         slug: string;
+        tags: string[];
       };
     }>;
   };
@@ -35,7 +36,6 @@ const Blog = ({ data }: PageProps<GetDevBlogMdxQuery>) => {
     blogMdx: { nodes: devPosts },
   } = data;
 
-  console.log(devPosts);
   return (
     <Layout>
       <PageTitle
@@ -64,6 +64,7 @@ export const query = graphql`
           date(formatString: "MMMM YYYY")
           title
           slug
+          tags
         }
         id
       }

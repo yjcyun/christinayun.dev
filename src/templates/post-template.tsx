@@ -1,13 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, Link, PageProps } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 
-import Layout from "../components/layout/layout";
-import { device } from "../constants/device";
-import { GetSinglePostQuery } from "../../graphql-types";
-import TableOfContents from "../components/page/posts/table-of-contents";
+import Layout from "@components/layout/layout";
 import Button from "@components/ui/button";
+import { GetSinglePostQuery } from "@graphql-types";
 
 const StyledPostTemplate = styled.div`
   display: flex;
@@ -43,14 +41,8 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
     mdx: {
       frontmatter: { title, date, tags },
       body,
-      headings,
     },
   } = data;
-
-  const nonNullHeadings: { depth: number; value: string }[] | null | undefined =
-    headings?.map((heading) => {
-      return { depth: heading!.depth!, value: heading!.value! };
-    });
 
   return (
     <Layout>
@@ -67,9 +59,6 @@ const PostTemplate = ({ data }: PageProps<GetSinglePostQuery>) => {
           </StyleCategoriesContainer>
           <MDXRenderer>{body}</MDXRenderer>
         </StyledArticle>
-        {nonNullHeadings && nonNullHeadings.length > 0 && (
-          <TableOfContents headings={nonNullHeadings} />
-        )}
       </StyledPostTemplate>
     </Layout>
   );
@@ -84,10 +73,6 @@ export const query = graphql`
         date(formatString: "MMMM D, YYYY")
         slug
         title
-      }
-      headings {
-        depth
-        value
       }
     }
   }

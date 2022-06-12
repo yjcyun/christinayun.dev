@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 
 import { device } from "@constants/device";
 import Button from "@components/ui/button";
@@ -15,6 +15,9 @@ const StyledTitle = styled.h3`
 const StyledCard = styled.div`
   background: var(--slate-800);
   transition: 0.2s;
+  padding: 1.5rem;
+  display: block;
+  cursor: pointer;
 
   &:hover {
     transform: translateY(-0.3rem);
@@ -23,12 +26,6 @@ const StyledCard = styled.div`
       color: var(--accent);
     }
   }
-`;
-
-const StyledLink = styled(Link)`
-  padding: 1.5rem;
-  display: block;
-
   @media ${device.tabletS} {
     padding: 2rem;
   }
@@ -49,18 +46,29 @@ const StyledDate = styled.p`
 type BlogCardProps =
   GetDevBlogMdxQuery["blogMdx"]["nodes"][number]["frontmatter"];
 
-const BlogCard = ({ date, description, title, slug }: BlogCardProps) => {
+const BlogCard = ({ date, title, slug, tags }: BlogCardProps) => {
   return (
-    <StyledCard>
-      <StyledLink to={slug}>
-        <StyledDate>{date}</StyledDate>
-        <StyledContent>
-          <StyledTitle>{title}</StyledTitle>
-          <StyledDescription>{description}</StyledDescription>
-        </StyledContent>
-      </StyledLink>
+    <StyledCard role="link" onClick={() => navigate(`/blog/${slug}`)}>
+      <StyledDate>{date}</StyledDate>
+      <StyledContent>
+        <StyledTitle>{title}</StyledTitle>
+      </StyledContent>
+      <StyledTagsContainer>
+        {tags?.map((tag) => (
+          <Link to={`/blog/tags/${tag.toLocaleLowerCase()}`} key={tag}>
+            <Button key={tag} type="pill">
+              {tag}
+            </Button>
+          </Link>
+        ))}
+      </StyledTagsContainer>
     </StyledCard>
   );
 };
 
 export default BlogCard;
+const StyledTagsContainer = styled.div`
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
+`;

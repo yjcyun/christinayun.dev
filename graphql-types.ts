@@ -612,7 +612,6 @@ export type MdxFrontmatter = {
   date?: Maybe<Scalars['Date']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   slug?: Maybe<Scalars['String']>;
-  image?: Maybe<File>;
 };
 
 
@@ -1133,7 +1132,6 @@ export type MdxFrontmatterFilterInput = {
   date?: InputMaybe<DateQueryOperatorInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
   slug?: InputMaybe<StringQueryOperatorInput>;
-  image?: InputMaybe<FileFilterInput>;
 };
 
 export type FileFilterInput = {
@@ -1477,44 +1475,6 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___date'
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___slug'
-  | 'childrenMdx___frontmatter___image___sourceInstanceName'
-  | 'childrenMdx___frontmatter___image___absolutePath'
-  | 'childrenMdx___frontmatter___image___relativePath'
-  | 'childrenMdx___frontmatter___image___extension'
-  | 'childrenMdx___frontmatter___image___size'
-  | 'childrenMdx___frontmatter___image___prettySize'
-  | 'childrenMdx___frontmatter___image___modifiedTime'
-  | 'childrenMdx___frontmatter___image___accessTime'
-  | 'childrenMdx___frontmatter___image___changeTime'
-  | 'childrenMdx___frontmatter___image___birthTime'
-  | 'childrenMdx___frontmatter___image___root'
-  | 'childrenMdx___frontmatter___image___dir'
-  | 'childrenMdx___frontmatter___image___base'
-  | 'childrenMdx___frontmatter___image___ext'
-  | 'childrenMdx___frontmatter___image___name'
-  | 'childrenMdx___frontmatter___image___relativeDirectory'
-  | 'childrenMdx___frontmatter___image___dev'
-  | 'childrenMdx___frontmatter___image___mode'
-  | 'childrenMdx___frontmatter___image___nlink'
-  | 'childrenMdx___frontmatter___image___uid'
-  | 'childrenMdx___frontmatter___image___gid'
-  | 'childrenMdx___frontmatter___image___rdev'
-  | 'childrenMdx___frontmatter___image___ino'
-  | 'childrenMdx___frontmatter___image___atimeMs'
-  | 'childrenMdx___frontmatter___image___mtimeMs'
-  | 'childrenMdx___frontmatter___image___ctimeMs'
-  | 'childrenMdx___frontmatter___image___atime'
-  | 'childrenMdx___frontmatter___image___mtime'
-  | 'childrenMdx___frontmatter___image___ctime'
-  | 'childrenMdx___frontmatter___image___birthtime'
-  | 'childrenMdx___frontmatter___image___birthtimeMs'
-  | 'childrenMdx___frontmatter___image___blksize'
-  | 'childrenMdx___frontmatter___image___blocks'
-  | 'childrenMdx___frontmatter___image___publicURL'
-  | 'childrenMdx___frontmatter___image___childrenImageSharp'
-  | 'childrenMdx___frontmatter___image___childrenMdx'
-  | 'childrenMdx___frontmatter___image___id'
-  | 'childrenMdx___frontmatter___image___children'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
   | 'childrenMdx___excerpt'
@@ -1615,44 +1575,6 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___slug'
-  | 'childMdx___frontmatter___image___sourceInstanceName'
-  | 'childMdx___frontmatter___image___absolutePath'
-  | 'childMdx___frontmatter___image___relativePath'
-  | 'childMdx___frontmatter___image___extension'
-  | 'childMdx___frontmatter___image___size'
-  | 'childMdx___frontmatter___image___prettySize'
-  | 'childMdx___frontmatter___image___modifiedTime'
-  | 'childMdx___frontmatter___image___accessTime'
-  | 'childMdx___frontmatter___image___changeTime'
-  | 'childMdx___frontmatter___image___birthTime'
-  | 'childMdx___frontmatter___image___root'
-  | 'childMdx___frontmatter___image___dir'
-  | 'childMdx___frontmatter___image___base'
-  | 'childMdx___frontmatter___image___ext'
-  | 'childMdx___frontmatter___image___name'
-  | 'childMdx___frontmatter___image___relativeDirectory'
-  | 'childMdx___frontmatter___image___dev'
-  | 'childMdx___frontmatter___image___mode'
-  | 'childMdx___frontmatter___image___nlink'
-  | 'childMdx___frontmatter___image___uid'
-  | 'childMdx___frontmatter___image___gid'
-  | 'childMdx___frontmatter___image___rdev'
-  | 'childMdx___frontmatter___image___ino'
-  | 'childMdx___frontmatter___image___atimeMs'
-  | 'childMdx___frontmatter___image___mtimeMs'
-  | 'childMdx___frontmatter___image___ctimeMs'
-  | 'childMdx___frontmatter___image___atime'
-  | 'childMdx___frontmatter___image___mtime'
-  | 'childMdx___frontmatter___image___ctime'
-  | 'childMdx___frontmatter___image___birthtime'
-  | 'childMdx___frontmatter___image___birthtimeMs'
-  | 'childMdx___frontmatter___image___blksize'
-  | 'childMdx___frontmatter___image___blocks'
-  | 'childMdx___frontmatter___image___publicURL'
-  | 'childMdx___frontmatter___image___childrenImageSharp'
-  | 'childMdx___frontmatter___image___childrenMdx'
-  | 'childMdx___frontmatter___image___id'
-  | 'childMdx___frontmatter___image___children'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -3485,86 +3407,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___date'
   | 'frontmatter___tags'
   | 'frontmatter___slug'
-  | 'frontmatter___image___sourceInstanceName'
-  | 'frontmatter___image___absolutePath'
-  | 'frontmatter___image___relativePath'
-  | 'frontmatter___image___extension'
-  | 'frontmatter___image___size'
-  | 'frontmatter___image___prettySize'
-  | 'frontmatter___image___modifiedTime'
-  | 'frontmatter___image___accessTime'
-  | 'frontmatter___image___changeTime'
-  | 'frontmatter___image___birthTime'
-  | 'frontmatter___image___root'
-  | 'frontmatter___image___dir'
-  | 'frontmatter___image___base'
-  | 'frontmatter___image___ext'
-  | 'frontmatter___image___name'
-  | 'frontmatter___image___relativeDirectory'
-  | 'frontmatter___image___dev'
-  | 'frontmatter___image___mode'
-  | 'frontmatter___image___nlink'
-  | 'frontmatter___image___uid'
-  | 'frontmatter___image___gid'
-  | 'frontmatter___image___rdev'
-  | 'frontmatter___image___ino'
-  | 'frontmatter___image___atimeMs'
-  | 'frontmatter___image___mtimeMs'
-  | 'frontmatter___image___ctimeMs'
-  | 'frontmatter___image___atime'
-  | 'frontmatter___image___mtime'
-  | 'frontmatter___image___ctime'
-  | 'frontmatter___image___birthtime'
-  | 'frontmatter___image___birthtimeMs'
-  | 'frontmatter___image___blksize'
-  | 'frontmatter___image___blocks'
-  | 'frontmatter___image___publicURL'
-  | 'frontmatter___image___childrenImageSharp'
-  | 'frontmatter___image___childrenImageSharp___gatsbyImageData'
-  | 'frontmatter___image___childrenImageSharp___id'
-  | 'frontmatter___image___childrenImageSharp___children'
-  | 'frontmatter___image___childImageSharp___gatsbyImageData'
-  | 'frontmatter___image___childImageSharp___id'
-  | 'frontmatter___image___childImageSharp___children'
-  | 'frontmatter___image___childrenMdx'
-  | 'frontmatter___image___childrenMdx___rawBody'
-  | 'frontmatter___image___childrenMdx___fileAbsolutePath'
-  | 'frontmatter___image___childrenMdx___slug'
-  | 'frontmatter___image___childrenMdx___body'
-  | 'frontmatter___image___childrenMdx___excerpt'
-  | 'frontmatter___image___childrenMdx___headings'
-  | 'frontmatter___image___childrenMdx___html'
-  | 'frontmatter___image___childrenMdx___mdxAST'
-  | 'frontmatter___image___childrenMdx___tableOfContents'
-  | 'frontmatter___image___childrenMdx___timeToRead'
-  | 'frontmatter___image___childrenMdx___id'
-  | 'frontmatter___image___childrenMdx___children'
-  | 'frontmatter___image___childMdx___rawBody'
-  | 'frontmatter___image___childMdx___fileAbsolutePath'
-  | 'frontmatter___image___childMdx___slug'
-  | 'frontmatter___image___childMdx___body'
-  | 'frontmatter___image___childMdx___excerpt'
-  | 'frontmatter___image___childMdx___headings'
-  | 'frontmatter___image___childMdx___html'
-  | 'frontmatter___image___childMdx___mdxAST'
-  | 'frontmatter___image___childMdx___tableOfContents'
-  | 'frontmatter___image___childMdx___timeToRead'
-  | 'frontmatter___image___childMdx___id'
-  | 'frontmatter___image___childMdx___children'
-  | 'frontmatter___image___id'
-  | 'frontmatter___image___parent___id'
-  | 'frontmatter___image___parent___children'
-  | 'frontmatter___image___children'
-  | 'frontmatter___image___children___id'
-  | 'frontmatter___image___children___children'
-  | 'frontmatter___image___internal___content'
-  | 'frontmatter___image___internal___contentDigest'
-  | 'frontmatter___image___internal___description'
-  | 'frontmatter___image___internal___fieldOwners'
-  | 'frontmatter___image___internal___ignoreType'
-  | 'frontmatter___image___internal___mediaType'
-  | 'frontmatter___image___internal___owner'
-  | 'frontmatter___image___internal___type'
   | 'slug'
   | 'body'
   | 'excerpt'
@@ -3719,12 +3561,12 @@ export type GetArchivedProjectsMdxQuery = { projectsMdx: { nodes: Array<{ id: st
 export type GetAllDevBlogMdxQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllDevBlogMdxQuery = { blogMdx: { nodes: Array<{ body: string, id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null } | null }> } };
+export type GetAllDevBlogMdxQuery = { blogMdx: { nodes: Array<{ body: string, id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null, tags?: Array<string | null> | null } | null }> } };
 
 export type GetFeaturedProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetFeaturedProjectMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> }, blogMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null } | null }> } };
+export type GetFeaturedProjectMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> }, blogMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, date?: any | null, title: string, slug?: string | null, tags?: Array<string | null> | null } | null }> } };
 
 export type GetAllProjectMdxQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3736,14 +3578,14 @@ export type GetSinglePostQueryVariables = Exact<{
 }>;
 
 
-export type GetSinglePostQuery = { mdx?: { body: string, frontmatter?: { tags?: Array<string | null> | null, date?: any | null, slug?: string | null, title: string } | null, headings?: Array<{ depth?: number | null, value?: string | null } | null> | null } | null };
+export type GetSinglePostQuery = { mdx?: { body: string, frontmatter?: { tags?: Array<string | null> | null, date?: any | null, slug?: string | null, title: string } | null } | null };
 
 export type GetTaggedProjectMdxQueryVariables = Exact<{
   tag?: InputMaybe<Scalars['String']>;
 }>;
 
 
-export type GetTaggedProjectMdxQuery = { allMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
+export type GetTaggedProjectMdxQuery = { projectsMdx: { nodes: Array<{ id: string, frontmatter?: { description?: string | null, featured?: boolean | null, liveLink?: string | null, sourceLink?: string | null, tags?: Array<string | null> | null, title: string, thumbnail?: { childImageSharp?: { gatsbyImageData: any } | null } | null } | null }> } };
 
 export type GatsbyImageSharpFixedFragment = { base64?: string | null, width: number, height: number, src: string, srcSet: string };
 
