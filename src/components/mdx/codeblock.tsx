@@ -1,12 +1,11 @@
 import React from "react";
 import Highlight, { defaultProps } from "prism-react-renderer";
-import theme from "prism-react-renderer/themes/palenight";
+import theme from "prism-react-renderer/themes/dracula";
 import styled from "styled-components";
 
 const StyledPre = styled.pre`
   margin: 1rem 0;
   font-family: Consolas, Liberation Mono, Courier New, monospace;
-  background-color: var(--slate-700);
   overflow-x: auto;
   padding: 1rem 1.25rem;
   line-height: 1.7rem;
@@ -30,9 +29,15 @@ export const StyledLineContent = styled.span`
   width: 100%;
 `;
 
-export const Codeblock = ({ children }) => {
+type CodeblockProps = {
+  children: any;
+};
+
+export const Codeblock = ({ children }: CodeblockProps) => {
   const className = children.props.className;
   const language = className.replace(/language-/, "");
+
+  theme.plain.backgroundColor = "#263555";
 
   return (
     <Highlight
@@ -46,7 +51,7 @@ export const Codeblock = ({ children }) => {
           <code>
             {tokens.map((line, i) => (
               <StyledLines {...getLineProps({ line, key: i })}>
-                <StyledLineNo>{i + 1}</StyledLineNo>
+                {/* <StyledLineNo>{i + 1}</StyledLineNo> */}
                 <StyledLineContent>
                   {line.map((token, key) => (
                     <span {...getTokenProps({ token, key })} />
