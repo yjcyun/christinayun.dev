@@ -5,20 +5,31 @@ image: ./images/javascript.png
 slug: find-items-in-arrays
 ---
 
-```js
+### Problem:
+
+<p>Given a team id, find member's information.</p>
+
+```javascript
 const teams = [
   { id: "t1", name: "Team 1", members: ["u1", "u2"] },
   { id: "t2", name: "Team 2", members: ["u1", "u2", "u3"] },
 ];
 
 const users = [
-  { id: "u1", fullName: "Mars Yun", role: "Engineer" },
-  { id: "u2", fullName: "Chester Yun", role: "Consultant" },
+  { id: "u1", fullName: "Mars", role: "Engineer" },
+  { id: "u2", fullName: "Chester", role: "Consultant" },
+  { id: "u3", fullName: "Obi", role: "Frontend Developer" },
 ];
 
 const teamId = "t1";
+```
+
+### Solution:
+
+```javascript
 // find team
 const selectedTeam = teams.find((team) => team.id === teamId);
+
 // find memebers
 const members = selectedTeam.members;
 

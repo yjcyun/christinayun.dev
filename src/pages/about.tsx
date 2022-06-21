@@ -33,9 +33,10 @@ const About = () => {
         <Section
           title="What's in my toolbox?"
           list={[
-            "JavaScript,Typescript",
-            "React, Gatsby",
-            "CSS, SCSS, Styled-Components",
+            "JavaScript, Typescript",
+            "React, Gatsby, Context API, Redux",
+            "Vue, Vuex",
+            "CSS, SCSS, Styled-Components, TailwindCSS",
             "Framer motion",
             "Node, Express, NestJS",
             "HTML",
