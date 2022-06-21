@@ -1,12 +1,12 @@
 import React from "react";
-import { graphql, Link, PageProps } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
-
-import ProjectCardGrid from "@components/page/projects/project-card-grid";
 import HighlightedLink from "@components/ui/highlighted-link";
 import Seo from "@components/ui/seo";
+import Grid from "@components/ui/grid";
+import ProjectCard from "@components/ui/cards/project-card";
 
 export type GetAllProjectMdxQuery = {
   projectsMdx: {
@@ -47,7 +47,11 @@ const PostsPage = ({ data }: PageProps<GetAllProjectMdxQuery>) => {
           </>
         }
       />
-      <ProjectCardGrid projects={projects} />
+      <Grid grid={1}>
+        {projects.map(({ frontmatter, id }) => (
+          <ProjectCard key={id} {...frontmatter} />
+        ))}
+      </Grid>
     </Layout>
   );
 };

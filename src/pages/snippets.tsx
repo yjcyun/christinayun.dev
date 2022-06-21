@@ -3,7 +3,8 @@ import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
 import Seo from "@components/ui/seo";
 import { graphql, PageProps } from "gatsby";
-import SnippetCardGrid from "@components/page/snippets/snippet-card-grid";
+import Grid from "@components/ui/grid";
+import SnippetCard from "@components/ui/cards/snippet-card";
 
 export type GetAllSnippetsMdxQuery = {
   snippetsMdx: {
@@ -36,7 +37,11 @@ const Snippets = ({ data }: PageProps<GetAllSnippetsMdxQuery>) => {
         description="These are code snippets I've collected and saved."
       />
 
-      <SnippetCardGrid snippets={snippets} />
+      <Grid grid={2}>
+        {snippets.map(({ frontmatter, id }) => (
+          <SnippetCard {...frontmatter} key={id} />
+        ))}
+      </Grid>
     </Layout>
   );
 };

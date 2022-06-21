@@ -3,8 +3,9 @@ import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
-import PostsGrid from "@components/page/posts/posts-grid";
 import Seo from "@components/ui/seo";
+import Grid from "@components/ui/grid";
+import BlogCard from "@components/ui/cards/blog-card";
 
 export type GetDevBlogMdxQuery = {
   blogMdx: {
@@ -37,7 +38,11 @@ const Blog = ({ data }: PageProps<GetDevBlogMdxQuery>) => {
         title="Blog"
         description="This is where I write notes on what I learned and discovered. I thought I would share a piece of my knowledge with the world. Hope you find some of them useful!"
       />
-      <PostsGrid data={devPosts} />
+      <Grid grid={2}>
+        {devPosts.map(({ frontmatter, id }) => (
+          <BlogCard {...frontmatter} key={id} />
+        ))}
+      </Grid>
     </Layout>
   );
 };

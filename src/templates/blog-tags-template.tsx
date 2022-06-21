@@ -2,12 +2,14 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 import { FiMinus } from "react-icons/fi";
 
+import { GetDevBlogMdxQuery } from "@pages/blog";
+
 import Layout from "@components/layout/layout";
 import BackLink from "@components/ui/back-link";
 import PageTitle from "@components/ui/page-title";
-import PostsGrid from "@components/page/posts/posts-grid";
-import { GetDevBlogMdxQuery } from "@pages/blog";
 import Seo from "@components/ui/seo";
+import Grid from "@components/ui/grid";
+import BlogCard from "@components/ui/cards/blog-card";
 
 type GetBlogTagsQuery = {
   tag: string;
@@ -37,7 +39,11 @@ const BlogTagsTemplate = (
           </>
         }
       />
-      <PostsGrid data={devPosts} />
+      <Grid grid={2}>
+        {devPosts.map(({ frontmatter, id }) => (
+          <BlogCard {...frontmatter} key={id} />
+        ))}
+      </Grid>
     </Layout>
   );
 };

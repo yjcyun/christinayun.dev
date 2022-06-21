@@ -5,9 +5,10 @@ import { FiMinus } from "react-icons/fi";
 import BackLink from "@components/ui/back-link";
 import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
-import ProjectCardGrid from "@components/page/projects/project-card-grid";
 import { GetAllProjectMdxQuery } from "@pages/projects";
 import Seo from "@components/ui/seo";
+import Grid from "@components/ui/grid";
+import ProjectCard from "@components/ui/cards/project-card";
 
 type GetProjectTagsQuery = {
   tag: string;
@@ -36,7 +37,11 @@ const ProjectTagsTemplate = (
           </>
         }
       />
-      <ProjectCardGrid projects={projects} />
+      <Grid grid={1}>
+        {projects.map(({ frontmatter, id }) => (
+          <ProjectCard key={id} {...frontmatter} />
+        ))}
+      </Grid>
     </Layout>
   );
 };

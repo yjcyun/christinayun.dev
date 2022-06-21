@@ -1,8 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Button from "@components/ui/button";
+
 import { device } from "@constants/device";
-import { Link } from "gatsby";
 
 const StyledHero = styled.div`
   margin-bottom: 5rem;
@@ -38,9 +37,6 @@ const Hero = () => {
         useful apps and continue making beautiful websites while expanding my
         knowledge in software engineering.
       </StyledDesc>
-      {/* <Link to="/about">
-        <Button>About me</Button>
-      </Link> */}
     </StyledHero>
   );
 };

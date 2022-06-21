@@ -1,8 +1,9 @@
 import React from "react";
-import Layout from "@components/layout/layout";
-import AboutBanner from "@components/page/about/banner";
 import styled from "styled-components";
-import Section from "@components/page/about/section";
+
+import Layout from "@components/layout/layout";
+import AboutBanner from "@components/about/banner";
+import Section from "@components/about/section";
 import Seo from "@components/ui/seo";
 
 const StyledAbout = styled.section`

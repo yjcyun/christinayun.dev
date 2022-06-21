@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 import { Link } from "gatsby";
+import { ImageDataLike } from "gatsby-plugin-image";
 
-import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
-import Javascript from "../../../images/snippets/javascript.svg";
 import { GetAllSnippetsMdxQuery } from "@pages/snippets";
-import SnippetsLogo from "../snippets-logo";
+
+import SnippetsLogo from "@components/ui/snippets-logo";
 
 const StyledTitle = styled.h3`
   font-size: 1.2rem;

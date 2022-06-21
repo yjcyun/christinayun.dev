@@ -2,14 +2,6 @@ import { device } from "@constants/device";
 import React from "react";
 import styled from "styled-components";
 
-export interface PageTitleProps {
-  title: string | React.ReactNode;
-  description?: string | React.ReactNode;
-  section?: boolean;
-}
-
-const StyledPageTitle = styled.div``;
-
 const StyledH1 = styled.h1`
   font-size: 2.5rem;
   border-bottom: 5px solid var(--secondary);
@@ -34,12 +26,18 @@ const StyledP = styled.p`
   max-width: var(--md-width);
 `;
 
+type PageTitleProps = {
+  title: string | React.ReactNode;
+  description?: string | React.ReactNode;
+  section?: boolean;
+};
+
 const PageTitle = ({ title, description, section }: PageTitleProps) => {
   return (
-    <StyledPageTitle>
+    <div>
       {section ? <StyledH2>{title}</StyledH2> : <StyledH1>{title}</StyledH1>}
       {description && <StyledP>{description}</StyledP>}
-    </StyledPageTitle>
+    </div>
   );
 };
 

@@ -1,6 +1,6 @@
 import React from "react";
 import Layout from "@components/layout/layout";
-import Table from "@components/page/archive/table";
+import Table from "@components/archive/table";
 import PageTitle from "@components/ui/page-title";
 import { graphql, PageProps } from "gatsby";
 import Seo from "@components/ui/seo";

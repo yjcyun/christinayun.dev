@@ -2,8 +2,8 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 
 import Layout from "@components/layout/layout";
-import Hero from "@components/page/home/hero";
-import Featured from "@components/page/home/featured";
+import Hero from "@components/home/hero";
+import Featured from "@components/home/featured";
 import ProjectCard from "@components/ui/cards/project-card";
 import BlogCard from "@components/ui/cards/blog-card";
 import Seo from "@components/ui/seo";
