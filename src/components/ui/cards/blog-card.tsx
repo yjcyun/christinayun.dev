@@ -35,12 +35,14 @@ const StyledContent = styled.div`
   margin-top: 1.3rem;
 `;
 
-const StyledDescription = styled.p`
-  color: var(--slate-400);
-`;
-
 const StyledDate = styled.p`
   color: var(--slate-500);
+`;
+
+const StyledTagsContainer = styled.div`
+  display: flex;
+  gap: 0.3rem;
+  flex-wrap: wrap;
 `;
 
 type BlogCardProps =
@@ -72,8 +74,3 @@ const BlogCard = ({ date, title, slug, tags }: BlogCardProps) => {
 };
 
 export default BlogCard;
-const StyledTagsContainer = styled.div`
-  display: flex;
-  gap: 0.3rem;
-  flex-wrap: wrap;
-`;
