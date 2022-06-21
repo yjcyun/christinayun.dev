@@ -17,6 +17,13 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
+      snippets: allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
       blogTags: allMdx(filter: { fileAbsolutePath: { regex: "/dev-blog/" } }) {
         distinct(field: frontmatter___tags)
       }
@@ -35,9 +42,15 @@ exports.createPages = async ({ graphql, actions }) => {
     createPage({
       path: `/blog/${slug}`,
       component: path.resolve(`src/templates/post-template.tsx`),
-      context: {
-        slug,
-      },
+      context: { slug },
+    });
+  });
+
+  result.data.snippets.nodes.forEach(({ frontmatter: { slug } }) => {
+    createPage({
+      path: `/snippets/${slug}`,
+      component: path.resolve(`src/templates/snippet-template.tsx`),
+      context: { slug },
     });
   });
 

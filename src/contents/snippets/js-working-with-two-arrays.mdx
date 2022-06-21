@@ -1,0 +1,30 @@
+---
+title: Find items in arrays
+language: javascript
+image: ./images/javascript.png
+slug: find-items-in-arrays
+---
+
+```js
+const teams = [
+  { id: "t1", name: "Team 1", members: ["u1", "u2"] },
+  { id: "t2", name: "Team 2", members: ["u1", "u2", "u3"] },
+];
+
+const users = [
+  { id: "u1", fullName: "Mars Yun", role: "Engineer" },
+  { id: "u2", fullName: "Chester Yun", role: "Consultant" },
+];
+
+const teamId = "t1";
+// find team
+const selectedTeam = teams.find((team) => team.id === teamId);
+// find memebers
+const members = selectedTeam.members;
+
+const selectedMembers = [];
+for (const member of members) {
+  const selectedUser = users.find((user) => user.id === member);
+  selectedMembers.push(selectedUser);
+}
+```

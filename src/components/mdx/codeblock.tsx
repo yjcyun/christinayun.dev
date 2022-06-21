@@ -15,9 +15,6 @@ const StyledPre = styled.pre`
 
 export const StyledLines = styled.div`
   display: table-row;
-  &:hover {
-    background-color: var(--slate-000);
-  }
 `;
 
 export const StyledLineNo = styled.span`
@@ -33,17 +30,14 @@ export const StyledLineContent = styled.span`
   width: 100%;
 `;
 
-export const Codeblock = ({
-  children: {
-    props: { children, className },
-  },
-}) => {
+export const Codeblock = ({ children }) => {
+  const className = children.props.className;
   const language = className.replace(/language-/, "");
 
   return (
     <Highlight
       {...defaultProps}
-      code={children.trim()}
+      code={children.props.children.trim()}
       language={language}
       theme={theme}
     >

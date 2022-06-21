@@ -48,6 +48,13 @@ const config: GatsbyConfig = {
         path: "./src/contents/projects",
       },
     },
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "snippets",
+        path: "./src/contents/snippets",
+      },
+    },
     "gatsby-plugin-graphql-codegen",
     {
       resolve: `gatsby-plugin-mdx`,

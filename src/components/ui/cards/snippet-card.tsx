@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import { Link, navigate } from "gatsby";
+import { Link } from "gatsby";
 
-import { device } from "@constants/device";
-import Button from "@components/ui/button";
-import { GetDevBlogMdxQuery } from "@pages/blog";
+import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
+import Javascript from "../../../images/snippets/javascript.svg";
+import { GetAllSnippetsMdxQuery } from "@pages/snippets";
+import SnippetsLogo from "../snippets-logo";
 
 const StyledTitle = styled.h3`
   font-size: 1.2rem;
@@ -15,7 +16,9 @@ const StyledCard = styled(Link)`
   background: var(--slate-800);
   transition: 0.2s;
   padding: 1rem;
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
   &:hover {
     transform: translateY(-0.3rem);
@@ -26,13 +29,23 @@ const StyledCard = styled(Link)`
   }
 `;
 
-type SnippetCardProps = { title: string; slug: string };
+type SnippetCardFrontmatter =
+  GetAllSnippetsMdxQuery["snippetsMdx"]["nodes"][number]["frontmatter"];
 
-const SnippetCard = ({ title, slug }: SnippetCardProps) => {
+const SnippetCard = ({
+  title,
+  slug,
+  image,
+  language,
+}: SnippetCardFrontmatter) => {
   return (
     <StyledCard to={`/snippets/${slug}`}>
       <StyledTitle>{title}</StyledTitle>
-      <img src="" alt="Javascript" />
+      <SnippetsLogo
+        image={image as ImageDataLike}
+        alt={language}
+        size="small"
+      />
     </StyledCard>
   );
 };
