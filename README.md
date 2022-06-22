@@ -1,54 +1,62 @@
-<p align="center">
-  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+<!-- PROJECT LOGO -->
+<div align="center">
+   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+    <img alt="Gatsby" src="./src/images/android-chrome-512x512.png" width="60" />
   </a>
-</p>
-<h1 align="center">
-  Gatsby minimal TypeScript starter
-</h1>
 
-## 🚀 Quick start
+  <h1 align="center">
+  christinayun.dev - v1
+  </h1>
 
-1.  **Create a Gatsby site.**
+  <p align="center">
+   This project is built with Gatsby and TypeScript
+    <br />
+    <a href="https://christina.dev">View Live</a>
+  </p>
+</div>
 
-    Use the Gatsby CLI to create a new site, specifying the minimal TypeScript starter.
+![christinayun.dev screenshot](./src/images/portfolio-screenshot.png)
 
-    ```shell
-    # create a new Gatsby site using the minimal TypeScript starter
-    npm init gatsby
-    ```
+<!-- GETTING STARTED -->
 
-2.  **Start developing.**
+## 🚀 Getting Started
 
-    Navigate into your new site’s directory and start it up.
+### Prerequisites
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+1. **NPM**
 
-3.  **Open the code and start customizing!**
+   ```shell
+   npm install npm@latest -g
+   ```
 
-    Your site is now running at http://localhost:8000!
+### Installation
 
-    Edit `src/pages/index.tsx` to see your site update in real-time!
+1. **Clone the repo.**
 
-4.  **Learn more**
+   ```sh
+   https://github.com/yjcyun/christinayun.dev.git
+   ```
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+2. **Start developing.**
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+   Navigate into your new site’s directory and start it up.
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+   ```shell
+   cd christinayun.dev/
+   npm install
+   npm run develop
+   ```
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+3. **Open the code and start customizing!**
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+   Site is now running at http://localhost:8000!
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts)
+<!-- ROADMAP -->
 
-## 🚀 Quick start (Gatsby Cloud)
+## 🚧 Roadmap
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal-ts)
+- [ ] Add SEO keywords to blog template
+- [ ] Add SEO twitter image
+- [ ] Add park blog
+- [ ] Refactor card components
+- [ ] Add banner image in About page
