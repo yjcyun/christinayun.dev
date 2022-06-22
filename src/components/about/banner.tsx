@@ -4,7 +4,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledAboutBanner = styled.div`
-  background-color: ${(props) => props.theme.bannerBackground};
+  background-color: ${(props) => props.theme.background2};
   max-width: var(--md-width);
   margin: auto;
   border-radius: 10px;

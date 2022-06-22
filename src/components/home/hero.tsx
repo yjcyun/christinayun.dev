@@ -8,22 +8,21 @@ const StyledHero = styled.div`
 `;
 
 const StyledH1 = styled.h1`
-  color: ${(props) => props.theme.accentColor};
   font-size: 2.5rem;
 
   @media ${device.tablet} {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 `;
 
 const StyledDesc = styled.p`
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  color: ${(props) => props.theme.text};
-  font-size: 1.1rem;
+  color: ${(props) => props.theme.text4};
+  font-size: 1rem;
 
   @media ${device.tablet} {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 `;
 

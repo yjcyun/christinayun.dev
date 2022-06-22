@@ -9,11 +9,11 @@ import { GetDevBlogMdxQuery } from "@pages/blog";
 const StyledTitle = styled.h3`
   margin-bottom: 1.3rem;
   font-size: 1.5rem;
-  font-weight: 600;
+  color: ${({ theme }) => theme.text2};
 `;
 
 const StyledCard = styled(Link)`
-  background-color: ${({ theme }) => theme.cardContentBackground};
+  background-color: ${({ theme }) => theme.background3};
   transition: 0.2s;
   padding: 1.5rem;
   display: block;
@@ -36,7 +36,7 @@ const StyledContent = styled.div`
 `;
 
 const StyledDate = styled.p`
-  color: ${({ theme }) => theme.metaText};
+  color: ${({ theme }) => theme.text5};
 `;
 
 const StyledTagsContainer = styled.div`

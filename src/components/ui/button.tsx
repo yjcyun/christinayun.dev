@@ -2,11 +2,9 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 type ButtonSize = "small" | "default";
-type ButtonType = "primary" | "secondary" | "tertiary" | "pill";
+type ButtonType = "primary" | "secondary" | "pill";
 type ButtonProps = {
-  bgColor?: string;
   children: React.ReactNode;
-  color?: string;
   disabled?: boolean;
   size?: ButtonSize;
   style?: React.CSSProperties;
@@ -14,58 +12,44 @@ type ButtonProps = {
   onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 };
 
-const getButtonTypeStyle = (
-  type: ButtonType,
-  bgColor: string,
-  size: string
-) => {
+const getButtonTypeStyle = (type: ButtonType, size: string) => {
   switch (type) {
     case "pill":
       return css`
         padding: 3px 10px;
         font-size: 0.8rem;
         border-radius: 3px;
-        background-color: var(--slate-000);
-        color: var(--slate-400);
+        background-color: ${({ theme }) => theme.background2};
+        color: ${({ theme }) => theme.text4};
       `;
-
     case "primary":
-      return css`
-        padding: 0.5rem 1.5rem;
-        font-size: 1.2rem;
-        background-color: var(--slate-700);
-      `;
-
-    case "secondary":
       return css`
         padding: 0.5rem 1rem;
         font-size: ${size === "default" ? "1.2rem" : "1rem"};
-        border: 1px solid ${bgColor};
-        background-color: ${bgColor};
+        border: 1px solid var(--slate-600);
+        background-color: var(--slate-600);
+        color: var(--slate-100);
       `;
-
-    case "tertiary":
+    case "secondary":
       return css`
         padding: 0.5rem 1rem;
         font-size: ${size === "default" ? "1.2rem" : "1rem"};
         border: 1px solid var(--slate-600);
         background-color: transparent;
+        color: ${({ theme }) => theme.text1};
       `;
   }
 };
 
 const StyledButton = styled.button<{
-  $color: string;
-  $bgColor: string;
   $size: ButtonSize;
   $type: ButtonType;
 }>`
-  color: ${(props) => props.$color};
-  background-color: ${(props) => props.$bgColor};
   border: none;
   letter-spacing: 0.5px;
   white-space: nowrap;
-  ${(props) => getButtonTypeStyle(props.$type, props.$bgColor, props.$size)}
+
+  ${(props) => getButtonTypeStyle(props.$type, props.$size)}
 
   &:hover {
     opacity: 0.8;
@@ -74,8 +58,6 @@ const StyledButton = styled.button<{
 
 const Button = ({
   children,
-  bgColor = "inherit",
-  color = "var(--white)",
   disabled,
   size = "default",
   style,
@@ -85,8 +67,6 @@ const Button = ({
   return (
     <StyledButton
       disabled={disabled}
-      $color={color}
-      $bgColor={bgColor}
       $size={size}
       style={style}
       $type={type}

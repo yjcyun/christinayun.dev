@@ -1,17 +1,16 @@
 import "styled-components";
 
-// and extend them!
 declare module "styled-components" {
   export interface DefaultTheme {
-    backgroundColor: string;
-    body: string;
+    text1: string;
+    text2: string;
+    text3: string;
+    text4: string;
+    text5: string;
     accentColor: string;
-    cardImgBackground: string;
-    cardContentBackground: string;
-    cardTitle: string;
-    text: string;
-    metaText: string;
-    bannerBackground: string;
+    background1: string;
+    background2: string;
+    background3: string;
     logo: string;
     border: string;
   }

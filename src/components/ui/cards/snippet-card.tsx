@@ -9,11 +9,11 @@ import SnippetsLogo from "@components/ui/snippets-logo";
 
 const StyledTitle = styled.h3`
   font-size: 1.2rem;
-  font-weight: 600;
+  color: ${({ theme }) => theme.text2};
 `;
 
 const StyledCard = styled(Link)`
-  background-color: ${({ theme }) => theme.cardContentBackground};
+  background-color: ${({ theme }) => theme.background3};
   transition: 0.2s;
   padding: 1rem;
   display: flex;

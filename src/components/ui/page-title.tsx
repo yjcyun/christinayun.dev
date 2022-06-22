@@ -3,8 +3,7 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledH1 = styled.h1`
-  font-size: 2.5rem;
-  border-bottom: 5px solid var(--secondary);
+  font-size: 2rem;
   padding-bottom: 5px;
   display: flex;
   align-items: center;
@@ -21,9 +20,9 @@ const StyledH2 = styled.h2`
 `;
 
 const StyledP = styled.p`
-  margin-top: 3rem;
-  font-size: 1.2rem;
+  margin-top: 1rem;
   max-width: var(--md-width);
+  color: ${(props) => props.theme.text4};
 `;
 
 type PageTitleProps = {

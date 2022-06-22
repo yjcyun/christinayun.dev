@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.border};
+  border-bottom: 1px solid ${({ theme }) => theme.text5};
   padding: 1.5rem 0 1rem;
   margin: 0 1.25rem;
 

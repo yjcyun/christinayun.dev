@@ -8,12 +8,12 @@ import { device } from "@constants/device";
 import { Link } from "gatsby";
 
 const StyledH3 = styled.h3`
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 1rem;
-  color: ${({ theme }) => theme.cardTitle};
+  color: ${({ theme }) => theme.text2};
 
   @media ${device.tabletS} {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 `;
 
@@ -24,7 +24,7 @@ const StyledProjectCard = styled.div<{
   display: grid;
   grid-template-columns: 1fr;
   transition: 0.2s;
-  background-color: ${({ theme }) => theme.cardContentBackground};
+  background-color: ${({ theme }) => theme.background3};
   grid-gap: 1rem;
 
   &:hover {
@@ -43,7 +43,6 @@ const StyledProjectCard = styled.div<{
 const StyledThumbnailContainer = styled.div`
   display: none;
   padding: 2rem;
-  background-color: ${({ theme }) => theme.cardImgBackground};
 
   @media ${device.tablet} {
     display: flex;
@@ -65,7 +64,7 @@ const StyledContentContainer = styled.div`
 `;
 
 const StyledP = styled.p`
-  color: ${({ theme }) => theme.text};
+  color: ${({ theme }) => theme.text4};
 `;
 
 const StyledTagsContainer = styled.div`
@@ -114,13 +113,13 @@ const ProjectCard = ({
         <StyledP>{description}</StyledP>
         <StyledCtaContainer>
           <a href={liveLink} target="_blank" rel="noopener noreferrer">
-            <Button type="secondary" bgColor="var(--slate-600)" size="small">
+            <Button type="primary" size="small">
               Live Site
             </Button>
           </a>
           {sourceLink && (
             <a href={sourceLink} target="_blank" rel="noopener noreferrer">
-              <Button type="tertiary" size="small">
+              <Button type="secondary" size="small">
                 Github
               </Button>
             </a>

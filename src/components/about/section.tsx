@@ -6,16 +6,16 @@ const StyledSection = styled.div`
 `;
 
 const StyledH2 = styled.h2`
-  color: ${(props) => props.theme.accentColor};
+  color: ${(props) => props.theme.text1};
   font-size: 2rem;
   margin-bottom: 1.5rem;
 `;
 
 const StyledP = styled.p`
-  font-size: 1.2rem;
+  font-size: 1rem;
   line-height: 2;
   margin: 1.5rem 0;
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.text3};
 `;
 
 const StyledUl = styled.ul`
@@ -23,9 +23,9 @@ const StyledUl = styled.ul`
 `;
 
 const StyledLi = styled.li`
-  font-size: 1.2rem;
+  font-size: 1rem;
   margin: 5px 0;
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.text3};
   list-style: disc;
   word-break: break-word;
 `;
