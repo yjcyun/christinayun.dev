@@ -1,6 +1,7 @@
-import { device } from "@constants/device";
 import React from "react";
 import styled from "styled-components";
+
+import { device } from "@constants/device";
 
 const StyledH1 = styled.h1`
   font-size: 1.7rem;

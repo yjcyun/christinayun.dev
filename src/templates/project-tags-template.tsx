@@ -2,10 +2,10 @@ import React from "react";
 import { graphql, PageProps } from "gatsby";
 import { FiMinus } from "react-icons/fi";
 
+import { GetAllProjectMdxQuery } from "@pages/projects";
 import BackLink from "@components/ui/back-link";
 import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
-import { GetAllProjectMdxQuery } from "@pages/projects";
 import Seo from "@components/ui/seo";
 import Grid from "@components/ui/grid";
 import ProjectCard from "@components/ui/cards/project-card";

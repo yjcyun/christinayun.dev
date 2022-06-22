@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 const StyledHighlightedLink = styled(Link)`
   color: ${(props) => props.theme.accentColor};

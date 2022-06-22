@@ -6,8 +6,6 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Layout from "@components/layout/layout";
 import Button from "@components/ui/button";
 import { GetSinglePostQuery } from "@graphql-types";
-import useTheme from "@hooks/useTheme";
-import { darkTheme, lightTheme } from "@styles/themes";
 
 const StyledPostTemplate = styled.div`
   display: flex;

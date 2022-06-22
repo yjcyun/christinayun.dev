@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, navigate, PageProps } from "gatsby";
+import { graphql, PageProps } from "gatsby";
 import { MDXRenderer } from "gatsby-plugin-mdx";
+import { ImageDataLike } from "gatsby-plugin-image";
 
 import Layout from "@components/layout/layout";
-import Button from "@components/ui/button";
-import { GetSingleSnippetQuery } from "@graphql-types";
-import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import SnippetsLogo from "@components/ui/snippets-logo";
 import { device } from "@constants/device";
+import { GetSingleSnippetQuery } from "@graphql-types";
 
 const StyledPostTemplate = styled.div`
   display: flex;

@@ -1,8 +1,9 @@
 import React from "react";
+import { graphql, PageProps } from "gatsby";
+
 import Layout from "@components/layout/layout";
 import PageTitle from "@components/ui/page-title";
 import Seo from "@components/ui/seo";
-import { graphql, PageProps } from "gatsby";
 import Grid from "@components/ui/grid";
 import SnippetCard from "@components/ui/cards/snippet-card";
 
