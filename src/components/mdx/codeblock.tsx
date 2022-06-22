@@ -42,12 +42,18 @@ export const Codeblock = ({ children }: CodeblockProps) => {
   darkTheme.plain.backgroundColor = "#263555";
   lightTheme.plain.backgroundColor = "var(--slate-250)";
 
+  const isBrowser = () => typeof window !== "undefined";
+  const theme =
+    isBrowser() && localStorage.getItem("theme") === "dark"
+      ? darkTheme
+      : lightTheme;
+
   return (
     <Highlight
       {...defaultProps}
       code={children.props.children.trim()}
       language={language}
-      theme={localStorage.getItem("theme") === "dark" ? darkTheme : lightTheme}
+      theme={theme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <StyledPre className={className} style={style}>

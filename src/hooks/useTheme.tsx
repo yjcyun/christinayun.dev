@@ -8,13 +8,15 @@ export type useThemeReturnType = {
 };
 
 const useTheme = (): useThemeReturnType => {
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const isBrowser = () => typeof window !== "undefined";
+  const prefersDark =
+    isBrowser() && window.matchMedia("(prefers-color-scheme: dark)").matches;
   const preference = prefersDark ? "dark" : "light";
 
   const [theme, setTheme] = useState<themeMode>(preference);
 
   const setMode = (mode: themeMode) => {
-    localStorage.setItem("theme", mode);
+    isBrowser() && localStorage.setItem("theme", mode);
     setTheme(mode);
   };
 
@@ -23,7 +25,8 @@ const useTheme = (): useThemeReturnType => {
   };
 
   useEffect(() => {
-    const localTheme = localStorage.getItem("theme") as themeMode;
+    const localTheme =
+      isBrowser() && (localStorage.getItem("theme") as themeMode);
 
     localTheme && setTheme(localTheme);
   }, []);
