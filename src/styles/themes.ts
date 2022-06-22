@@ -8,7 +8,7 @@ export const lightTheme = {
   background2: "var(--slate-300)",
   background3: "var(--slate-250)",
   logo: "var(--slate-900)",
-  border: "var(--slate-300)",
+  border: "var(--slate-400)",
   accentColor: "var(--accent-secondary)",
 };
 
@@ -22,6 +22,6 @@ export const darkTheme = {
   background2: "var(--slate-000)",
   background3: "var(--slate-800)",
   logo: "#ffffff",
-  border: "var(--slate-500)",
+  border: "var(--slate-700)",
   accentColor: "var(--accent)",
 };

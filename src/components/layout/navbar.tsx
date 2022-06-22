@@ -14,7 +14,7 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.text5};
+  border-bottom: 1px solid ${({ theme }) => theme.border};
   padding: 1.5rem 0 1rem;
   margin: 0 1.25rem;
 
@@ -75,7 +75,6 @@ const StyledNavList = styled.ul`
 
   a {
     font-size: 1rem;
-    text-transform: uppercase;
 
     &.active {
       color: ${(props) => props.theme.accentColor};

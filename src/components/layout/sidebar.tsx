@@ -4,11 +4,11 @@ import { Link } from "gatsby";
 
 import { device } from "@constants/device";
 import { headerNav } from "@constants/header-nav";
+import { themeMode } from "@hooks/useTheme";
 import ThemeSwitch from "./theme-switch";
-import { themeMode, useThemeReturnType } from "@hooks/useTheme";
 
 const StyledSidebar = styled.div<{ $show: boolean }>`
-  background-color: var(--slate-800);
+  background-color: ${({ theme }) => theme.background3};
   position: fixed;
   top: 0;
   right: 0px;
@@ -33,7 +33,7 @@ const StyledUl = styled.ul`
 
 const StyledLi = styled.li`
   margin: 0.7rem 0;
-  border-bottom: 1px solid var(--slate-700);
+  border-bottom: 1px solid ${({ theme }) => theme.border};
 `;
 
 const StyledLink = styled(Link)`

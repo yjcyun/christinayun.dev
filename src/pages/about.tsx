@@ -8,7 +8,7 @@ import Seo from "@components/ui/seo";
 
 const StyledAbout = styled.section`
   max-width: var(--md-width);
-  margin: 5rem auto;
+  margin: 3rem auto;
 `;
 
 const About = () => {

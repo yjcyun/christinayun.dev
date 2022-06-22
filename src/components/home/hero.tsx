@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { device } from "@constants/device";
 
 const StyledHero = styled.div`
-  margin-bottom: 5rem;
+  margin-bottom: 3rem;
 `;
 
 const StyledH1 = styled.h1`

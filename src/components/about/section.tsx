@@ -1,14 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
+import { device } from "@constants/device";
+
 const StyledSection = styled.div`
   margin: 3rem 0;
 `;
 
 const StyledH2 = styled.h2`
   color: ${(props) => props.theme.text1};
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin-bottom: 1.5rem;
+
+  @media ${device.tabletS} {
+    font-size: 1.7rem;
+  }
 `;
 
 const StyledP = styled.p`

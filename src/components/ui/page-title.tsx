@@ -3,19 +3,23 @@ import React from "react";
 import styled from "styled-components";
 
 const StyledH1 = styled.h1`
-  font-size: 2rem;
+  font-size: 1.7rem;
   padding-bottom: 5px;
   display: flex;
   align-items: center;
   color: ${(props) => props.theme.accentColor};
+
+  @media ${device.tabletS} {
+    font-size: 2rem;
+  }
 `;
 
 const StyledH2 = styled.h2`
   color: ${(props) => props.theme.accentColor};
-  font-size: 1.7rem;
+  font-size: 1.5rem;
 
   @media ${device.tabletS} {
-    font-size: 2rem;
+    font-size: 1.7rem;
   }
 `;
 

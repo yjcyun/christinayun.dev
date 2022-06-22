@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
   align-items: center;
   justify-content: space-between;
   margin: 0 1.25rem;
-  padding: 1rem 0 3rem;
+  padding: 1rem 0;
   border-top: 1px solid var(--slate-500);
   text-align: center;
   flex-direction: column-reverse;

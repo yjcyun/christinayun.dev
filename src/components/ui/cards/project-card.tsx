@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 import { GetAllProjectMdxQuery } from "@pages/projects";
-import Button from "@components/ui/button";
 import { device } from "@constants/device";
-import { Link } from "gatsby";
+import Button from "@components/ui/button";
 
 const StyledH3 = styled.h3`
   font-size: 1.3rem;
@@ -19,7 +19,6 @@ const StyledH3 = styled.h3`
 
 const StyledProjectCard = styled.div<{
   $featured: boolean;
-  $displayAll: boolean;
 }>`
   display: grid;
   grid-template-columns: 1fr;
@@ -83,12 +82,9 @@ const StyledCtaContainer = styled.div`
 type ProjectCardFrontmatter =
   GetAllProjectMdxQuery["projectsMdx"]["nodes"][number]["frontmatter"];
 
-type ProjectCardProps = ProjectCardFrontmatter & {
-  displayAll?: boolean;
-};
+type ProjectCardProps = ProjectCardFrontmatter;
 
 const ProjectCard = ({
-  displayAll = false,
   description,
   featured = false,
   liveLink,
@@ -98,7 +94,7 @@ const ProjectCard = ({
   thumbnail,
 }: ProjectCardProps) => {
   return (
-    <StyledProjectCard $displayAll={displayAll} $featured={featured}>
+    <StyledProjectCard $featured={featured}>
       <StyledContentContainer>
         <StyledTagsContainer>
           {tags?.map((tag) => (

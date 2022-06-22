@@ -1,13 +1,12 @@
-import { device } from "@constants/device";
-import useTheme from "@hooks/useTheme";
 import React from "react";
 import styled from "styled-components";
+
+import { device } from "@constants/device";
 
 const StyledAboutBanner = styled.div`
   background-color: ${(props) => props.theme.background2};
   max-width: var(--md-width);
   margin: auto;
-  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,8 +18,6 @@ const StyledAboutBanner = styled.div`
     flex-direction: row;
   }
 `;
-
-const StyledText = styled.div``;
 
 const StyledH1 = styled.h1`
   font-size: 2rem;
@@ -54,15 +51,13 @@ const StyledImageContainer = styled.div`
 const AboutBanner = () => {
   return (
     <StyledAboutBanner>
-      <StyledText>
-        <StyledH1>
-          <span>C</span>hristina
-          <br />
-          <span>Y</span>ujeong
-          <br />
-          <span>Y</span>un
-        </StyledH1>
-      </StyledText>
+      <StyledH1>
+        <span>C</span>hristina
+        <br />
+        <span>Y</span>ujeong
+        <br />
+        <span>Y</span>un
+      </StyledH1>
       <StyledImageContainer></StyledImageContainer>
     </StyledAboutBanner>
   );

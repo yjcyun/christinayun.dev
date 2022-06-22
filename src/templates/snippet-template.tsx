@@ -8,7 +8,7 @@ import Button from "@components/ui/button";
 import { GetSingleSnippetQuery } from "@graphql-types";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import SnippetsLogo from "@components/ui/snippets-logo";
-import useTheme from "@hooks/useTheme";
+import { device } from "@constants/device";
 
 const StyledPostTemplate = styled.div`
   display: flex;
@@ -29,7 +29,11 @@ const StyleadHeading = styled.div`
 `;
 
 const StyledH1 = styled.h1`
-  font-size: 2.5rem;
+  font-size: 1.7rem;
+
+  @media ${device.tablet} {
+    font-size: 2rem;
+  }
 `;
 
 const SnippetTemplate = ({ data }: PageProps<GetSingleSnippetQuery>) => {

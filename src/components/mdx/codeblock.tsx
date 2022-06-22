@@ -10,7 +10,6 @@ const StyledPre = styled.pre`
   overflow-x: auto;
   padding: 1rem 1.25rem;
   line-height: 1.7rem;
-  font-size: 1.1rem;
 `;
 
 export const StyledLines = styled.div`
