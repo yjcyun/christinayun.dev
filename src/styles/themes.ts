@@ -9,6 +9,7 @@ export const lightTheme = {
   metaText: "var(--slate-600)",
   bannerBackground: "var(--slate-250)",
   logo: "var(--slate-900)",
+  border: "var(--slate-300)",
 };
 
 export const darkTheme = {
@@ -23,4 +24,5 @@ export const darkTheme = {
   metaText: "var(--slate-500)",
   bannerBackground: "var(--slate-000)",
   logo: "#ffffff",
+  border: "var(--slate-500)",
 };

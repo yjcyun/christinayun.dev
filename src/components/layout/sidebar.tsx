@@ -4,6 +4,8 @@ import { Link } from "gatsby";
 
 import { device } from "@constants/device";
 import { headerNav } from "@constants/header-nav";
+import ThemeSwitch from "./theme-switch";
+import { themeMode, useThemeReturnType } from "@hooks/useTheme";
 
 const StyledSidebar = styled.div<{ $show: boolean }>`
   background-color: var(--slate-800);
@@ -14,42 +16,50 @@ const StyledSidebar = styled.div<{ $show: boolean }>`
   height: 100%;
   font-weight: bold;
   transition: all 0.2s ease-in-out;
-  z-index: 0;
+  z-index: 2;
   opacity: ${(props) => (props.$show ? "1" : "0")};
-  display: flex;
   visibility: ${(props) => (props.$show ? "visible" : "hidden")};
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 400;
-  text-transform: uppercase;
 
   @media ${device.tablet} {
     display: none;
   }
 `;
 
+const StyledUl = styled.ul`
+  margin: 5rem 2rem 0 2rem;
+`;
+
 const StyledLi = styled.li`
-  margin: 1rem 0;
+  margin: 0.7rem 0;
+  border-bottom: 1px solid var(--slate-700);
+`;
+
+const StyledLink = styled(Link)`
+  display: flex;
+  padding-bottom: 0.7rem;
 `;
 
 type SidebarProps = {
   show: boolean;
+  theme: themeMode;
+  themeToggler: () => void;
 };
 
-const Sidebar = ({ show }: SidebarProps) => {
+const Sidebar = ({ show, theme, themeToggler }: SidebarProps) => {
   return (
     <StyledSidebar $show={show}>
-      <ul>
+      <StyledUl>
         {headerNav.map((item) => (
           <StyledLi key={item.label}>
-            <Link to={item.link} activeClassName="active">
+            <StyledLink to={item.link} activeClassName="active">
               {item.label}
-            </Link>
+            </StyledLink>
           </StyledLi>
         ))}
-      </ul>
+        <ThemeSwitch themeToggler={themeToggler} theme={theme} />
+      </StyledUl>
     </StyledSidebar>
   );
 };

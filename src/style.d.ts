@@ -13,5 +13,6 @@ declare module "styled-components" {
     metaText: string;
     bannerBackground: string;
     logo: string;
+    border: string;
   }
 }

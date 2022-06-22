@@ -14,9 +14,13 @@ const StyledHeader = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--slate-500);
-  padding: 3.5rem 0 1rem;
+  border-bottom: 1px solid ${({ theme }) => theme.border};
+  padding: 1.5rem 0 1rem;
   margin: 0 1.25rem;
+
+  @media ${device.tablet} {
+    padding: 3.5rem 0 1rem;
+  }
 `;
 
 const StyledInnerHeader = styled.div`
@@ -24,6 +28,7 @@ const StyledInnerHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
 
   @media ${device.tablet} {
     justify-content: flex-start;
@@ -39,7 +44,7 @@ const StyledHome = styled.div`
 const StyledIcons = css`
   font-size: 1.4rem;
   cursor: pointer;
-  z-index: 1;
+  z-index: 3;
 
   @media ${device.tablet} {
     display: none;
@@ -108,7 +113,7 @@ const Navbar = ({ theme, themeToggler }: NavbarProps) => {
           $show={showSidebar}
         />
         <StyledFiX role="button" onClick={onShowSidebar} $show={showSidebar} />
-        <Sidebar show={showSidebar} />
+        <Sidebar show={showSidebar} themeToggler={themeToggler} theme={theme} />
 
         <StyledNav>
           <StyledNavList>
@@ -122,9 +127,19 @@ const Navbar = ({ theme, themeToggler }: NavbarProps) => {
           </StyledNavList>
         </StyledNav>
       </StyledInnerHeader>
-      <ThemeSwitch themeToggler={themeToggler} theme={theme} />
+
+      <ThemeSwitchContainer>
+        <ThemeSwitch themeToggler={themeToggler} theme={theme} />
+      </ThemeSwitchContainer>
     </StyledHeader>
   );
 };
 
 export default Navbar;
+const ThemeSwitchContainer = styled.div`
+  display: none;
+
+  @media ${device.tablet} {
+    display: block;
+  }
+`;

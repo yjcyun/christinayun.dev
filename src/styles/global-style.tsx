@@ -26,7 +26,7 @@ const GlobalStyle = createGlobalStyle`
     --sky-800:#075985;
     --sky-900:#0c4a6e;
     --accent: #78D5CA;
-    --accent-secondary: #0369a1;
+    --accent-secondary: #0c4a6e;
     --box-shadow: 0px 1px 10px -2px var(--slate-800);
     --lg-width:1280px;
     --md-width: 860px;
