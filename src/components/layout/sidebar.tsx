@@ -58,7 +58,7 @@ const Sidebar = ({ show, theme, themeToggler }: SidebarProps) => {
             </StyledLink>
           </StyledLi>
         ))}
-        <ThemeSwitch themeToggler={themeToggler} theme={theme} />
+        {/* <ThemeSwitch themeToggler={themeToggler} theme={theme} /> */}
       </StyledUl>
     </StyledSidebar>
   );

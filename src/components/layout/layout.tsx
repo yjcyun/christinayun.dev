@@ -24,7 +24,8 @@ interface LayoutProps {
 export default function Layout({ children }: LayoutProps) {
   const { theme, themeToggler } = useTheme();
 
-  const themeMode = theme === "light" ? lightTheme : darkTheme;
+  // const themeMode = theme === "light" ? lightTheme : darkTheme;
+  const themeMode = darkTheme;
 
   return (
     <ThemeProvider theme={themeMode}>

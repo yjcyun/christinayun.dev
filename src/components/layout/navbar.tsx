@@ -127,9 +127,9 @@ const Navbar = ({ theme, themeToggler }: NavbarProps) => {
         </StyledNav>
       </StyledInnerHeader>
 
-      <ThemeSwitchContainer>
+      {/* <ThemeSwitchContainer>
         <ThemeSwitch themeToggler={themeToggler} theme={theme} />
-      </ThemeSwitchContainer>
+      </ThemeSwitchContainer> */}
     </StyledHeader>
   );
 };
