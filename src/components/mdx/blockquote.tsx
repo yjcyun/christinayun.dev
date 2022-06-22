@@ -6,7 +6,7 @@ interface BlockquoteProps {
 }
 
 const StyledBlockquote = styled.blockquote`
-  border-left: 4px solid var(--accent);
+  border-left: 4px solid ${(props) => props.theme.accentColor};
   padding: 1.25rem;
   background: var(--slate-000);
   margin: 1.5rem 0;

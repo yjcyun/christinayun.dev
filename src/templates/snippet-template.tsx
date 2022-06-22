@@ -8,6 +8,7 @@ import Button from "@components/ui/button";
 import { GetSingleSnippetQuery } from "@graphql-types";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 import SnippetsLogo from "@components/ui/snippets-logo";
+import useTheme from "@hooks/useTheme";
 
 const StyledPostTemplate = styled.div`
   display: flex;

@@ -10,7 +10,7 @@ import { Link } from "gatsby";
 const StyledH3 = styled.h3`
   font-size: 1.5rem;
   margin-bottom: 1rem;
-  color: var(--slate-300);
+  color: ${({ theme }) => theme.cardTitle};
 
   @media ${device.tabletS} {
     font-size: 1.7rem;
@@ -24,14 +24,14 @@ const StyledProjectCard = styled.div<{
   display: grid;
   grid-template-columns: 1fr;
   transition: 0.2s;
-  background-color: var(--slate-800);
+  background-color: ${({ theme }) => theme.cardContentBackground};
   grid-gap: 1rem;
 
   &:hover {
     transform: translateY(-0.3rem);
 
     ${StyledH3} {
-      color: var(--accent);
+      color: ${(props) => props.theme.accentColor};
     }
   }
 
@@ -43,7 +43,7 @@ const StyledProjectCard = styled.div<{
 const StyledThumbnailContainer = styled.div`
   display: none;
   padding: 2rem;
-  background-color: var(--slate-100);
+  background-color: ${({ theme }) => theme.cardImgBackground};
 
   @media ${device.tablet} {
     display: flex;
@@ -65,7 +65,7 @@ const StyledContentContainer = styled.div`
 `;
 
 const StyledP = styled.p`
-  color: var(--slate-400);
+  color: ${({ theme }) => theme.text};
 `;
 
 const StyledTagsContainer = styled.div`

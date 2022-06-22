@@ -8,7 +8,7 @@ const StyledHero = styled.div`
 `;
 
 const StyledH1 = styled.h1`
-  color: var(--accent);
+  color: ${(props) => props.theme.accentColor};
   font-size: 2.5rem;
 
   @media ${device.tablet} {
@@ -19,7 +19,7 @@ const StyledH1 = styled.h1`
 const StyledDesc = styled.p`
   margin-top: 1.5rem;
   margin-bottom: 2rem;
-  color: var(--slate-400);
+  color: ${(props) => props.theme.text};
   font-size: 1.1rem;
 
   @media ${device.tablet} {

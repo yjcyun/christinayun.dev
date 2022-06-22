@@ -1,9 +1,10 @@
 import { device } from "@constants/device";
+import useTheme from "@hooks/useTheme";
 import React from "react";
 import styled from "styled-components";
 
 const StyledAboutBanner = styled.div`
-  background-color: var(--slate-000);
+  background-color: ${(props) => props.theme.bannerBackground};
   max-width: var(--md-width);
   margin: auto;
   border-radius: 10px;
@@ -27,7 +28,7 @@ const StyledH1 = styled.h1`
 
   span {
     font-family: var(--logoFF);
-    color: var(--accent);
+    color: ${(props) => props.theme.accentColor};
   }
 
   @media ${device.mobileS} {
@@ -44,7 +45,7 @@ const StyledH1 = styled.h1`
 `;
 
 const StyledImageContainer = styled.div`
-  background-color: var(--accent);
+  background-color: ${(props) => props.theme.accentColor};
   border-radius: 5px;
   max-width: 200px;
   width: 100%;

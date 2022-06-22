@@ -18,7 +18,7 @@ const StyledListItem = styled.li`
   }
 
   &:hover ${StyledTitle} {
-    color: var(--accent);
+    color: ${(props) => props.theme.accentColor};
   }
 `;
 

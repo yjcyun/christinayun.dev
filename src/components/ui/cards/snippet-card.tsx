@@ -13,7 +13,7 @@ const StyledTitle = styled.h3`
 `;
 
 const StyledCard = styled(Link)`
-  background: var(--slate-800);
+  background-color: ${({ theme }) => theme.cardContentBackground};
   transition: 0.2s;
   padding: 1rem;
   display: flex;
@@ -24,7 +24,7 @@ const StyledCard = styled(Link)`
     transform: translateY(-0.3rem);
 
     ${StyledTitle} {
-      color: var(--accent);
+      color: ${(props) => props.theme.accentColor};
     }
   }
 `;

@@ -7,6 +7,7 @@ import HighlightedLink from "@components/ui/highlighted-link";
 import Seo from "@components/ui/seo";
 import Grid from "@components/ui/grid";
 import ProjectCard from "@components/ui/cards/project-card";
+import useTheme from "@hooks/useTheme";
 
 export type GetAllProjectMdxQuery = {
   projectsMdx: {
@@ -33,6 +34,7 @@ const PostsPage = ({ data }: PageProps<GetAllProjectMdxQuery>) => {
   const {
     projectsMdx: { nodes: projects },
   } = data;
+
   return (
     <Layout>
       <Seo title="Projects" />

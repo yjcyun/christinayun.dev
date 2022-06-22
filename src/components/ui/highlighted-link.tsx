@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 
 const StyledHighlightedLink = styled(Link)`
-  color: var(--accent);
+  color: ${(props) => props.theme.accentColor};
   text-decoration: underline;
 `;
 

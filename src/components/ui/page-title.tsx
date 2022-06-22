@@ -8,11 +8,11 @@ const StyledH1 = styled.h1`
   padding-bottom: 5px;
   display: flex;
   align-items: center;
-  color: var(--accent);
+  color: ${(props) => props.theme.accentColor};
 `;
 
 const StyledH2 = styled.h2`
-  color: var(--accent);
+  color: ${(props) => props.theme.accentColor};
   font-size: 1.7rem;
 
   @media ${device.tabletS} {

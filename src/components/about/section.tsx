@@ -6,7 +6,7 @@ const StyledSection = styled.div`
 `;
 
 const StyledH2 = styled.h2`
-  color: var(--accent);
+  color: ${(props) => props.theme.accentColor};
   font-size: 2rem;
   margin-bottom: 1.5rem;
 `;
@@ -15,7 +15,7 @@ const StyledP = styled.p`
   font-size: 1.2rem;
   line-height: 2;
   margin: 1.5rem 0;
-  color: var(--slate-400);
+  color: ${(props) => props.theme.text};
 `;
 
 const StyledUl = styled.ul`
@@ -25,7 +25,7 @@ const StyledUl = styled.ul`
 const StyledLi = styled.li`
   font-size: 1.2rem;
   margin: 5px 0;
-  color: var(--slate-400);
+  color: ${(props) => props.theme.text};
   list-style: disc;
   word-break: break-word;
 `;

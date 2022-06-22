@@ -5,19 +5,27 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 import { device } from "@constants/device";
 import { headerNav } from "@constants/header-nav";
+import { useThemeReturnType } from "@hooks/useTheme";
+
 import Sidebar from "./sidebar";
+import ThemeSwitch from "./theme-switch";
 
 const StyledHeader = styled.header`
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
   border-bottom: 1px solid var(--slate-500);
-  padding: 2rem 0 1rem;
+  padding: 3.5rem 0 1rem;
   margin: 0 1.25rem;
+`;
+
+const StyledInnerHeader = styled.div`
+  gap: 1rem;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 
   @media ${device.tablet} {
-    padding: 3rem 0 1rem;
     justify-content: flex-start;
   }
 `;
@@ -65,12 +73,14 @@ const StyledNavList = styled.ul`
     text-transform: uppercase;
 
     &.active {
-      color: var(--accent);
+      color: ${(props) => props.theme.accentColor};
     }
   }
 `;
 
-const Navbar = () => {
+type NavbarProps = useThemeReturnType;
+
+const Navbar = ({ theme, themeToggler }: NavbarProps) => {
   const [showSidebar, setShowSidebar] = useState(false);
 
   const onShowSidebar = () => {
@@ -87,25 +97,32 @@ const Navbar = () => {
 
   return (
     <StyledHeader>
-      <Link to="/">
-        <StyledHome>CYY</StyledHome>
-      </Link>
+      <StyledInnerHeader>
+        <Link to="/">
+          <StyledHome>CYY</StyledHome>
+        </Link>
 
-      <StyledFiMenu role="button" onClick={onShowSidebar} $show={showSidebar} />
-      <StyledFiX role="button" onClick={onShowSidebar} $show={showSidebar} />
-      <Sidebar show={showSidebar} />
+        <StyledFiMenu
+          role="button"
+          onClick={onShowSidebar}
+          $show={showSidebar}
+        />
+        <StyledFiX role="button" onClick={onShowSidebar} $show={showSidebar} />
+        <Sidebar show={showSidebar} />
 
-      <StyledNav>
-        <StyledNavList>
-          {headerNav.map((item) => (
-            <li key={item.label}>
-              <Link to={item.link} activeClassName="active">
-                {item.label}
-              </Link>
-            </li>
-          ))}
-        </StyledNavList>
-      </StyledNav>
+        <StyledNav>
+          <StyledNavList>
+            {headerNav.map((item) => (
+              <li key={item.label}>
+                <Link to={item.link} activeClassName="active">
+                  {item.label}
+                </Link>
+              </li>
+            ))}
+          </StyledNavList>
+        </StyledNav>
+      </StyledInnerHeader>
+      <ThemeSwitch themeToggler={themeToggler} theme={theme} />
     </StyledHeader>
   );
 };

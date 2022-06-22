@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { GatsbyImage, getImage, ImageDataLike } from "gatsby-plugin-image";
 
 const StyledImgContainer = styled.div`
-  background: white;
+  background: ${({ theme }) => theme.logo};
   border-radius: 50%;
   padding: 0.5rem;
 `;
