@@ -247,6 +247,8 @@ export type DirectoryCtimeArgs = {
 export type Site = Node & {
   buildTime?: Maybe<Scalars['Date']>;
   siteMetadata?: Maybe<SiteSiteMetadata>;
+  port?: Maybe<Scalars['Int']>;
+  host?: Maybe<Scalars['String']>;
   polyfill?: Maybe<Scalars['Boolean']>;
   pathPrefix?: Maybe<Scalars['String']>;
   jsxRuntime?: Maybe<Scalars['String']>;
@@ -612,9 +614,9 @@ export type MdxFrontmatter = {
   archived?: Maybe<Scalars['Boolean']>;
   date?: Maybe<Scalars['Date']>;
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
-  slug?: Maybe<Scalars['String']>;
   language?: Maybe<Scalars['String']>;
   image?: Maybe<File>;
+  slug?: Maybe<Scalars['String']>;
 };
 
 
@@ -805,6 +807,8 @@ export type QueryAllDirectoryArgs = {
 export type QuerySiteArgs = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -1132,9 +1136,9 @@ export type MdxFrontmatterFilterInput = {
   archived?: InputMaybe<BooleanQueryOperatorInput>;
   date?: InputMaybe<DateQueryOperatorInput>;
   tags?: InputMaybe<StringQueryOperatorInput>;
-  slug?: InputMaybe<StringQueryOperatorInput>;
   language?: InputMaybe<StringQueryOperatorInput>;
   image?: InputMaybe<FileFilterInput>;
+  slug?: InputMaybe<StringQueryOperatorInput>;
 };
 
 export type FileFilterInput = {
@@ -1477,7 +1481,6 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___archived'
   | 'childrenMdx___frontmatter___date'
   | 'childrenMdx___frontmatter___tags'
-  | 'childrenMdx___frontmatter___slug'
   | 'childrenMdx___frontmatter___language'
   | 'childrenMdx___frontmatter___image___sourceInstanceName'
   | 'childrenMdx___frontmatter___image___absolutePath'
@@ -1517,6 +1520,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___image___childrenMdx'
   | 'childrenMdx___frontmatter___image___id'
   | 'childrenMdx___frontmatter___image___children'
+  | 'childrenMdx___frontmatter___slug'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
   | 'childrenMdx___excerpt'
@@ -1616,7 +1620,6 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___archived'
   | 'childMdx___frontmatter___date'
   | 'childMdx___frontmatter___tags'
-  | 'childMdx___frontmatter___slug'
   | 'childMdx___frontmatter___language'
   | 'childMdx___frontmatter___image___sourceInstanceName'
   | 'childMdx___frontmatter___image___absolutePath'
@@ -1656,6 +1659,7 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___image___childrenMdx'
   | 'childMdx___frontmatter___image___id'
   | 'childMdx___frontmatter___image___children'
+  | 'childMdx___frontmatter___slug'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -2154,6 +2158,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___titleTemplate'
   | 'siteMetadata___twitterUsername'
   | 'siteMetadata___image'
+  | 'port'
+  | 'host'
   | 'polyfill'
   | 'pathPrefix'
   | 'jsxRuntime'
@@ -2289,6 +2295,8 @@ export type SiteGroupConnectionGroupArgs = {
 export type SiteFilterInput = {
   buildTime?: InputMaybe<DateQueryOperatorInput>;
   siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  port?: InputMaybe<IntQueryOperatorInput>;
+  host?: InputMaybe<StringQueryOperatorInput>;
   polyfill?: InputMaybe<BooleanQueryOperatorInput>;
   pathPrefix?: InputMaybe<StringQueryOperatorInput>;
   jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
@@ -3489,7 +3497,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___archived'
   | 'frontmatter___date'
   | 'frontmatter___tags'
-  | 'frontmatter___slug'
   | 'frontmatter___language'
   | 'frontmatter___image___sourceInstanceName'
   | 'frontmatter___image___absolutePath'
@@ -3571,6 +3578,7 @@ export type MdxFieldsEnum =
   | 'frontmatter___image___internal___mediaType'
   | 'frontmatter___image___internal___owner'
   | 'frontmatter___image___internal___type'
+  | 'frontmatter___slug'
   | 'slug'
   | 'body'
   | 'excerpt'

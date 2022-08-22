@@ -1,11 +1,20 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
-import { Headings, Blockquote, Codeblock } from "./src/components/mdx";
+import {
+  Headings,
+  Blockquote,
+  Codeblock,
+  InlineCode,
+  ExternalLink,
+} from "./src/components/mdx";
 
 const components = {
-  h2: Headings.h2,
   blockquote: Blockquote,
   pre: Codeblock,
+  inlineCode: InlineCode,
+  h2: Headings.h2,
+  h3: Headings.h3,
+  a: ExternalLink,
 };
 
 export const wrapMDX = ({ element }) => {
